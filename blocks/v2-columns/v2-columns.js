@@ -9,7 +9,7 @@ const getLastTextElmts = (block) => {
   return linksTitle;
 };
 
-export default async function decorate(block) {
+async function decorate(block) {
   const blockParent = block.parentElement.parentElement;
 
   const variantClasses = ['with-background-image', 'background-plane', 'icon-list', 'navigation-links', 'inset'];

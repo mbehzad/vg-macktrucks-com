@@ -69,21 +69,16 @@ const jumpToCarouselItem = (carousel, index, navigation) => {
   carousel.style.transform = `translateX(-${index * width}px)`;
 };
 
-export default function decorate(block) {
+function decorate(block) {
   const currentVariant = variantClasses.find((variant) => block.classList.contains(variant))
     || null;
   variantsClassesToBEM(block.classList, variantClasses, blockName);
-  const carouselContainer = createElement('div', { classes: `${blockName}__container` });
-  const carouselItems = createElement('ul', { classes: `${blockName}__items` });
-  carouselContainer.append(carouselItems);
+  const carouselItems = (block.querySelector(`.${blockName}__items`));
 
-  const tabNavigation = createElement('ul', { classes: `${blockName}__navigation` });
-  const navigationLine = createElement('li', { classes: `${blockName}__navigation-line` });
   let timeout;
 
-  function buildTabNavigation(buttonContent, index) {
-    const listItem = createElement('li', { classes: `${blockName}__navigation-item` });
-    const button = createElement('button');
+  function buildTabNavigation(listItem, index) {
+    const button = listItem.querySelector('button');
     const moveCarousel = !currentVariant || currentVariant !== variants.fadeIn
       ? () => setCarouselPosition(carouselItems, (index - 1))
       : () => jumpToCarouselItem(carouselItems, (index - 1), tabNavigation);
@@ -99,55 +94,24 @@ export default function decorate(block) {
         moveNavigationLine(navigationLine, activeItem, tabNavigation);
       }, 600);
     });
-
-    button.innerHTML = buttonContent;
-    listItem.append(button);
-
     return listItem;
   }
 
-  const tabItems = block.querySelectorAll(':scope > div');
-  tabItems.forEach((tabItem, index) => {
+  const tabItems = block.querySelectorAll(`.${blockName}__navigation-item`);
+  tabItems.forEach((tabItem) => {
     const picture = tabItem.querySelector('picture');
     if (picture) {
-      const liItem = createElement('li', { classes: `${blockName}__item` });
-      const figure = createElement('figure', { classes: `${blockName}__figure` });
-      const tabContent = tabItem.querySelector('p');
-
-      figure.append(tabContent.querySelector('picture'));
-
-      const lastItems = [...tabContent.childNodes].at(-1);
-      if (lastItems.nodeType === Node.TEXT_NODE && lastItems.textContent.trim() !== '') {
-        const figureCaption = createElement('figcaption');
-        figureCaption.append(lastItems);
-        figure.append(figureCaption);
-      }
-
-      liItem.append(figure);
-      carouselItems.appendChild(liItem);
-
-      // navigation item
-      const tabTitle = tabItem.querySelector('h3');
-      const navItem = buildTabNavigation(tabTitle.innerHTML, index);
-      tabNavigation.append(navItem);
-      tabTitle.remove();
-      tabItem.innerHTML = '';
+      buildTabNavigation(tabItems);
     } else {
-      const carouselTitle = tabItem.querySelector('h2');
-      carouselTitle?.classList.add(`${blockName}__title`);
-      const carouselText = tabItem.querySelector('p');
-      carouselText?.classList.add(`${blockName}__text`);
-      tabItem.classList.add(`${blockName}__heading-wrapper`);
+
     }
   });
 
-  tabNavigation.append(navigationLine);
-  carouselContainer.append(tabNavigation);
-
-  block.append(carouselContainer);
 
   // update the button indicator on scroll
   const elements = carouselItems.querySelectorAll(':scope > *');
   listenScroll(carouselItems, elements, updateActiveItem, 0.75);
   unwrapDivs(block);
 }
+
+document.querySelectorAll(".v2-tabbed-carousel-container").forEach(decorate);

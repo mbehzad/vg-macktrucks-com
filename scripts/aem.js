@@ -635,18 +635,7 @@ async function loadBlock(block) {
       const decorationComplete = new Promise((resolve) => {
         (async () => {
           try {
-            let mod;
-            if (blockName === 'header') mod = await import(/* webpackMode: "eager" */'../blocks/header/header.js');
-            else if (blockName === 'footer') mod = await import(/* webpackMode: "eager" */'../blocks/footer/footer.js');
-            else if (blockName.startsWith('v2-')) {
-              const blockNameWithoutVersionPrefix = blockName.replace("v2-", "");
-              // @TODO: replace using webpackInclude
-              mod = await import(
-              /* webpackMode: "eager" */
-              `../blocks/v2-${blockNameWithoutVersionPrefix}/v2-${blockNameWithoutVersionPrefix}.js`);
-            }
-            // non v2- blocks that have a v2- version. it isn't used on the pages. but still lets support that
-            else mod = await import(/* webpackIgnore: true */ `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
+            const mod = await import(/* webpackIgnore: true */ `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
             if (mod.default) {
               await mod.default(block);
             }

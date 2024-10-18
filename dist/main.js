@@ -1,1 +1,3239 @@
-(()=>{var e,t,n,a,s,i,o={6939:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>b});var s=n(3927),i=n(5545),o=e([i]);const r={subscribe:(0,(i=(o.then?(await o)():o)[0]).ce)("SUBSCRIBE TO BULLDOG"),emailAddress:(0,i.ce)("Email Address")},c=(e,t)=>{[...e.querySelectorAll("h1, h2, h3, h4, h5, h6")].forEach((e=>e.classList.add(t)))},l={blockName:"footer",prefooter:"prefooter",truckList:"footer-truck-list",menu:"footer-menu",newsletter:"footer-newsletter",legal:"footer-legal"},{blockName:d,prefooter:u,truckList:p,menu:m,newsletter:h,legal:v}=l;function f(e){const t=document.createRange().createContextualFragment(`<div class="scroll-to-top-container">\n    <a href="#" class="scroll-to-top" title="${(0,i.ce)("go to top")}">\n      <span class="icon icon-arrow-right" />\n    </a>\n  </div>`);e.append(t)}function y(e){return e.classList.contains(p)?e:y(e.parentElement)}function g(e){const t=y(e),n=t.classList.contains("expand"),a=e.closest(`.${p}`),s=a.querySelector(`.${p}__items`);a!==t||n?(a.classList.remove("expand"),s.style.maxHeight=null):(a.classList.add("expand"),s.style.maxHeight=`${s.scrollHeight}px`)}async function b(e){const t=(0,s.cB)(e);e.textContent="";let n=t.footer||"/footer";const a=(0,s.yb)("custom-footer"),o=(0,s.yb)("cfg-footer");a&&(n=a,e.classList.add(`${d}__custom`)),o&&(n=o);const l=await fetch(`${n}.plain.html`),y=await l.text();e.innerHTML=y;let b=null,_=!1;const w=e.querySelectorAll(`:scope > div .${d} > div`);let $,L,S,E;if(4===w.length){const[e,t,n,a]=w;$=e.querySelector(":scope > div"),L=t.querySelector(":scope > div"),S=n,E=a.querySelector(":scope > div")}const q=(0,i.n)("div");if($&&($.classList.add(u),q.append($)),L){L.classList.add(`${p}__wrapper`),L.querySelector("ul")?.classList.add(`${p}__items`),c(L,`${p}__title`);const e=(0,i.n)("div",{classes:p});e.appendChild(L),q.append(e)}if(S){const t=(0,i.n)("div",{classes:m}),n=document.createRange().createContextualFragment(`<div class="${m}__logo">\n      <a href="/">\n        <span class="icon icon-logo" />\n        <span class="screenreader">${(0,i.ce)("Logo link")}</span>\n      </a>\n    </div>`);t.appendChild(n);const a=S.querySelector(":scope > div ul");a.classList.add(`${m}__socialmedia`),[...a.querySelectorAll("a")].forEach((e=>{e.target="_blank"})),t.appendChild(a),S.firstElementChild.remove();const s=(0,i.n)("div",{classes:h}),o=S.querySelector(":scope > div:last-child");o&&s.appendChild(o);const r=e.querySelector(".v2-newsletter");r&&(r?.setAttribute("data-block-name","v2-newsletter"),s.append(r)),c(s,`${h}__title`);const l=(0,i.n)("div",{classes:`${m}__columns`});l.innerHTML=S.innerHTML,l.querySelectorAll(":scope > div").forEach((e=>e.classList.add(`${m}__column`))),l.children.length&&t.appendChild(l),s.children.length&&t.appendChild(s),q.append(t)}E&&(E.classList.add(v),q.append(E)),e.innerHTML=q.innerHTML,f(e),await(0,i.sT)(e),await(0,s.tB)(e);const k=e.querySelector(".footer-newsletter");k&&(b=new MutationObserver((t=>{for(const n of t){if(_)return;if("childList"!==n.type)return;const t=e.querySelector('button[type="submit"]'),a=e.querySelector('input[name="email"]'),s=e.querySelector(":scope form");s&&(s.className="pardot-form"),t&&a&&(a.placeholder=r.emailAddress,t.ariaLabel=`${r.subscribe}`,_=!0,b.disconnect())}})),b.observe(k,{childList:!0,attributes:!1,subtree:!0})),e.addEventListener("click",(e=>{e.target.classList.contains(`${p}__title`)&&g(e.target)}))}a()}catch(_){a(_)}}))},4321:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.d(t,{A:()=>c});var s=n(7658),i=n(3927),o=e([s]);async function r(e){const t=e&&e.startsWith("/")?e:new URL(e).pathname;if(t){const e=await fetch(`${t}.plain.html`);if(e.ok){const t=document.createElement("main");return t.innerHTML=await e.text(),(0,s.P2)(t),await(0,i.tB)(t),t}}return null}async function c(e){const t=e.querySelector("a"),n=t?t.getAttribute("href"):e.textContent.trim(),a=await r(n);if(a){const t=a.querySelector(":scope .section");t&&(e.classList.add(...t.classList,"fragment"),e.replaceChildren(...t.childNodes))}}s=(o.then?(await o)():o)[0],a()}catch(l){a(l)}}))},9687:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>q});var s=n(5545),i=n(3927),o=n(7658),r=e([s,o]);[s,o]=r.then?(await r)():r;const{SEARCH_DISABLED:c,LOGIN_DISABLED:l}=s.e0,d="header",u=window.matchMedia("(min-width: 1200px)"),p={TAB_WITH_CARDS:"tabs-with-cards",TAB:"tabs"},m=(e,t)=>{[...e.querySelectorAll("a, button")].forEach((e=>{e.setAttribute("tabindex",t)}))},h=e=>{const t=e.querySelector("span.icon"),n="A"===t.parentElement.tagName?t.parentElement:null;if(t.classList.add(`${d}__logo-image`),t.setAttribute("aria-hidden","true"),(n||t).classList.add(`${d}__logo-image-wrapper`),n){const e=(0,s.n)("span",{classes:["screenreader"]}),t=(0,s.ce)("Logo link");e.append(t),n.append(e)}return n||t},v=e=>{const t=e.querySelector("ul");if(t){t.setAttribute("id","header-main-nav"),t.classList.add(`${d}__main-nav`),t.querySelectorAll("li").forEach((e=>{const t=document.createRange().createContextualFragment(`\n        <div class="${d}__accordion-container ${d}__main-link-wrapper">\n          <div class="${d}__accordion-content-wrapper">\n          </div>\n          <div class="desktop-wrapper"></div>\n          <div class="desktop-wrapper-footer"></div>\n        </div>\n      `);e.classList.add(`${d}__main-nav-item`),e.append(t),e.querySelector("a").setAttribute("id",(0,s.$C)("main-nav"))})),t.querySelectorAll("li > a").forEach((e=>{e.classList.add(`${d}__main-nav-link`,`${d}__link`,`${d}__link-accordion`)}));const e=(0,s.ce)("Close menu"),n=document.createRange().createContextualFragment(`\n      <li class="${d}__action-item ${d}__action-item--close-menu">\n        <button\n          aria-label="${e}"\n          class="${d}__close-menu"\n          aria-expanded="false"\n          aria-controls="header-main-nav, header-actions-list"\n        >\n          <span class="icon icon-close" />\n        </button>\n      </li>\n    `);return t.prepend(n),t}return null},f=e=>{const t=e.querySelector("ul");return t.setAttribute("id","header-actions-list"),t.classList.add(`${d}__actions-list`),t.querySelectorAll("li").forEach((e=>{e.classList.add(`${d}__action-item`)})),t.querySelectorAll("li > a").forEach((e=>{e.classList.add(`${d}__action-link`,`${d}__link`),[...e.childNodes].filter((e=>e.nodeType===Node.TEXT_NODE)).forEach((t=>{const n=(0,s.n)("span",{classes:[`${d}__action-link-text`]});t.replaceWith(n),n.append(t),e.setAttribute("aria-label",t.textContent)}))})),t},y=()=>{const e=(0,s.n)("div",{classes:[`${d}__mobile-actions`]}),t=(0,s.ce)("Search"),n=(0,s.ce)("Open menu"),a=document.createRange().createContextualFragment(`\n    ${"false"===c.toLowerCase()?`\n    <a\n      href="/search"\n      aria-label="${t}"\n      class="${d}__search-button ${d}__action-link ${d}__link"\n    >\n      <span class="icon icon-search" aria-hidden="true"></span>\n    </a>`:""}\n    <button\n      aria-label="${n}"\n      class="${d}__hamburger-menu ${d}__action-link ${d}__link"\n      aria-expanded="false"\n      aria-controls="header-main-nav, header-actions-list"\n    >\n      <span class="icon icon-hamburger" aria-hidden="true"></span>\n    </button>\n  `);return e.append(...a.childNodes),e},g=e=>{e.classList.add(`${d}__category-item`),[...e.childNodes].forEach((t=>{"P"===t.tagName&&1===t.querySelectorAll(":scope > picture, :scope > a").length&&t.replaceWith(t.children[0]),e.querySelector(":scope > ul:nth-of-type(2)")===t&&(t.classList.add(`${d}__category-item-buttons`),[...t.querySelectorAll("a")].forEach(((e,t)=>{t?e.classList.add("button","button--small","button--secondary"):e.classList.add("button","button--small","button--primary")})))}));const t=e.querySelector(":scope > a:first-of-type");"PICTURE"===t?.previousElementSibling?.tagName&&t.classList.add(`${d}__link--after-image`)},b=e=>{const t=e.querySelector("img"),n=(0,i.gD)(t.src,t.alt,!1,[{media:"(min-width: 1200px) and (min-resolution: 2x)",width:"568"},{media:"(min-width: 1200px)",width:"284"}]);e.replaceWith(n)},_=e=>(e.forEach((e=>{e.querySelectorAll(".menu > div > div:first-child > a").forEach((e=>e.parentElement.parentElement.replaceWith(e))),[...e.querySelectorAll(".menu")].forEach((e=>{if(e.classList.contains(p.TAB_WITH_CARDS)){const t=e.querySelectorAll(":scope > div > div"),n=(0,s.n)("ul");t.forEach((e=>{const t=(0,s.n)("li");e.parentElement.remove(),t.append(...e.children),n.append(t)})),e.append(n)}else{const t=e.querySelector("ul");e.children[1].replaceWith(t)}})),[...e.querySelectorAll("picture")].forEach(b)})),document.createRange().createContextualFragment(`\n    <div>\n      ${e.map((e=>e.outerHTML)).join("")}\n    </div>\n  `).children[0]),w=e=>{const t=e.closest("[menu-accordion-id]").getAttribute("menu-accordion-id"),n=document.querySelector(`#${t}`);if([...n.parentElement.querySelectorAll(`.${d}__accordion-container`)].forEach((e=>{e!==n&&e.setAttribute("data-active","false")})),n.setAttribute("data-active","true"),e.closest(".header__main-link-wrapper--tabs-with-cards")){const t=e.getAttribute("aria-controls");document.querySelector(`#${t}`).scrollIntoView({behavior:"smooth"})}[...e.closest(".header__accordion-content-wrapper").querySelectorAll(".header__tab-link")].forEach((t=>{const n=t.getAttribute("aria-controls"),a=document.querySelector(`#${n}`);t.setAttribute("aria-expanded",t===e?"true":"false"),m(a,t===e?"0":"-1")}))},$=e=>{document.body.classList[e?"add":"remove"]("disable-scroll"),document.querySelector(".header.block").classList[e?"add":"remove"]("header--expanded")},L=e=>{const t=e.currentTarget.classList,n=t.contains(`${d}__main-nav-link`),a=t.contains(`${d}__tab-link`),s=u.matches;if(s&&!n&&!a)return;e.preventDefault();const i=e.currentTarget.parentElement;i.classList.toggle(`${d}__menu-open`);const o=i.classList.contains(`${d}__menu-open`);if(e.currentTarget.setAttribute("aria-expanded",o),s&&n){s&&i.classList.contains(`${d}__main-nav-item`)&&([...document.querySelectorAll(`.${d}__menu-open`)].filter((e=>e!==i)).forEach((e=>{e.classList.remove(`${d}__menu-open`),e.querySelector(":scope > a").setAttribute("aria-expanded",!1),m(e,"-1")})),m(i,"0")),$(o);const t=e.target.parentElement.querySelector(".header__main-link-wrapper a");w(t)}s&&a&&w(e.currentTarget)},S=(e,t)=>{const n=_(e),a=[...t.querySelectorAll(`.${d}__main-nav-link`)];[...n.children].forEach((e=>{const t=e.querySelector(":scope > p > a");if(!t)return;const n=[...e.querySelectorAll(":scope > div")],s=a.find((e=>e.textContent.trim()===t.textContent.trim())),i=s?.closest(`.${d}__main-nav-item`).querySelector(`.${d}__accordion-content-wrapper`);n.filter((e=>e.classList.contains("menu"))).forEach((e=>{const t=e.querySelector(":scope > a"),n=e.querySelector(":scope > ul");let a,s="";t?.classList.add(`${d}__link`,`${d}__link-accordion`,`${d}__menu-heading`),t?.removeAttribute("href"),(e.classList.contains(p.TAB_WITH_CARDS)||e.classList.contains(p.TAB))&&t?.classList.add(`${d}__tab-link`),e.classList.contains(p.TAB_WITH_CARDS)&&(s=`${d}__main-link-wrapper--${p.TAB_WITH_CARDS}`),e.classList.contains(p.TAB)&&(s=`${d}__main-link-wrapper--${p.TAB}`),n.classList.add(`${d}__category-items`),[...n.querySelectorAll("li")].forEach(g),[...n.querySelectorAll("a")].forEach((e=>e.classList.add(`${d}__link`))),[...n.querySelectorAll("li > a:not(.button):not(:only-child)")].forEach((e=>e.classList.add("standalone-link"))),a=t?document.createRange().createContextualFragment(`\n        <div class="${d}__menu-content">\n          ${t.outerHTML}\n          <div class="${d}__category-content ${d}__accordion-container">\n            <div class="${d}__accordion-content-wrapper">\n              ${n.outerHTML}\n            </div>\n          </div>\n        </div>\n      `):document.createRange().createContextualFragment(`\n          <div class="${d}__menu-content">\n            ${n.outerHTML}\n          </div>\n        `),a.querySelector(`.${d}__link-accordion`)?.addEventListener("click",L),i.append(a),s&&i.parentElement.classList.add(s)}));const o=n.find((e=>e.classList.contains("menu-footer")));o&&([...o.querySelectorAll("a")].forEach(((e,t)=>{const n=t?["standalone-link"]:["button","button--primary","button--small"];e.classList.add(...n)})),s.parentElement.querySelector(".desktop-wrapper-footer").append(o)),s?.addEventListener("click",L)}))},E=e=>(e.querySelectorAll("a").forEach((t=>{t.classList.add(`${d}__custom-button`,"button","button--primary"),e.appendChild(t)})),e.firstElementChild.remove(),e);async function q(e){e.textContent="";const{pathname:t}=new URL(window.location.href),n=t.match("^(/[a-z]{2}(-[a-z]{2})?/).*");let a=`${n?n[1]:"/"}nav`;const r=(0,i.yb)("custom-header"),p="false"===(0,i.yb)("custom-header-mobile-menu").toLowerCase();if(r){a=`${n?n[1]:""}${r}`,e.classList.add(`${d}__custom`);const t=(0,i.yb)("custom-header-style");t&&e.classList.add(`${d}__custom--${t}`)}const g=(0,i.yb)("test-header");g&&(a=g);const b=await fetch(`${a}.plain.html`);b.ok||console.error(`Header is not loaded: ${b.status}`);const _=document.createRange().createContextualFragment(await b.text()),[w,L,q,...k]=_.children,A=(0,s.n)("nav",{classes:[`${d}__nav`]}),C=document.createRange().createContextualFragment(`\n    <div class="${d}__menu-overlay"></div>\n    ${h(w).outerHTML}\n    ${L.children.length?`<div class="${d}__main-links">\n      ${v(L).outerHTML}\n    </div>`:""}\n    <div class="${d}__actions">\n      ${p?"":y().outerHTML}\n      ${p?E(q).outerHTML:f(q).outerHTML}\n    </div>\n  `),x=e=>{A.querySelectorAll(`.${d}__close-menu, .${d}__hamburger-menu`).forEach((t=>{t.setAttribute("aria-expanded",e),document.querySelectorAll(".header__main-nav-link").forEach((t=>{t.setAttribute("tabindex",e?"0":"-1")})),document.querySelectorAll(".header__action-item").forEach((t=>{m(t,e?"0":"-1")})),e&&document.querySelector(".header__close-menu")?.focus()})),A.querySelectorAll("#header-main-nav, #header-actions-list").forEach((t=>{t.setAttribute("aria-hidden",!e)}))},T=()=>{e.classList.remove(`${d}--hamburger-open`),$(!1),e.querySelectorAll(`.${d}__menu-open`).forEach((e=>{e.classList.remove(`${d}__menu-open`),e.setAttribute("aria-expanded","false")})),x(!1)};"false"===c.toLowerCase()&&C.querySelector(`.${d}__search-button`)?.addEventListener("click",(()=>{window.location.href="/search"})),C.querySelector(`.${d}__hamburger-menu`)?.addEventListener("click",(()=>{e.classList.add(`${d}--hamburger-open`),$(!0),x(!0)})),C.querySelectorAll(`.${d}__menu-overlay, .${d}__close-menu`).forEach((e=>{e.addEventListener("click",T)})),u.addEventListener("change",T),A.append(C),e.append(A),x(!1),k&&S(k,A),[...e.querySelectorAll(`.${d}__link-accordion ~ .${d}__accordion-container`)].forEach((e=>{const t=(0,s.$C)("menu-accordion"),n=e.parentElement.querySelector(`.${d}__link-accordion`);e.setAttribute("id",t),n.setAttribute("aria-controls",t),n.setAttribute("aria-expanded",!1),n.parentElement.setAttribute("menu-accordion-id",t)})),document.addEventListener("click",(t=>{const n=!t.target.closest(`.${d}__main-nav`)&&!t.target.closest(".header__actions"),a=e.querySelector(`.${d}__main-nav-item.${d}__menu-open`);n&&a&&(a.classList.remove(`${d}__menu-open`),a.setAttribute("aria-expanded",!1),$(!1))}));const N=e=>{const t=[...document.querySelectorAll("\n      .header__main-link-wrapper--tabs-with-cards .header__category-content.header__accordion-container,\n      .header__main-link-wrapper--tabs .header__category-content.header__accordion-container\n    ")];e?t.forEach((e=>{e.closest(`.${d}__main-link-wrapper`).querySelector(".desktop-wrapper").append(e)})):t.forEach((e=>{[...e.closest(`.${d}__main-link-wrapper`).querySelectorAll(".header__menu-content")].find((t=>t.getAttribute("menu-accordion-id")===e.getAttribute("id"))).append(e)}))},M=e=>{const t=document.querySelector("#header-actions-list"),n=document.querySelector(".header__actions"),a=document.querySelector(".header__main-links"),s=(0,o.cB)([...t.querySelectorAll("a")],".icon",!0),i=t.querySelector('.header__action-item a[href*="login"]');i&&"true"===l.toLowerCase()&&i.remove(),e?(n.append(t),s.forEach((e=>e.classList.add("button","button--primary")))):(a.append(t),s.forEach((e=>e.classList.remove("button","button--primary"))))},R=e=>{if(e){const e=document.querySelector(".header__main-nav");m(e)}else{const e=document.querySelector(".header__main-links"),t=document.querySelector(".header__actions-list");m(e,"-1"),m(t,"-1"),[...e.querySelectorAll('[aria-expanded="true"]')].forEach((e=>{e.setAttribute("aria-expanded","false")}))}};p||(u.addEventListener("change",(e=>{const t=e.matches;R(t),N(t),M(t)})),R(u.matches),N(u.matches),M(u.matches)),(0,s.sT)(e)}a()}catch(k){a(k)}}))},7983:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>u});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o={blockName:"v2-accordion-column",left:"left"},{blockName:r,left:c}=o,l=Object.values(o).splice(1),d=e=>{if(e.querySelector("picture"))e.classList.add(`${r}__item-image`);else{const t=e.querySelector(":is(h1, h2, h3, h4, h5, h6)");t&&t.classList.add(`${r}__item-title`),e.classList.add(`${r}__item-description`)}};function u(e){const t=[...e.querySelectorAll(":scope > div")],n=(0,s.n)("div",{classes:`${r}__accordion-container`}),a=(0,s.n)("div",{classes:`${r}__items-container`}),i=e.classList.contains(c),o=i||!i&&!!t[0].lastElementChild.querySelector("picture");!i&&o&&e.classList.add(c),(0,s.qy)(e.classList,l,r),e.parentElement.classList.add("full-width"),t.forEach(((t,i)=>{[...e.querySelectorAll(".button-container")].forEach((e=>{e.classList.add(`${r}__button-container`),[...e.querySelectorAll("a")].forEach((e=>{e.classList.contains("button--primary")||e.classList.contains("button--secondary")||e.classList.contains("button--red")?e.classList.add("button--small"):e.classList.add("standalone-link",`${r}__button`)}))}));const o=(0,s.n)("button",{classes:`${r}__item-header-button`,props:{type:"button"}}),c=(0,s.n)("span",{classes:[`${r}__icon`,"icon","icon-dropdown-caret"]}),l=[...t.querySelectorAll(":scope > div")];t.classList.add(`${r}__item`),0===i&&t.classList.add("active"),l.forEach((e=>d(e))),o.prepend(t.querySelector(`.${r}__item-title`),c),o.onclick=()=>{const e=n.querySelector(".active");e&&e!==t&&e.classList.remove("active"),t.classList.add("active")},t.prepend(o),a.appendChild(t)})),n.append(a),e.appendChild(n),(0,s.sT)(e)}a()}catch(p){a(p)}}))},9523:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>d});var s=n(5545),i=n(4321),o=e([s,i]);[s,i]=o.then?(await o)():o;const r="v2-accordion";function c(e,t){return(1===e.children.length&&"p"===e.children[0].tagName.toLowerCase()||0===e.children.length&&e.textContent===e.innerHTML)&&e.textContent.startsWith(t)}function l(e,t,n){e.innerHTML="",e.append(t.parentElement),t.parentElement.style.display=n}async function d(e){const t=[...e.querySelectorAll(":scope > div")].map((async e=>{const t=e.querySelector(":scope > div > h1, :scope > div > h2, :scope > div > h3, :scope > div > h4, :scope > div > h5, :scope > div > h6");t?.classList.add(`${r}__title`);const n=e.querySelector(":scope > div:nth-child(2)"),a=(0,s.n)("button",{classes:`${r}__button`}),o=(0,s.n)("span",{classes:[`${r}__icon`,"icon","icon-dropdown-caret"]});a.append(t,o);const d=(0,s.n)("div",{classes:[`${r}__content`,`${r}__content-close`]});if(c(n,"/")&&await(0,i.A)(n),d.innerHTML=n.innerHTML,c(n,"#id-")){const e=document.querySelector(`.${n.textContent.substring(1)}`);if(e){const t=e.parentElement.style.display;e.parentElement.style.display="none","loaded"===e.dataset.blockStatus?l(d,e,t):new MutationObserver(((n,a)=>{"loaded"===e.dataset.blockStatus&&(a.disconnect(),l(d,e,t))})).observe(e,{attributes:!0})}}const u=(0,s.n)("div",{classes:[`${r}__item`,`${r}__item-close`]});return u.append(a),u.append(d),a.addEventListener("click",(()=>{u.classList.toggle(`${r}__item-close`)})),(0,s.sT)(u),u}));e.innerHTML="",await Promise.allSettled(t),t.forEach((async t=>{const n=await t;e.append(n)})),(0,s.sT)(e)}a()}catch(u){a(u)}}))},2303:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>r});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-all-trucks";function r(e){e.querySelectorAll(`.${o} > div`).forEach((t=>{t.classList.add(`${o}__truck`),e.querySelectorAll(`.${o}__truck > div:first-child`).forEach((e=>{e.classList.add(`${o}__truck-image`);const t=e.querySelectorAll("picture"),n=e.querySelector("a");n.text="",n.classList.remove("button","button--primary"),n.append(...t),e.innerHTML="",e.append(n)})),e.querySelectorAll(`.${o}__truck> div:last-child`).forEach((e=>{e.classList.add(`${o}__truck-info`)}))})),document.querySelector(`.${o}-wrapper`).classList.add("full-width");const t=document.querySelectorAll(`.${o}__truck`),n=document.querySelectorAll(`.${o}__truck > div > ul`);document.querySelectorAll(`.${o}__truck > div + div > h3`).forEach((e=>{e.parentNode.parentNode.classList.add(e.id)}));const a=[(0,s.ce)("All Trucks")];n.forEach((e=>{e.classList.add(`${o}__segment-list`);const t=e.querySelectorAll("li"),n=Array.from(t).map((e=>{const t=e.textContent.trim().toLowerCase().replaceAll(" ","-");return a.includes(t)||a.push(t),t})),s=e.closest(`.${o}__truck`);n.forEach((e=>{s.classList.add(e)}))}));const i=(0,s.n)("div",{classes:`${o}__dropdown`}),r=(0,s.n)("div",{classes:`${o}__selected-item-wrapper`}),c=(0,s.n)("div",{classes:`${o}__selected-item`}),l=(0,s.n)("ul",{classes:`${o}__button-list`}),d=document.createRange().createContextualFragment(`<span class="${o}__svg-wrapper">\n    <svg xmlns="http://www.w3.org/2000/svg"><use href="#icons-sprite-dropdown-caret"></use></svg>\n  </span>`);r.append(c),r.appendChild(...d.children),i.append(r),i.append(l),e.prepend(i),a.forEach(((e,n)=>{const a=(0,s.n)("li"),i=(0,s.n)("button",{classes:`${o}__segment-button`});i.textContent=e,0===n&&(i.classList.add("active"),c.textContent=e),l.appendChild(a),a.append(i),i.addEventListener("click",(()=>{const e=i.textContent.trim().toLowerCase();c.textContent=e,t.forEach((t=>{const n=e===(0,s.ce)("All trucks").trim().toLowerCase();t.style.display=t.classList.contains(e)||n?"flex":"none";const a="flex"===t.style.display;t.style.display=a?"flex":"none",t.classList.toggle("selected-truck",a)})),document.querySelectorAll(`.${o}__truck`).forEach((e=>{e.classList.contains("selected-truck")?(e.classList.remove("odd","even"),document.querySelectorAll(".selected-truck").forEach(((e,t)=>{t%2==0?(e.classList.remove("even-row"),e.classList.add("odd-row")):(e.classList.remove("odd-row"),e.classList.add("even-row"))}))):e.classList.contains("selected-truck")||e.classList.remove("odd","even")}))}))})),document.addEventListener("click",(e=>{e.target.closest(`.${o}__selected-item-wrapper`)?i.classList.toggle(`${o}__dropdown--open`):i.classList.remove(`${o}__dropdown--open`)})),function(){const e=document.querySelectorAll(`.${o}__button-list .${o}__segment-button`);e.forEach((t=>{t.addEventListener("click",(t=>{e.forEach((e=>{e!==t.target?e.classList.remove("active"):e!==t.target||e.classList.contains("active")||t.target.classList.toggle("active")}))}))}))}()}a()}catch(c){a(c)}}))},31:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>f});var s=n(3927),i=n(5545),o=e([i]);i=(o.then?(await o)():o)[0];const r="v2-breadcrumb",c="data-section-status",l=(0,i.ce)("breadcrumb"),d={home:(0,i.ce)("home"),ellipsis:"…"},u=e=>e.replace(/-/g," ").toLowerCase(),p=e=>parseInt(e.getPropertyValue("padding-left"),10)+parseInt(e.getPropertyValue("padding-right"),10),m=e=>[...e.querySelectorAll(`.${r}__crumb-item`)].reduce(((e,t)=>{const n=window.getComputedStyle(t);return e+parseInt(n.getPropertyValue("width"),10)}),0),h=e=>{const t=window.getComputedStyle(e);return parseInt(t.getPropertyValue("width"),10)-("border-box"===t.getPropertyValue("box-sizing")?p(t):0)},v=e=>m(e)<h(e);function f(e){const t=(0,s.cB)(e),n=(t&&Object.hasOwn(t,"path")?t.path:window.location.pathname).split("/").filter(Boolean),a=(0,i.n)("nav",{classes:[`${r}__crumb-nav`]}),o=(0,i.n)("ul",{classes:[`${r}__crumb-list`]}),p=n.map(((e,t)=>{const a=(0,i.n)("li",{classes:[`${r}__crumb-item`]}),s=u(n[t]),o={"data-content":s},c=[`${r}__crumb`];t!==n.length-1?o.href=`/${n.slice(0,t+1).join("/")}/`:(c.push(`${r}__crumb--active`),o["aria-current"]="page");const l=(0,i.n)("a",{classes:c,props:o});return l.textContent=s,a.append(l),a})),m=(0,i.n)("li",{classes:[`${r}__crumb-item`]}),h=(0,i.n)("a",{classes:[`${r}__crumb`,`${r}__crumb--home`],props:{href:"/"}});h.textContent=d.home,m.append(h),p.unshift(m),o.append(...p),a.append(o),e.textContent="",e.append(a),e.parentElement.classList.add("full-width"),e.setAttribute("aria-label",l);const f=new ResizeObserver((t=>{t.forEach((t=>{t.contentBoxSize&&(h.textContent=d.home,p.forEach(((e,t)=>{const n=e.firstElementChild;t>0&&(e.classList.remove(`${r}__crumb-item--hidden`),n.textContent=n.dataset.content)})),(()=>{if(!v(e)&&p.length>2&&(h.textContent=d.ellipsis),v(e)||(p.at(-1).firstElementChild.textContent="",p.at(-1).classList.add(`${r}__crumb-item--hidden`)),!v(e)){let t=1;for(;t<p.length-2&&!v(e);)p[t].firstElementChild.textContent="",p[t].classList.add(`${r}__crumb-item--hidden`),t+=1}})())}))})),y=new MutationObserver((t=>{t.forEach((t=>{t.attributeName===c&&"loaded"===t.target.getAttribute(c)&&(f.observe(e),y.disconnect())}))}));y.observe(e.closest(".section"),{childList:!0,attributeFilter:[c]})}a()}catch(y){a(y)}}))},8845:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>o});var s=n(5545),i=e([s]);async function o(e){const t="v2-cards";(0,s.qy)(e.classList,["no-background","horizontal","image-aspect-ratio-7-5","large-heading","4-cards-row","2-cards-row","spaced","with-border"],t),[...e.querySelectorAll(":scope > div")].forEach((e=>e.classList.add(`${t}__card-item`))),[...e.querySelectorAll(":scope > div > div")].forEach((e=>{e.classList.add(`${t}__text-wrapper`)})),[...e.querySelectorAll("picture")].forEach((e=>{e.classList.add(`${t}__picture`),e.parentElement.classList.add(`${t}__picture-wrapper`),e.parentElement.classList.remove(`${t}__text-wrapper`)})),[...e.querySelectorAll("img")].forEach((e=>e.classList.add(`${t}__image`))),[...e.querySelectorAll("h1, h2, h3, h4, h5, h6")].forEach((n=>{n.classList.add(`${t}__heading`),n.querySelector("a")&&e.classList.add(`${t}--heading-with-arrow`)})),[...e.querySelectorAll(".button-container")].forEach((n=>{n.classList.add(`${t}__button-container`),[...n.querySelectorAll("a")].forEach((n=>{n.classList.contains("button--primary")||n.classList.contains("button--secondary")||n.classList.contains("button--red")?n.classList.add("button--small"):n.classList.add("standalone-link",`${t}__button`),e.classList.contains(`${t}--spaced`)&&n.classList.replace("button--small","button--large")}))}))}s=(i.then?(await i)():i)[0],a()}catch(r){a(r)}}))},9415:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>_});var s=n(5545),i=n(2246),o=e([s,i]);[s,i]=o.then?(await o)():o;const r="v2-category-collage",c={itemContainer:`${r}__item-container`,itemContent:`${r}__item-content`,itemTitle:`${r}__item-title`,itemCategoryTitle:`${r}__item-category-title`,itemMedia:`${r}__item-media`,itemLinkClass:`${r}__item-link`},l=e=>e.querySelector("div:nth-child(3)"),d=e=>e.querySelector("div:nth-child(2)"),u=e=>e.querySelector("div:nth-child(3) > a"),p=()=>(0,s.n)("span",{classes:["icon","icon-arrow-right"]}),m=(e,t)=>{if(t.parentElement!==e){const n=t.parentElement;t.classList.add(c.itemMedia),e.prepend(t),n.remove()}t.setAttribute("tabindex",0)},h=(e,t)=>{const n=e.querySelector(".v2-video__playback-button");n&&t.prepend(n)},v=(e,t)=>{const n=e.querySelector("a.text-link-with-video");n&&(0,i.uW)(n)&&((0,i.g5)(e,n.getAttribute("href"),c.itemMedia,{muted:!0,autoplay:!0,loop:!0,playsinline:!0,tabindex:0}),n.remove(),h(e,t))},f=(e,t)=>{const n=e.querySelector(`.${c.itemLinkClass}`);t?m(n,t):v(n,e)},y=e=>{const t=e.parentElement,n=e.innerHTML;t.innerHTML=n},g=(e,t,n)=>{const{href:a,title:i}=n,o=(0,s.n)("a",{classes:c.itemLinkClass,props:{href:a,title:i,tabindex:-1}}),r=(0,s.n)("div",{classes:c.itemContent}),u=d(e),m=l(e);y(n),e.classList.add(c.itemContainer),(0,s.dF)(m).classList.add(c.itemTitle),(0,s.dF)(u).classList.add(c.itemCategoryTitle),m.append(p()),r.append(u),r.append(m),o.innerHTML=t.innerHTML,o.prepend(r),t.remove(),e.append(o)},b=e=>{e.forEach((e=>{const t=e.firstElementChild,n=u(e);g(e,t,n),f(e,e.querySelector("picture"))}))};function _(e){const t=e.parentElement,n=e.querySelectorAll(":scope > div");t.classList.add("full-width"),b([...n]),(0,s.sT)(e)}a()}catch(w){a(w)}}))},2213:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>c});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-columns",r=e=>{const t=e.querySelectorAll("p"),n=t[t.length-1];return n.classList.add("list-title"),n};async function c(e){const t=e.parentElement.parentElement;(0,s.qy)(e.classList,["with-background-image","background-plane","icon-list","navigation-links","inset"],o);const n=e.classList.contains(`${o}--with-background-image`),a=e.classList.contains(`${o}--icon-list`),i=e.classList.contains(`${o}--navigation-links`),c=a||i,l=t.classList.contains("header-with-mark")||t.classList.contains("header-no-mark"),d=[...e.querySelectorAll(":scope > div")],u=[...e.querySelectorAll(":scope > div > div")];d.forEach((e=>{e.classList.add(`${o}__row`)})),u.forEach((a=>{a.classList.add(`${o}__column`);const d=a.querySelector("picture"),u=a.querySelectorAll("p, ul, ol"),p=[],m=(0,s.n)("div",{classes:`${o}--links`});d?a.classList.add(`${o}__column--with-image`):a.classList.add(`${o}__column--with-text`),u.forEach((e=>{const t=e.nextElementSibling,n=[...e.classList].includes("button-container"),s="h"===t?.tagName.toLowerCase()[0];!c||"ul"!==e.tagName.toLowerCase()&&"ol"!==e.tagName.toLowerCase()?s||n||p.push(e):(i&&m.append(r(a)),m.append(e))})),p.forEach((e=>{e.classList.contains("list-title")||e.classList.add(`${o}__body`)})),e.querySelectorAll(`ul.${o}__body li`).forEach((e=>{e.classList.add("li--hyphen")}));const h=[...a.querySelectorAll(".button-container a")];if(n){t.classList.add(`${o}-container--with-background-image`);const e=(0,s.n)("div",{classes:"button-container"});if(h.forEach((t=>{t.classList.add("button--large"),t.closest(".button-container").replaceWith(t),e.append(t)})),d||a.append(e),c&&(m.querySelectorAll("a").forEach((e=>e.classList.add("standalone-link"))),a.append(m)),l){const e=t.querySelector(".default-content-wrapper"),n=[...e.querySelectorAll("h1, h2, h3, h4, h5, h6")];n[0].classList.add(`${o}__body-header`,!t.classList.contains("header-no-mark")&&"with-marker"),p[0].insertAdjacentElement("beforebegin",n[0]),e.remove()}}else h.forEach((e=>{e.classList.add("button--large")}));const v=[...a.querySelectorAll("h1, h2, h3, h4, h5, h6")];v.forEach((e=>e.classList.add(`${o}__heading`,"h2")));const f=v[0]?.previousElementSibling,y=f&&!f.classList.contains("icon")&&f.textContent;if(y){const e=(0,s.n)("span",{classes:"pretitle"});e.textContent=y,f.replaceWith(e)}}))}a()}catch(l){a(l)}}))},7922:(e,t,n)=>{"use strict";n.d(t,{A:()=>a});const a=({zipCode:e,isMobile:t,isExportMarket:n})=>`<input id="hoverText" value="Please unselect the selected option to click this option" hidden/>\n  \x3c!-- PartsASIST Datasource Selection --\x3e\n  <div class="datasource-option" style="display:none;">\n      <div class="backdrop"></div>\n      <div class="col-12">\n          <div class="row">\n              <h3 class="MediumTitleSentence">Select a Brand</h3>\n              <p>To view participating dealers near you.</p>\n              <div class="brand">\n                  <button id="volvo" type="button">Volvo Trucks</button>\n                  <button id="mack" type="button">Mack Trucks</button>\n                  <button id="dual" type="button" style="min-width:80px;">Other</button>\n              </div>\n          </div>\n      </div>\n  </div>\n  \x3c!-- PartsASIST Registration Modal --\x3e\n  <div class="partsasist-form" style="display:none;">\n      <div class="backdrop"></div>\n      <div class="col-12">\n          <div class="row regForm rtl-padding">\n\n              <button type="button" class="btn" onclick="$.fn.resetRegistration(this);">Return to Dealer Locator</button>\n\n              <h3 class="MediumTitleSentence"></h3>\n          </div>\n          <div class="row regForm">\n              <div id="select-form">SELECT FORM HTML</div>\n          </div>\n      </div>\n  </div>\n  <div class="wrapper">\n      <div class="mobile-main-header">\n          <div class="panel-header">\n              <input type="text" id="location2"\n                ${e&&t?`value="${e}"`:""}\n                placeholder="Enter City, State, or Zip Code"/>\n              <div class="search-container">\n                  <button type="button" id="search" onclick="$.fn.setAddress2();">\n                      <img src="/blocks/v2-dealer-locator/images/search.svg"/>\n                  </button>\n              </div>\n              <div class="filter-container">\n                  <button type="button" onclick="$.fn.switchSidebarPane('sidebar-filter');">\n                      <div style="width:44px;">\n                          <div class="icon"><img src="/blocks/v2-dealer-locator/images/filter.svg"/></div>\n                      </div>\n                  </button>\n              </div>\n              <div class="geo-container">\n                  <button type="button" id="search" onclick="$.fn.setLocation();"><img\n                          src="/blocks/v2-dealer-locator/images/location.svg"/></button>\n              </div>\n\n          </div>\n      </div>\n      <div id="map"></div>\n      <div class="map-geo-container">\n          <button type="button" id="search" onclick="$.fn.setLocation();"><img\n                  src="/blocks/v2-dealer-locator/images/location.svg"/></button>\n      </div>\n      <div class="sidebar" style="left:0px;">\n          <div class="row main-header">\n              <div class="panel-header">\n                  <input type="text" id="location"\n                    ${e&&!t?`value="${e}"`:""}\n                    placeholder="Enter City, State, or Zip Code"/>\n                  <div class="search-container">\n                      <button type="button" id="search" onclick="$.fn.setAddress();">\n                          <img src="/blocks/v2-dealer-locator/images/search.svg"/>\n                      </button>\n                  </div>\n                  <div class="filter-container">\n                      <button type="button" onclick="$.fn.switchSidebarPane('sidebar-filter');">\n                          <div style="width:44px;">\n                              <div class="icon"><img src="/blocks/v2-dealer-locator/images/filter.svg"/></div>\n                          </div>\n                      </button>\n                  </div>\n                  <div class="geo-container">\n                      <button type="button" id="search" onclick="$.fn.setLocation();"><img\n                              src="/blocks/v2-dealer-locator/images/location.svg"/></button>\n                  </div>\n\n              </div>\n          </div>\n          <div class="row legend-header">\n\n\n              <div class="sidebar-legend">\n                  <span id="dealer-tag">\n                  <div class="dealer" id="filterDealer">\n                      <div>\n                      <img src="/blocks/v2-dealer-locator/images/dealer.svg" class="legend-icon"/>\n                      <span>Dealer</span>\n                        </div>\n                  </div>\n                      </span>\n                  <span id="uptime-tag">\n                  <div class="uptime-dealer" id="filterUptime">\n                      <div>\n                      <img src="/blocks/v2-dealer-locator/images/uptime.svg" class="legend-icon"/> <span>Certified Uptime Dealer</span>\n                  </div>\n                          </div>\n                      </span>\n                  <span id="electric-tag">\n                  <div class="electric-dealer" id="filterElectricDealer">\n                      <div>\n                      <img src="/blocks/v2-dealer-locator/images/bolt.svg" class="legend-icon"/> <span>Certified Electric Dealer</span>\n                  </div>\n                      </div>\n                        </span>\n                  <div class="mobile-dealer" id="filterDealerMobile">\n                      <div>\n                          <img src="/blocks/v2-dealer-locator/images/dealer.svg" class="legend-icon"/>\n                          <span>Dealer</span>\n                      </div>\n                  </div>\n                  <div class="mobile-uptime-dealer" id="filterUptimeMobile">\n                      <div>\n                          <img src="/blocks/v2-dealer-locator/images/uptime.svg" class="legend-icon"/> <span>Certified Uptime</span>\n                      </div>\n                  </div>\n                  <div class="mobile-electric-dealer" id="filterElectricDealerMobile">\n                      <div>\n                          <img src="/blocks/v2-dealer-locator/images/bolt.svg" class="legend-icon"/>\n                          <span>Certified Electric</span>\n                      </div>\n                  </div>\n\n              </div>\n          </div>\n          <div class="row main-directions" style="display: none;">\n              <div class="go-back-direction" style="text-align: right;">\n                  <button type="button" id="cancel2">Back</button>\n              </div>\n              <div class="panel-header from-directions">\n                  <input type="text" id="location" placeholder="Enter City, State, or Zip Code"/>\n              </div>\n              <div class="panel-header to-directions" style="margin-top:5px;">\n                  <input type="text" id="location" placeholder="Enter City, State, or Zip Code"/>\n              </div>\n              <div class="panel-header add-directions" onclick="$.fn.switchSidebarPane('add-directions-return', this);"\n                  data-id="">\n                  <i class="fa fa-refresh"></i> Recalculate Directions\n              </div>\n          </div>\n          <div class="sidebar-content">\n              <div class="go-back" style="display:none;">\n                  <button type="button" class="tooltip" id="cancel">Back</button>\n              </div>\n              <div class="loading-overlay">\n                  <div class="loading-msg">\n                      <p>One moment while we gather nearby dealers</p>\n                  </div>\n              </div>\n              <div class="waiting-overlay">\n                  <p>Start finding nearby dealers by providing a location above.</p>\n              </div>\n          </div>\n      </div>\n\n      <a href="javascript:void(0);" class="slider-arrow hide"><i class="fa fa-angle-left"></i></a>\n\n\n  </div>\n  <div id="sidebar-pins" style="display: none;">\n      <div class="row" style="height:100%;">\n\n          <div class="scroller">\n              <p class="no-dealer-text" style="display: none;">No Dealers Found</p>\n              <div class="nearby-pins"></div>\n          </div>\n      </div>\n      <div class="panel-footer">Loading...</div>\n  </div>\n  <div id="sidebar-pin" style="display: none;">\n      <div class="pin-header">\n          <div class="pin-details-header">\n              <img id="head-marker" class="pin-header-img" src=""/>\n              <div id="title"></div>\n\n\n          </div>\n          <div id="type"></div>\n          <div class="button-group">\n              <div id="my-dealer" style="display: none;"><i class="fa fa-star-o tooltip"><span\n                      class="tooltiptext mydealer">Your Preferred Dealer</span></i></div>\n          </div>\n\n          <div class="dealer-deatils-header">\n              <div class="detail-website">\n                  <a target="_blank">\n                      <img src="/blocks/v2-dealer-locator/images/globe.svg"/>\n                      Website</a>\n              </div>\n              <div class="detail-direction">\n                  <a id="directions" data-id="" onclick="$.fn.switchSidebarPane('sidebar-directions', this);">\n                      <img src="/blocks/v2-dealer-locator/images/gps.svg"/>\n                      Directions</a>\n              </div>\n              <div class="detail-call">\n\n              </div>\n              <div class="detail-share">\n                  <button type="button" class="accordion">\n                    <img src="/blocks/v2-dealer-locator/images/share.svg"/>\n                    <span>SHARE</span>\n                  </button>\n                  <div class="accordion-panel">\n                      <input type="text" id="share-link" value="" onclick="this.select();"/>\n                  </div>\n              </div>\n\n          </div>\n      </div>\n      <div class="row pin-content">\n          <div class="scroller">\n              <div class="pin-container">\n\n\n                  <ul class="pin-details">\n                      <li>\n                          <img src="/blocks/v2-dealer-locator/images/map-detail.svg"/>\n                          <div id="title2"></div>\n                          <br/>\n                          <div id="address1">\n                              <div></div>\n                          </div>\n                          <br/>\n                          <div id="address2">\n                              <div></div>\n                          </div>\n                          <br/>\n                          <div id="city-state-zip">\n                              <div></div>\n                          </div>\n                          <div class="controls">\n                              <i class="tooltip fa fa-copy" id="clipboard-address" data-clipboard=""\n                                onclick="$.fn.copyToClipboard(this);"><span class="tooltiptext copy">Copy address</span></i>\n                          </div>\n                      </li>\n                      <li id="hours">\n                          <img src="/blocks/v2-dealer-locator/images/clock.svg"/>\n                          <div></div>\n                      </li>\n                      <li>\n                          <img src="/blocks/v2-dealer-locator/images/globe-detail.svg"/>\n                          <div id="website">No website available</div>\n                          <div class="controls">\n                              <i class="tooltip fa fa-external-link" id="open-website" onclick="">\n                                <span class="tooltiptext link">Open website</span>\n                              </i>\n                          </div>\n                      </li>\n                      <li>\n                          <img src="/blocks/v2-dealer-locator/images/mail.svg"/>\n                          <div id="email" ></div>\n                      </li>\n\n\n                      <li id="details" class="accordion-panel"></li>\n                  </ul>\n                  <div class="header-title header-driver-title">Driver Amenitites</div>\n                  <ul id="drivers">\n                  </ul>\n                  <div class="header-title header-services-title">Truck Services</div>\n                  <ul id="services">\n                  </ul>\n              </div>\n          </div>\n      </div>\n  </div>\n  <div id="nearbyPinDetails" style="display: none;">\n      <div class="panel-card">\n          <div class="panel-container">\n              <article class="teaser">\n                  <div class="marker-main">\n                      <img id="marker" src=""/>\n                  </div>\n                  <div class="dealerPanelContainer">\n                      <div class="teaser-top" onclick="$.fn.switchSidebarPane('sidebar-pin', this);" data-id="">\n                          <div class="heading">\n                              <p></p>\n\n                              <div class="distance"></div>\n                          </div>\n                          <div class="info">\n                              <div class="hours"></div>\n                          </div>\n                          <div class="left">\n                              <div class="address"></div>\n                              <div class="city"></div>\n                              <div class="phone"></div>\n                          </div>\n                      </div>\n                      <div class="teaser-bottom">\n                          <div class="right">\n                              <div class="website">\n                                  <a href="" target="_blank" rel="noopener"></a>\n                              </div>\n                          </div>\n                          <div class="right">\n                              <div class="direction">\n                                  <a href="" id="direction"\n                                    onclick="$.fn.switchSidebarPane('sidebar-direction-list', this);return false;"></a>\n                              </div>\n                          </div>\n                          <div class="right">\n                              <div class="call">\n\n                              </div>\n                          </div>\n                          <div class="right">\n                              <div class="more" onclick="$.fn.switchSidebarPane('sidebar-pin', this);">\n                                  <a>More</a>\n                              </div>\n                          </div>\n                      </div>\n                      <div class="teaser-services">\n                      </div>\n                  </div>\n              </article>\n          </div>\n      </div>\n  </div>\n  <div id="sidebar-filter" style="display: none;">\n      <div class="row" style="padding-top: 25px;">\n          <div class="panel-card result-item">\n              <div class="panel-container panel-filter-distance">\n                  <span class="header-title">Filter By Distance</span>\n                  <ul>\n                      <li>\n                          <div>\n                              <input name=range-filter class=range-filter type=range id=range value=${n?75:100} list=steplist\n                                    max=100 min=25 step=25 onchange="$.fn.radiusChange();"/>\n                              <datalist id=steplist class=sliderticks>\n                                  <option>25</option>\n                                  <option>50</option>\n                                  <option>75</option>\n                                  <option>100</option>\n                              </datalist>\n                          </div>\n                      </li>\n                  </ul>\n              </div>\n          </div>\n          <div class="panel-card result-item">\n              <div class="panel-container">\n                  <span class="header-title">Filter By Service</span>\n                  ${n?'\n  <ul id="filter-options">\n      <li>\n          <label for=all>All Dealers\n              <input name=type-filter type=checkbox id=all value="All Dealers" checked=checked/>\n              <span class="checkmark"></span>\n          </label>\n      </li>\n      <li>\n          <label for=sales-service>Sales, service &amp; Parts\n              <input name=type-filter type=checkbox id=sales-service value=Sales, Service & Parts />\n              <span class="checkmark"></span>\n          </label>\n      </li>\n      <li>\n          <label for=services-parts>Service &amp; Parts\n              <input name=type-filter type=checkbox id=services-parts value=Service and Parts />\n              <span class="checkmark"></span>\n          </label>\n      </li>\n      <li>\n          <label for=customer-service>Customer Service Center\n              <input name=type-filter type=checkbox id=customer-service value=Customer Service Centre />\n              <span class="checkmark"></span>\n          </label>\n      </li>\n      <li>\n          <label for=head-office>Head office\n              <input name=type-filter type=checkbox id=head-office value=/>\n              <span class="checkmark"></span>\n          </label>\n      </li>\n  </ul>':'\n  <ul id="filter-options">\n      <li>\n          <label for=all>All Dealers\n              <input name=type-filter type=checkbox id=all value="All Dealers" checked=checked/>\n              <span class="checkmark"></span>\n          </label>\n      </li>\n      <li>\n          <label for=rental-leasing>Rental &amp; Leasing\n              <input name=type-filter type=checkbox id=rental-leasing value=Leasing/>\n              <span class="checkmark"></span>\n          </label>\n      </li>\n  </ul>'}\n              </div>\n          </div>\n      </div>\n  </div>\n  <div id="sidebar-direction-list" style="display: none;">\n      <div class="row">\n          <div class="scroller">\n              <div class="directions-panel">\n                  <div class="pin-actions directions">\n                      <button type="button" id="gmaps-link"><img\n                              src="/blocks/v2-dealer-locator/images/google-maps.svg"/><span>Open in<br>Google Maps</span>\n                      </button>\n                      <button type="button" id="print"><img\n                              src="/blocks/v2-dealer-locator/images/print.svg"/><span>Print</span></button>\n                      <button type="button" id="add-directions" onclick="$.fn.switchSidebarPane('sidebar-select-pins');">\n                          <img src="/blocks/v2-dealer-locator/images/add.svg"/></i><span>Modify Dealer<br>Waypoints</span>\n                      </button>\n                  </div>\n                  <div id="directions-container"></div>\n              </div>\n          </div>\n      </div>\n\n  </div>\n  <div id="sidebar-directions" style="display: none;">\n\n      <div class="row">\n          <div class="scroller">\n              <div class="directions-panel">\n                  <div class="pin-actions directions">\n                      <button type="button" id="gmaps-link"><img\n                              src="/blocks/v2-dealer-locator/images/google-maps.svg"/><span>Open in<br>Google Maps</span>\n                      </button>\n                      <button type="button" id="print"><img\n                              src="/blocks/v2-dealer-locator/images/print.svg"/><span>Print</span></button>\n                      <button type="button" id="add-directions" onclick="$.fn.switchSidebarPane('sidebar-select-pins');">\n                          <img src="/blocks/v2-dealer-locator/images/add.svg"/></i><span>Modify Dealer<br>Waypoints</span>\n                      </button>\n                  </div>\n                  <div id="directions-container"></div>\n              </div>\n          </div>\n      </div>\n  </div>\n  <div id="sidebar-select-pins" style="display: none;">\n      <div class="row">\n          <span class="header-title">Advanced Routing</span>\n          <p>Click any <i><span id="filter"></span> Dealer</i> on the map to add it to your route. When done, click\n              <strong>Calculate Route</strong> below.</p>\n          <p>\n          <div class="go-back-pin">\n              <button type="button">Calculate Route</button>\n              <button type="button">Back to Directions</button>\n          </div>\n          </p>\n          <div class="scroller">\n              <div class="nearby-select"></div>\n          </div>\n      </div>\n  </div>\n  <div id="sidebar-select-pin" style="display: none;">\n      <div class="panel-card">\n          <div class="panel-container">\n              <article class="teaser">\n\n                  <div style="width: 15%;">\n                      <i class="fa fa-close tooltip" onclick="$.fn.removeWaypoint(this)" data-id=""><span\n                              class="tooltiptext removepin">Remove from route</span></i>\n                  </div>\n                  <div style="width: 80%;">\n                      <div class="teaser-top">\n                          <div class="heading">\n                              <p></p>\n                          </div>\n                          <div class="info">\n                              <div class="hours"></div>\n                              <div class="distance"></div>\n                          </div>\n                      </div>\n                      <div class="teaser-bottom">\n                          <div class="left">\n                              <div class="address"></div>\n                              <div class="city"></div>\n                              <div class="phone"></div>\n                          </div>\n                          <div class="right">\n                              <div class="website">\n                                  <a href="" target="_blank" rel="noopener"></a>\n                              </div>\n                          </div>\n                      </div>\n                      <div class="teaser-services">\n\n                      </div>\n                  </div>\n              </article>\n          </div>\n      </div>\n  </div>\n  <div id="locator-snackbar"></div>\n\n  <script id="eloquaForm" type="text/template">\n      <div class="template">\n\n      </div>\n  <\/script>\n\n  </div>`},7027:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>h});var s=n(3927),i=n(5545),o=n(7922),r=e([i]);i=(r.then?(await r)():r)[0];const{GOOGLE_API_KEY:c}=i.Qn,l=e=>(0,s.k0)(e,{type:"text/javascript",charset:"UTF-8"}),d=()=>{const e=new URLSearchParams(window.location.search);return e.has("l")?e.get("l").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"):""},u=()=>window.matchMedia("(max-width: 992px)").matches,p=e=>e?.split(",").map((e=>e.trim()))||[],m=e=>{const t=(0,s.cB)(e);return t?.amenities&&(t.amenities=p(t.amenities)),t};async function h(e){const t=d(),n=u(),a=m(e),i="export-market"===a.version?.toLowerCase();if(a.datasource){window.locatorConfig={asist:!1,showAsistDialog:!0,consolidateFilters:!0,selectedBrand:"mack",dataSource:a.datasource,apiKey:c,version:a.version,country:a.country,amenities:a.amenities,coords:a.coords};const r=(0,o.A)({zipCode:t,isMobile:n,isExportMarket:i});i&&(0,s.y6)("/blocks/v2-dealer-locator/versions/export/dealer-locator.css"),e.innerHTML=r,l("/blocks/v2-dealer-locator/shared/vendor/jquery.min.js").then((()=>{l(i?"/blocks/v2-dealer-locator/versions/export/sidebar-maps.js":"/blocks/v2-dealer-locator/versions/default/sidebar-maps.js"),l("/blocks/v2-dealer-locator/shared/my-dealer.js")})),l("/blocks/v2-dealer-locator/shared/vendor/moment.js").then((()=>{l("/blocks/v2-dealer-locator/shared/vendor/moment-timezone.min.js")}))}else console.error("The block is missing the datasource field in the configuration.")}a()}catch(v){a(v)}}))},1321:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>p});var s=n(2246),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-embed",r=new s.bO;class c{constructor(e){this.videoId=e,r.register(this.videoId,o,(e=>(0,s.Hj)(e,this.videoId,o)))}unregister(){r.unregister(this.videoId,o)}}const l=e=>{const t=/aspect-ratio-(\d+)-(\d+)/,n=Array.from(e.classList).find((e=>t.test(e)));if(!n)return null;const a=n.match(t);return a?{width:parseInt(a[1],10),height:parseInt(a[2],10)}:null},d=(e,t)=>({...t?{aspectRatio:`${t.width}:${t.height}`}:{},...e.querySelector("img")?.getAttribute("src")?{poster:new URL(e.querySelector("img").getAttribute("src"),window.location.href).href}:{},autoplay:!!e.classList.contains("autoplay")&&"any",muted:e.classList.contains("autoplay"),loop:e.classList.contains("loop"),controls:!e.classList.contains("disable-controls"),disablePictureInPicture:e.classList.contains("disable-picture-in-picture"),language:document.documentElement.lang}),u=(e,t)=>{const n=d(e);Object.entries(n).forEach((([e,n])=>{void 0!==n&&(0,s.X5)(t,{[e]:n})}))};function p(e){const t=e.querySelector("a"),n=t?.getAttribute("href"),a=t?.textContent,i=n?.match(s.ci.videoIdRegex);if(!n)return void console.warn(`[${o}]: There is no video link`);if(!i)return void console.warn(`[${o}]: Video link is incorrect: ${n}`);const[r]=i;e.videoId=r;const p=l(e);p&&e.style.setProperty("--video-aspect-ratio",`${p.width}/${p.height}`);const m={...d(e,p),title:a};u(e,r),new c(e.videoId);const h=(0,s.g5)(e,n,`${o}__frame`,m,!1,r);e.innerHTML="",e.append(h)}a()}catch(m){a(m)}}))},327:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>g});var s=n(5545),i=n(3927),o=e([s]);const r={SHOW_MORE:(0,(s=(o.then?(await o)():o)[0]).ce)("Show More"),SEARCH:(0,s.ce)("Search"),FILTERS_PLACEHOLDERS:(0,s.ce)("Magazine filters placeholders"),SHOWING_PLACEHOLDER:(0,s.ce)("Showing placeholder"),SORT_BY:(0,s.ce)("Sort by"),SORT_PLACEHOLDERS:(0,s.ce)("Sort filter placeholders")},c="v2-explore-articles",l={filters:`${c}__filters`,extraLine:`${c}__extra-line`,filterItem:`${c}__filter-item`,showing:`${c}__showing`,sortBy:`${c}__sort-by`,collageWrapper:`${c}__collage-wrapper`,collage:`${c}__collage`,collageItemContainer:`${c}__collage-item-container`,collageItemLink:`${c}__collage-item-link`,collageItemContent:`${c}__collage-item-content`,collageItemCategoryTitle:`${c}__collage-item-category-title`,collageItemTitle:`${c}__collage-item-title`,showMoreButton:`${c}__show-more-button`,showMoreButtonWrapper:`${c}__show-more-container`},d=document.createRange(),u=9;let p=0;const m=async()=>{const e=await(0,s.UY)("/magazine-articles.json"),t=e?e.data:[];return t.sort(((e,t)=>{const n=e.path.split("/"),a=t.path.split("/"),s=n[3],i=n[4],o=a[3],r=a[4],c=new Date(`${s}-${i}`),l=new Date(`${o}-${r}`);return c.getTime()===l.getTime()?t.lastModified-e.lastModified:l-c})),{articles:t.map((e=>{const{title:t,image:n,path:a,category:s}=e,o=new URL(a,window.location.origin),r=(0,i.gD)(new URL(n,window.location.origin),t,!0);return r.setAttribute("tabindex","0"),{title:t,picture:r,linkUrl:o,category:s}}))}},h=e=>{const t=r.SHOWING_PLACEHOLDER.replace("$0",u).replace("$1",e);return`\n    <div class="${l.showing}">\n      ${t}\n    </div>\n  `},v=e=>e.reduce(((e,t)=>{const n=`\n    <a class="${l.collageItemLink}" href="${t.linkUrl.toString()}">\n      <div class="${l.collageItemContent}">\n        <div class="${l.collageItemCategoryTitle}">${t.category}</div>\n        <div class="${l.collageItemTitle}">\n          ${t.title.split("|")[0]}\n          <span class="icon icon-arrow-right"></span>\n        </div>\n      </div>\n      ${t.picture.outerHTML}\n    </a>\n  `;return`${e}\n    <div class="${l.collageItemContainer}">${n}</div>`}),""),f=(e,t)=>d.createContextualFragment(`\n  <div class="${l.filters}">\n  </div>\n  <div class="${l.extraLine}">\n    ${h(t)}\n  </div>\n  <div class="${l.collageWrapper}">\n    <div class="${l.collage}">\n      ${v(e)}\n    </div>\n  </div>\n  <div class="${l.showMoreButtonWrapper}">\n    <button class="${l.showMoreButton} button button--secondary button--large">\n      ${r.SHOW_MORE}\n    </button>\n  </div>\n`),y=(e,t)=>{const n=e.querySelector(`.${l.showMoreButton}`);n.addEventListener("click",(()=>{const a=e.querySelector(`.${l.collage}`),i=e.querySelector(`.${l.showing} strong span`),o=t.slice(p,p+u),r=v(o),c=d.createContextualFragment(r);a.appendChild(c),p+=u,p>=t.length&&(n.remove(),p=t.length),i.textContent=p,(0,s.sT)(e)}))};async function g(e){const{articles:t}=await m(),n=e.closest(`.${c}-wrapper`),a=t.slice(0,u),i=f(a,t.length);p+=u,n.classList.add("full-width"),e.appendChild(i),(0,s.sT)(e),y(e,t)}a()}catch(b){a(b)}}))},7719:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>d});var s=n(5545),i=n(2431),o=e([s,i]);[s,i]=o.then?(await o)():o;const r="v2-feature-carousel",c=(e,t)=>{e.forEach(((e,n)=>{if(e===t.target){e.classList.add("active");let t=e.parentElement.previousElementSibling.querySelector(`.${r}__button:disabled`);t&&(t.disabled=!1,t=null),0===n?t=e.parentElement.previousElementSibling.querySelector(`.${r}__button-prev`):n===e.parentNode.children.length-1&&(t=e.parentElement.previousElementSibling.querySelector(`.${r}__button-next`)),t&&(t.disabled=!0)}else e.classList.remove("active")}))},l=()=>document.createRange().createContextualFragment(`<li>\n  <button aria-label="${(0,s.ce)("Previous")}" class="${r}__button ${r}__button-prev">\n    <span class="icon icon-arrow-right" />\n  </button>\n</li>\n<li>\n  <button aria-label="${(0,s.ce)("Next")}" class="${r}__button ${r}__button-next">\n    <span class="icon icon-arrow-right" />\n  </button>\n</li>`);async function d(e){const t=e.firstElementChild;t.classList.add(`${r}__image-wrapper`),(0,s.m1)(t);const n=(0,s.n)("ul",{classes:`${r}__list`}),a=t.nextElementSibling;a.classList.add(`${r}__list-container`);const o=e.querySelectorAll("div:not(:first-child)");o.forEach((e=>{[...e.querySelectorAll(".button-container a")].forEach((e=>{e.classList.add("button--large")}));const t=(0,s.n)("li",{classes:`${r}__list-item`});t.innerHTML=e.innerHTML,[...t.querySelectorAll("h1, h2, h3, h4")].forEach((e=>e.classList.add(`${r}__title`))),(0,s.vm)(t),n.append(t),e.innerHTML=""})),a.append(n);const d=(0,s.n)("div",{classes:`${r}__list-wrapper`});if(d.append(a),e.append(d),o.length>1){(0,i.UZ)(n,`.${r}__list-item.active`,[`${r}__arrowcontrols`],l());const e=n.querySelectorAll(`.${r}__list-item`);(0,i.tl)(n,e,c,.75)}else a.classList.add(`${r}__list-container--single`);(0,s.m1)(e,{ignoreDataAlign:!0}),(0,s.sT)(e)}a()}catch(u){a(u)}}))},1090:(e,t,n)=>{var a={"./subscribe.js":[875,875]};function s(e){if(!n.o(a,e))return Promise.resolve().then((()=>{var t=new Error("Cannot find module '"+e+"'");throw t.code="MODULE_NOT_FOUND",t}));var t=a[e],s=t[0];return n.e(t[1]).then((()=>n(s)))}s.keys=()=>Object.keys(a),s.id=1090,e.exports=s},9009:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>h});var s=n(3927),i=n(5545),o=n(995),r=e([i,o]);[i,o]=r.then?(await r)():r;const c=new Map,l="v2-forms";function d(e){const t={};return[...e.elements].forEach((e=>{e.name&&("radio"===e.type&&e.checked?t[e.name]=e.value:"checkbox"===e.type&&e.checked?t[e.name]=t[e.name]?`${t[e.name]},${e.value}`:e.value:"file"!==e.type&&(t[e.name]=e.value))})),t.callback="logResult",{payload:t}}async function u(e){const{payload:t}=d(e),n=e.dataset.action,a=(i=t,Object.keys(i).map((e=>`${encodeURIComponent(e)}=${encodeURIComponent(i[e])}`)).join("&"));var i;return(0,s.k0)(`${n}?${a}`,{type:"text/javascript",charset:"UTF-8"})}async function p(e){if("true"!==e.getAttribute("data-submitting")){e.setAttribute("data-submitting","true");try{await u(e)}catch(e){window.logResult({result:o.logResults.success,log:e})}}}const m=async e=>{const t=e.style.display;e.style.display="none";const a=e.firstElementChild.innerText.trim(),s=e.firstElementChild.nextElementSibling.innerText.trim(),o=await n(1090)(`./${a}.js`),r=`\n    <form\n      method="post"\n      name="form-${a}"\n      action="${s}"\n    >${o.default}\n\n      <div style="position:absolute; left:-9999px; top: -9999px;" aria-hidden="true">\n        <label for="pardot_extra_field">Comments</label>\n        <input type="text" id="pardot_extra_field" name="pardot_extra_field" />\n      </div>\n    </form>\n  `;if(c.get(a)){const n=c.get(a);return e.replaceWith(n),void(e.style.display=t)}const d=(0,i.n)("div",{classes:`${l}__container`});d.innerHTML=r,e.replaceWith(d),c.set(a,d),e.style.display=t;const u=document.querySelector("form");u.addEventListener("submit",(e=>{o.onSubmit&&(e.preventDefault(),u.dataset.action=e.currentTarget.action,o.onSubmit(u,p)),e.preventDefault();let t=!0;u.hasAttribute("novalidate")&&(t=u.checkValidity()),t&&(e.submitter.setAttribute("disabled",""),u.dataset.action=e.currentTarget.action,p(u))})),o.postLoad?.(u)};async function h(e){const t=new IntersectionObserver((n=>{n.some((e=>e.isIntersecting))&&(t.disconnect(),m(e))}),{rootMargin:"300px"});t.observe(e)}a()}catch(v){a(v)}}))},2039:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>d});var s=n(5545),i=n(2246),o=e([s,i]);[s,i]=o.then?(await o)():o;const r=["dark","light","half-height","magazine"],c="v2-hero",l=e=>{e.innerHTML=e.textContent.split(" ").map((e=>`<span>${e}</span>`)).join(" ")};async function d(e){(0,s.qy)(e.classList,r,c);const t="pdp"===e.parentElement.parentElement.dataset.page,n=e.classList.contains(`${c}--half-height`),a=e.classList.contains(`${c}--magazine`),o=[...e.querySelectorAll("p > picture")],d=(0,s.gO)(o).map((e=>({src:e,breakpoints:[]}))),u=e.querySelector("a"),p=!!u&&(0,i.uW)(u);p&&((0,i.g5)(e,u.getAttribute("href"),`${c}__video`,{muted:!0,autoplay:!0,loop:!0,playsinline:!0}),u.remove()),1===d.length&&(d[0].breakpoints=[{media:"(min-width: 600px)",width:600},{media:"(min-width: 1200px)",width:1200},{media:"(min-width: 1440px)",width:1440},{media:"(min-width: 1920px)",width:1920},{width:750}]),d.length>1&&(d[0].breakpoints=[{media:"(min-width: 600px)",width:600},{width:750}],d[1].breakpoints=[{media:"(min-width: 1200px)",width:1200},{media:"(min-width: 1440px)",width:1440},{media:"(min-width: 1920px)",width:1920}]);const m=[...e.querySelectorAll("p > picture img.alt")],h=(0,s.Zf)(d,!0,m,`${c}__image`);o.forEach((e=>e.parentNode.remove())),0!==o.length?e.prepend(h):p||e.classList.add(`${c}--no-image`),e.querySelector(":scope > div").classList.add(`${c}__content-wrapper`);const v=e.querySelector(":scope > div > div");v.classList.add(`${c}__content`);const f=[...v.querySelectorAll("h1, h2, h3, h4, h5, h6")];if(f.forEach((e=>e.classList.add(`${c}__heading`))),!t&&!a){const e=f[0];e?.classList.add("with-marker")}if(a){const e=v.querySelector(`.${c}__heading`);e&&l(e)}const y=v.querySelector("a"),g=v.querySelectorAll("p");!y&&g.length>0&&(v.classList.add("with-text"),g.forEach((e=>e.classList.add(`${c}__text`)))),[...v.querySelectorAll(".button-container > a")].forEach((e=>{e.classList.add(t?`${c}__cta`:"button--large","button--red","button"),n||e.classList.remove("button--primary"),e.parentElement.classList.add(`${c}__cta-wrapper`)})),e.parentElement.classList.add("full-width"),(0,s.sT)(e)}a()}catch(u){a(u)}}))},7053:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>o});var s=n(3879),i=e([s]);function o(e){const t=e.closest(".v2-hotspots-container").querySelector(".v2-hotspots.block"),n=r(e);(0,s.addSpot)(t,n),e.remove()}function r(e){const t=e.querySelector("picture");e.querySelector("picture").closest("p").remove();const n=e.querySelector("p, h1, h2, h3, h4, h5, h6");n?.remove();const a=e.querySelectorAll("p"),s=/position-([0-9]+)-([0-9]+)/,i=[...e.classList].find((e=>s.test(e))).match(s);return{picture:t,title:n,text:a,positionLeft:`${i[1].trim()}%`,positionTop:`${i[2].trim()}%`}}s=(i.then?(await i)():i)[0],a()}catch(c){a(c)}}))},3879:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{addSpot:()=>y,default:()=>l});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];let o=0,r=0;const c="v2-hotspots";function l(e){const t=e.querySelector(":scope > div"),n=t.querySelector("picture"),a=t.querySelector("h1, h2");o+=1,e.closest(`.section.${c}-container`).dataset.hotspotAreaId=o,e.innerHTML='\n    <div class="main">\n      <div class="hotspot-features"></div>\n    </div>\n    <div class="hotspot-layover" style="display: none;"></div>\n  ',g(e.querySelector(".main"),n,a),(0,s.sT)(e)}function d(e){r=0,e.querySelector(".hotspot-features").style="transform: translateX(200%)",e.querySelectorAll(".hotspot-icon").forEach((e=>e.classList.remove("active-spot")))}function u(e,t,n,a){e.preventDefault(),r>0&&Number(n)===r?d(a):(r=Number(n),a.querySelectorAll(".hotspot-icon").forEach((e=>e.classList.remove("active-spot"))),a.querySelector(".hotspot-features").style="transform: translateX(0)",t.classList.add("active-spot"),a.querySelector(".features.is-active").classList.remove("is-active"),a.querySelector(`.features.number-${n}`).classList.add("is-active"))}function p(e,t,n){const a=(0,s.n)("a",{classes:"hotspot-icon",props:{href:"#","data-spot":e.id,style:`left: ${e.positionLeft}; top: ${e.positionTop};`}}),i=(0,s.n)("img",{props:{src:"/icons/plus.svg"}});a.appendChild(i),a.onclick=n=>u(n,a,e.id,t),n.querySelector(".hotspot-icon-set").append(a)}function m(e,t){const n=document.createElement("div");n.innerHTML=`\n    <div class="features number-${e.id}" data-fade-object="true">\n      <button class="feature-close"></button>\n      <div class="row">\n        <div class="feature">\n          <h3 class="feature-title"></h3>\n          <picture></picture>\n          <div class="feature-text"></div>\n        </div>\n        <div class='feature-pagination'></div>\n      </div>\n    </div>\n  `,n.querySelector("picture").innerHTML=e.picture.innerHTML,n.querySelector(".feature-title").innerHTML=e.title.innerHTML,1===Number(e.id)&&n.querySelector(".features").classList.add("is-active"),e.text.forEach((e=>{const t=(0,s.n)("p");t.innerHTML=e.innerHTML,n.querySelector(".feature-text").append(t)}));const a=n.querySelector(".feature-close");a.addEventListener("click",(()=>d(t)));const i=(0,s.n)("img",{props:{src:"/icons/close.svg"}});a.appendChild(i),t.querySelector(".hotspot-features").append(...n.childNodes)}function h(e){const t=e.querySelectorAll(".features");t.forEach(((e,n)=>{const a=`\n      <a class="hotspot-feature-button prev"></a>\n      <span class="hotspot-feature-pagination">${n+1}/${t.length}</span>\n      <a class="hotspot-feature-button next"></a>\n    `;e.querySelector(".feature-pagination").innerHTML=a,e.querySelectorAll(".hotspot-feature-button").forEach((e=>{const t=(0,s.n)("img",{props:{src:"/icons/arrow-right.svg"}});e.appendChild(t)}))}))}function v(e,t,n){const a=(t>3?1:t<1&&3)||t;r=t;const s=e.target.closest(".features");s.classList.remove("is-active"),s.parentElement.querySelector(`.features.number-${a}`).classList.add("is-active"),n.querySelectorAll(".hotspot-icon").forEach((e=>e.classList.remove("active-spot"))),n.querySelector(`.hotspot-icon[data-spot="${a}"]`).classList.add("active-spot")}function f(e){e.querySelectorAll(".features").forEach(((t,n)=>{t.querySelector(`.features.number-${n+1} .hotspot-feature-button.prev`).onclick=t=>v(t,n,e),t.querySelector(`.features.number-${n+1} .hotspot-feature-button.next`).onclick=t=>v(t,n+2,e)}))}function y(e,t){const n=e.querySelector(".main");n.dataset.hotspotCounter=(+n.dataset.hotspotCounter||0)+1,t.id=n.dataset.hotspotCounter,p(t,e,n),m(t,n),h(e),f(e)}function g(e,t,n){const a=(0,s.n)("div",{classes:"hotspot"});a.innerHTML='\n      <picture class="hotspot-bg-img"></picture>\n      <div class="hotspot-content content-wrapper ">\n        <h1 class="hotspot-header with-marker"></h1>\n      </div>\n\n      <div class="hotspot-icon-set"></div>',a.querySelector(".hotspot-bg-img").innerHTML=t.innerHTML,a.querySelector(".hotspot-header").innerHTML=n.innerHTML,e.prepend(a)}a()}catch(b){a(b)}}))},5839:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>c});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-icon-cards",r=["no-background","alt-font-size"];async function c(e){(0,s.qy)(e.classList,r,o);const t=[...e.querySelectorAll(":scope > div")],n=[...e.querySelectorAll(":scope > div > div")];t.forEach((e=>{e.classList.add(`${o}__row`)}));const a=e.parentElement.parentElement,i=a.classList.contains("header-with-mark"),c=4===n.length;c&&e.classList.add(`${o}--4-cols`),c&&i&&a.querySelector(".default-content-wrapper").classList.add(`${o}--4-cols-header`),n.forEach(((t,n)=>{const a=3===n;t.classList.add(`${o}__column`);const i=t.querySelectorAll("p"),r=[];i.forEach((e=>{const t=e.nextElementSibling,n=[...e.classList].includes("button-container");"h"===t?.tagName.toLowerCase()[0]||n||r.push(e)})),r.forEach((e=>e.classList.add(`${o}__body`))),[...e.querySelectorAll(".button-container a")].forEach((e=>{const t=e.closest(".button-container");t&&t.replaceWith(e),e.classList.contains("button--primary")||e.classList.contains("button--secondary")||e.classList.contains("button--red")?e.classList.add("button--small"):e.classList.add("standalone-link",`${o}__button`)})),a&&(t.classList.add(`${o}__column--extra-col`),t.dataset.theme="gold");const c=[...t.querySelectorAll("h1, h2, h3, h4, h5, h6")];c.forEach((e=>e.classList.add(`${o}__heading`,"h2"))),[...t.querySelectorAll(".icon")].forEach(((e,t)=>{const n=e.parentElement;1===n.children.length&&0===t&&(e.classList.add("top-icon"),n.replaceWith(e))}));const l=c[0]?.previousElementSibling,d=l&&!l.classList.contains("icon")&&l.textContent;if(d){const e=(0,s.n)("span",{classes:"pretitle"});e.textContent=d,l.replaceWith(e)}}));const l=[...e.querySelectorAll("h3, h4, h5, h6")],d=[...e.querySelectorAll("h2")];l.forEach((e=>{e.classList.add("h5"),e.classList.remove("h2")})),d.forEach((e=>{e.classList.add("with-marker","h2"),e.classList.remove("h1"),e.closest(`.${o}__column`)?.classList.add(`${o}__column--main`)})),l.forEach((e=>{const t=(0,s.n)("strong",{classes:[...e.classList]});t.innerHTML=e.innerHTML,e.replaceWith(t)}))}a()}catch(l){a(l)}}))},483:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>m});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o=["16-9","4-3"],r="v2-image-banner",c=e=>Array.from(e.querySelectorAll("source")).find((e=>{const t=e.getAttribute("media");return!t||window.matchMedia(t).matches})),l=e=>{const t=e.querySelector("picture");if(!t)return"";const n=c(t);if(n)return n.getAttribute("srcset");const a=t.querySelector("img");return a?a.getAttribute("src"):""},d=(e,t)=>{e.style.backgroundImage=`url(${t})`},u=(e,t)=>{const n=e.querySelector("picture");if(!n)return t;const a=c(n),s=a?a.getAttribute("media"):"";if(s!==t){const t=a?a.getAttribute("srcset"):n.querySelector("img").getAttribute("src");return d(e,t),s}return t},p=e=>{let t="";const n=(0,s.sg)((()=>{t=u(e,t)}),100);new ResizeObserver(n).observe(e)};async function m(e){(0,s.qy)(e.classList,o,r),e.parentElement.classList.add("full-width");const t=l(e);t&&d(e,t),p(e),(0,s.m1)(e)}a()}catch(h){a(h)}}))},345:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>f});var s=n(3927),i=n(5545),o=n(7658),r=n(5541),c=e([i,o,r]);[i,o,r]=c.then?(await c)():c;const l="v2-images-grid",d=["with-captions"],u=(e,t,n="smooth")=>{e.scrollTo({left:t,behavior:n})},p=(e,t)=>{const n=[...document.querySelectorAll(`.${l}__modal-arrows-wrapper button`)];n.length&&(0===e?n[0].setAttribute("disabled","disabled"):n[0].removeAttribute("disabled"),e===t-1?n[1].setAttribute("disabled","disabled"):n[1].removeAttribute("disabled"))},m=(e,t,n,a,s)=>{const i=t.getBoundingClientRect().width;p(e,t.children.length,a),u(n,90*e,s),u(t,e*i,s)},h=e=>{const t=(0,i.n)("ul",{classes:`${l}__carousel-items-list`}),n=(0,i.n)("ul",{classes:`${l}__carousel-preview-list`});let a,o=!1;t.addEventListener("scroll",(()=>{o=!0,clearTimeout(a),a=setTimeout((()=>{o=!1}),50)}));const r=(0,i.sg)((e=>{o||u(n,90*e)}),100);[...e.querySelectorAll(".v2-images-grid__item")].forEach(((e,a)=>{const o=e.querySelector("img"),c=(0,s.gD)(o.src,o.alt,!1,[{width:"80"}]),d=(0,i.n)("li",{classes:`${l}__carousel-preview-item`}),m=(0,i.n)("button");m.addEventListener("click",(()=>{const e=t.getBoundingClientRect().width;u(t,a*e)})),m.append(c),d.append(m),n.append(d);const h=(0,s.gD)(o.src,o.alt,!1),[,v,f]=e.querySelectorAll("p"),y=(0,i.n)("li",{classes:`${l}__carousel-item`});y.append(h,f||v),t.append(y),new IntersectionObserver((n=>{n[0].isIntersecting&&(r(a),p(a,t.children.length,e.closest(`${l}__carousel-items-wrapper`)))}),{root:t,rootMargin:"0px",threshold:1}).observe(y)}));const c=(0,i.n)("div",{classes:`${l}__carousel-items-wrapper`}),d=(0,i.n)("div",{classes:`${l}__modal-content`});return c.innerHTML=`<div class="${l}__modal-arrows-wrapper">\n    <button class="${l}__modal-arrow" aria-label="${(0,i.ce)("Previous")}">\n      <span class="icon icon-arrow-left" />\n    </button>\n    <button class="${l}__modal-arrow" aria-label="${(0,i.ce)("Next")}">\n      <span class="icon icon-arrow-right" />\n    </button>\n  </div>`,c.append(t),[...c.querySelectorAll("button")].forEach(((a,s)=>{const i=[-1,1];a.addEventListener("click",(()=>{const a=t.getBoundingClientRect().width,o=Math.round(t.scrollLeft/a)+i[s];m(o,t,n,e)}))})),(0,i.sT)(c),d.append(c,n),d},v=async e=>{await(0,r.showModal)(e,{classes:["modal-content--bottom"]})};function f(e){(0,i.qy)(e.classList,d,l);const t=e.classList.contains(`${l}--with-captions`),n=(0,i.n)("ul",{classes:`${l}__items`});if([...e.querySelectorAll(":scope > div > div")].forEach((e=>{if(e.childElementCount){const t=(0,i.n)("li",{classes:`${l}__item`});t.append(...e.childNodes),n.append(t)}e.remove()})),t){const e=n.querySelectorAll("li").length;n.classList.add(`${l}__${e}-items`)}e.append(n);const a=!t&&h(n);if([...n.children].forEach(((e,n)=>{if(n<4){const r=(0,o.cB)(e.querySelectorAll("p"),"picture",!0)[0];let c=e.querySelector("picture");if(c){const e=c.lastElementChild,t=(0,s.gD)(e.src,r?.textContent,!1);c.replaceWith(t),c=t,c.classList.add(`${l}__picture`);const n=(0,i.n)("figcaption",{classes:`${l}__figcaption`});n.textContent=r?.textContent,c.append(n)}return e.innerHTML="",e.append(c),void(t||e.addEventListener("click",(async()=>{const e=a.querySelector(`.${l}__carousel-items-list`),t=a.querySelector(`.${l}__carousel-preview-list`);await v(a),m(n,e,t,a,"instant")})))}e.remove()})),!t){const t=(0,i.n)("a",{classes:["button","button--large","button--primary"]});t.textContent=(0,i.ce)("Open Gallery"),t.addEventListener("click",(async()=>{const e=a.querySelector(`.${l}__carousel-items-list`),t=a.querySelector(`.${l}__carousel-preview-list`);await v(a),m(0,e,t,a)})),e.append(t)}(0,i.F1)(e)}a()}catch(y){a(y)}}))},5773:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>m});var s=n(3927),i=n(5545),o=e([i]);i=(o.then?(await o)():o)[0];const r="v2-inpage-navigation",c=e=>{let t;const n=document.querySelector(`main .section[data-inpageid='${e}']`);n?.scrollIntoView({behavior:"smooth"});const a=document.querySelector("main"),s=new ResizeObserver((()=>{clearTimeout(t),n?.scrollIntoView({behavior:"smooth"}),t=setTimeout((()=>{s.disconnect()}),500)}));s.observe(a)},l=()=>{if((0,s.yb)("inpage-button")&&(0,s.yb)("inpage-link")){const e=(0,s.yb)("inpage-button"),t=(0,s.yb)("inpage-link"),n=(0,i.n)("a",{classes:["button","button--large","button--red",`${r}__cta`],props:{href:t,title:e}}),a=(0,i.n)("span",{classes:`${r}__cta--mobile`});a.textContent=e,n.appendChild(a);const o=(0,s.yb)("inpage-button-large");if(o){const e=(0,i.n)("span",{classes:`${r}__cta--desktop`});e.textContent=o,n.setAttribute("title",o),n.appendChild(e)}return n}return null},d=e=>{const t=[],n=window.innerHeight;return e.forEach((e=>{const a=e.getBoundingClientRect(),s=(Math.min(a.bottom,n)-Math.max(a.top,0))/n;t.push({element:e,intersectionRatio:Math.max(0,Math.min(1,s))})})),t},u=e=>{const{target:t}=e,n=t.closest("button");if(n){const{id:e}=n.dataset;c(e)}},p=e=>{const t=document.querySelector(`.${r}__item--active`);if(t?.firstElementChild?.dataset.id===e)return;document.activeElement.blur();const n=document.querySelector(`.${r}__selected-item`);t?.classList.remove(`${r}__item--active`);const a=document.querySelectorAll(`.${r}__items button`),{pathname:s}=window.location;if(e){const t=[...a].find((t=>t.dataset.id===e));if(!t)return;n.textContent=t.textContent,t.parentNode.classList.add(`${r}__item--active`),window.history.replaceState({},"",`${s}#${e}`)}else window.history.replaceState({},"",`${s}`)};async function m(e){const t=l(),n=e.querySelector(":scope > div");n.classList.add(`${r}__wrapper`);const a=e.querySelector(":scope > div > div > p"),s=(0,i.n)("div",{classes:`${r}__dropdown`}),o=(0,i.n)("div",{classes:`${r}__selected-item-wrapper`}),m=(0,i.n)("div",{classes:`${r}__selected-item`}),h=(0,i.n)("ul",{classes:`${r}__items`});[...a.children].forEach(((e,t)=>{const n=[`${r}__item`];0===t&&(n.push(`${r}__item--active`),m.textContent=e.textContent);const a=(0,i.n)("li",{classes:n});a.innerHTML=e.outerHTML,h.appendChild(a)}));const v=(0,i.n)("span",{classes:[`${r}__icon`,"icon","icon-dropdown-caret"]});o.append(m),o.appendChild(v),s.append(o),s.append(h),n.append(s),a.remove(),t&&n.appendChild(t),h.addEventListener("click",u);const f=window.location.hash.substring(1);f&&(p(f),setTimeout((()=>{c(f)}),1e3)),document.addEventListener("click",(e=>{e.target.closest(`.${r}__selected-item-wrapper`)?s.classList.toggle(`${r}__dropdown--open`):s.classList.remove(`${r}__dropdown--open`)}));const y=document.querySelectorAll("main .section");window.addEventListener("scroll",(0,i.sg)((()=>{const t=d(y).reduce(((e,t)=>e.intersectionRatio>t.intersectionRatio?e:t));t.element.dataset?.inpageid?p(t.element.dataset.inpageid):p();const n=Number.parseInt(getComputedStyle(e).getPropertyValue("--nav-height"),10),a=e.getBoundingClientRect().top<=n;e.classList[a?"add":"remove"]("v2-inpage-navigation--stuck")}))),(0,i.sT)(e)}a()}catch(h){a(h)}}))},1447:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>r});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-intro-section";function r(e){const t=e.querySelector(":scope > div > div:first-child"),n=e.querySelector(":scope > div > div:nth-child(2) > picture"),a=t.querySelector(".button-container"),i=e.parentElement;if(i.classList.add(a?`${o}__with-button`:"full-width"),t.classList.add(`${o}__text-content`),t.querySelectorAll("h1, h2, h3, h4, h5, h6")[0].classList.add(`${o}__heading`,a&&"with-marker"),a){const n=(0,s.n)("div",{classes:`${o}__content`});n.append(t,a),e.append(n)}i.prepend(n),(0,s.m1)(e)}a()}catch(c){a(c)}}))},8911:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>S});var s=n(5545),i=n(2431),o=n(2246),r=e([s,i,o]);[s,i,o]=r.then?(await r)():r;const c="v2-magazine-tabbed-carousel",l=`${c}__navigation-item--active`,d=`${c}__carousel-item--active`;let u=!0;const p=4,m="/magazine-articles.json",h=await(0,s.UY)(m),v=Object.values(h.data);let f=null;const y=(e,t)=>{if(!e||!e.children[t])return;const n=e.children[t].querySelector("video");n?(f&&f!==n&&f.pause(),n.play(),f=n):f&&(f.pause(),f=null)},g=(e,t)=>{e.forEach(((e,n)=>{if(e===t.target&&t.intersectionRatio>=.75){const t=e.parentElement,a=e.parentElement.nextElementSibling;[t,a].forEach((e=>{e.querySelectorAll(`.${l}, .${d}`).forEach((e=>{e.classList.remove(`${l}`,`${d}`)}))})),t.children[n].classList.add(d),a.children[n].classList.add(l);const s=a.querySelector(`.${l}`);if(a&&s){const{clientWidth:e,offsetLeft:t}=s,n=t-(a.clientWidth-e)/2;a.scrollTo({left:n,behavior:"smooth"})}y(t,n)}}))},b=(e,t,n,a)=>{const s=document.createRange().createContextualFragment(`\n    <button tabindex="0" class="${c}__navigation-item item-${a+1}">\n      <p class="pretitle">${n}</p>\n      <p class="title">${t}</p>\n    </button>\n  `);return s.querySelector("button").addEventListener("click",(()=>(0,i.IC)(e,a))),s},_=(e,t,n)=>{if(t)e.append(t);else{const t=Array.from(n).find((e=>e.classList.contains("text-link-with-video")));t&&(0,o.uW)(t)&&((0,o.g5)(e,t.getAttribute("href"),`${c}__video`,{muted:!0,autoplay:!1,loop:!0,playsinline:!0}),t.remove())}},w=(e,t,n,a)=>{n.forEach(((n,i)=>{if(i<=p-1){const o=n.querySelector("picture"),r=n.querySelectorAll("a"),l=Array.from(r).find((e=>!e.classList.contains("text-link-with-video"))),d=l.href,u=(0,s.n)("li",{classes:[`${c}__item`,`item-${i+1}`]}),p=(0,s.n)("figure",{classes:`${c}__figure`});_(p,o,r);const m=(0,s.n)("figcaption");m.append(l),p.append(m),u.append(p),e.appendChild(u);const h=a.find((e=>{const t=d.split("/magazine/")[1];return e.path.split("/magazine/")[1]===t})),{title:v,category:f}=h,y=b(e,v,f,i);t.append(y)}n.innerHTML=""}))},$=e=>{const t=e.querySelectorAll(`.${c}__item`).length,n=e.querySelector(`.${d}`),a=[...n.classList].find((e=>"item-"===e.slice(0,5))),s=Number(a.split("-")[1]);n.classList.remove(`${d}`);const i=s===t?1:s+1,o=e.querySelector(`.item-${i}`);if(o.classList.add(`${d}`),o.classList.contains(`${c}__item`)){const e=o.parentElement,{x:t}=o.getBoundingClientRect();e.scrollLeft+=t}},L=(e,t)=>{const n=e.target.parentElement.querySelector(".switch-slider"),a=e.target.matches('[data-autoscroll="off"]');u===a&&(u=!a),n.style.left=a?"53px":"0",t(u)};async function S(e){let t,n=!0;const a=e.closest(".section.v2-magazine-tabbed-carousel-container"),o=parseInt(a?.dataset.magazineTabbedCarouselIntervalTime||"6000",10),r=(0,s.ce)("autoscroll_switch"),l=(0,s.n)("div",{classes:`${c}__container`}),d=(0,s.n)("ul",{classes:`${c}__items`});l.append(d);const p=(0,s.n)("nav",{classes:`${c}__navigation`}),m=e.querySelectorAll(":scope > div");w(d,p,m,v);const h=e=>{e?t=setInterval((()=>{$(l)}),o):(clearInterval(t),t=null)},f=r.split(","),y=document.createRange().createContextualFragment(`\n    <div class="switch">\n      <p class="switch-label">${f[0]}</p>\n      <div class="switch-buttons">\n        <button>${f[1]}</button>\n        <button data-autoscroll="off">${f[2]}</button>\n        <div class="switch-slider"></div>\n      </div>\n    </div>\n  `);y.querySelectorAll("button").forEach((e=>e.addEventListener("click",(e=>L(e,h))))),l.append(p),e.parentElement.classList.add("full-width"),e.append(l),n&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches&&(l.append(y),h(u),n=!1);const b=d.querySelectorAll(":scope > *");(0,i.tl)(d,b,g,.75),(0,s.m1)(e),(0,s.sT)(e)}a()}catch(E){a(E)}}),1)},2099:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>o});var s=n(5545),i=e([s]);async function o(e){const t="v2-media-with-content";(0,s.qy)(e.classList,["with-icons"],t);const n=e.querySelector(":scope > div");n.classList.add(`${t}__content-wrapper`);const a=[...e.querySelectorAll(":scope > div > div")];if(a.forEach((e=>{e.classList.add(`${t}__column`),"PICTURE"===e.firstElementChild.tagName?e.classList.add("column-with-image"):e.classList.add("column-with-text")})),"PICTURE"===a[1].firstElementChild.tagName&&n.classList.add(`${t}__content-wrapper--image-right`),[...e.querySelectorAll("h1, h2, h3, h4, h5, h6")].forEach((e=>{e.classList.add(`${t}__title`)})),[...e.querySelectorAll("p")].forEach((e=>{e.classList.add(`${t}__text`)})),e.classList.contains(`${t}--with-icons`)){const n=e.querySelector("ul");n.classList.add(`${t}__icon-list`),n.querySelectorAll("li").forEach((e=>{e.classList.add(`${t}__list-item`);const n=(0,s.n)("figure"),a=e.querySelector("picture"),i=(0,s.n)("figcaption"),o=e.innerText.trim();i.textContent=o,n.append(a,i),e.textContent="",e.append(n)}))}else e.querySelectorAll("li").forEach((e=>{e.classList.add("li--hyphen")}));(0,s.m1)(e)}s=(i.then?(await i)():i)[0],a()}catch(r){a(r)}}))},2919:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>l});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-navigation-hub",r=["media-left","media-right","overlap"],c={column:`${o}__column`,card:`${o}__card-container`,cardContent:`${o}__card-content`,cardNavigation:`${o}__card-navigation`,cardNavTitle:`${o}__card-nav-title`,cardNavList:`${o}__card-nav-list`,media:`${o}__media-container`,mediaRight:`${o}__media-right`,mediaLeft:`${o}__media-left`,mediaImage:`${o}__image`};function l(e){(0,s.qy)(e.classList,r,o);const t=e.closest(`.${o}-wrapper`),n=e.querySelector(":scope > div:first-child"),a=n.querySelector(":scope > div:first-child"),i=a.querySelector(":scope .button-container a"),l=n.querySelector(":scope > div:last-child"),d=l.querySelector(":scope > :first-child"),u=l.querySelector(":scope > ul"),p=[...u.querySelectorAll("a")],m=e.querySelector(":scope > div:last-child"),h=m.querySelector("img"),v=m.firstElementChild.children.length>0?c.mediaLeft:c.mediaRight;t.classList.add("full-width"),n.className=`${c.card} ${c.column}`,a.className=c.cardContent,i.classList.add("button--large"),l.className=c.cardNavigation,d.className=c.cardNavTitle,u.className=c.cardNavList,p.forEach((e=>{e.className="standalone-link"})),m.className=`${c.media} ${c.column}`,h.className=c.mediaImage,e.classList.add(v),(0,s.m1)(m)}a()}catch(d){a(d)}}))},995:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>p,logResults:()=>c});var s=n(3927),i=n(5545),o=e([i]);i=(o.then?(await o)():o)[0];const r="v2-newsletter",c={success:"success",error:"error"};let l,d;async function u(e){const t=document.querySelector("form[data-submitting=true]"),n=e?l:d;n.className=`${r}__message`,e&&(0,s.dC)("form:submit"),t.setAttribute("data-submitting","false"),t.replaceWith(n)}async function p(e){const t=e.firstElementChild.innerText.trim(),n=e.firstElementChild.nextElementSibling.firstElementChild,a=e.lastElementChild.firstElementChild,o=(0,i.n)("div",{classes:`${r}__container`});l=n.cloneNode(!0),d=a.cloneNode(!0),n.remove(),a.remove();const c=document.createRange().createContextualFragment(`\n    <div class="v2-forms block" data-block-name="v2-forms" data-block-status="">\n      <div>\n        <div>subscribe</div>\n      </div>\n      <div>\n        <div>${t}</div>\n      </div>\n    </div>`);o.append(...c.children),e.replaceWith(o),await(0,s.ez)(o.querySelector(".v2-forms"))}window.logResult=function(e){u(e.result===c.success)},a()}catch(m){a(m)}}))},4063:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>o});var s=n(5545),i=e([s]);async function o(e){const t="v2-pencil-promo",n=["pencil-banner-black","pencil-banner-copper","promo-banner-gold","promo-banner-copper"],a=n.findIndex((t=>e.classList.contains(t))),i=(a>=0&&n[a]||n[0]).includes("pencil");(0,s.qy)(e.classList,n,t),e.classList.add(`${t}__${i?"pencil":"promo"}-banner`),i?e.parentElement.classList.add("full-width"):e.classList.add(`${t}__promo-banner--with-image`);const o=e.querySelector("picture");if(i&&null!==o)o.remove();else if(!i){const n=[...e.querySelectorAll("p > picture")],a=(0,s.gO)(n).map((e=>({src:e,breakpoints:[]}))),i=[{media:"(min-width: 600px)",width:800},{width:600}],o=[{media:"(min-width: 744px)",width:800},{media:"(min-width: 1200px)",width:1200},{media:"(min-width: 1440px)",width:1440},{media:"(min-width: 1920px)",width:1920}];1===n.length?a[0].breakpoints=[...i,...o]:n.length>1&&(a[0].breakpoints=[...i],a[1].breakpoints=[...o]);const r=[...e.querySelectorAll("p > picture img.alt")],c=(0,s.Zf)(a,!0,r,`${t}__image`);n.forEach((e=>e.parentNode.remove())),e.prepend(c)}e.querySelector(":scope > div").classList.add(`${t}__content-wrapper`);const r=e.querySelector(":scope > div > div");if(r.classList.add(`${t}__content`),0===r.querySelectorAll("p").length){const e=(0,s.n)("p");for(;r.firstChild;)e.appendChild(r.firstChild);r.appendChild(e)}[...r.querySelectorAll(".button-container > a")].forEach((e=>{e.classList.remove("button","button--primary"),e.parentElement.classList.remove("button-container"),e.parentElement.removeAttribute("class")})),e.querySelectorAll("a").forEach((e=>{e.closest(`.${t}`).addEventListener("click",(()=>{const t=e.getAttribute("href");t&&(window.location.href=t)}))}))}s=(i.then?(await i)():i)[0],a()}catch(r){a(r)}}))},9051:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>f});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-product-listing",r=["with-filter","with-dots"];function c(){const e=document.querySelectorAll(`.${o}__button-list .${o}__segment-button`);e.forEach((t=>{t.addEventListener("click",(t=>{e.forEach((e=>{e!==t.target?e.classList.remove("active"):e!==t.target||e.classList.contains("active")||t.target.classList.toggle("active")}))}))}))}function l(e){const t=[...e.querySelectorAll("picture")],n=(0,s.gO)(t).map((e=>({src:e,breakpoints:[]})));return 2===n.length&&(n[0].breakpoints=[{media:"(min-width: 600px)",width:600},{media:"(min-width: 1200px)",width:1200},{media:"(min-width: 1440px)",width:1440},{width:750}]),n.length>2&&(n[0].breakpoints=[{media:"(min-width: 600px)",width:600},{width:750}],n[1].breakpoints=[{media:"(min-width: 1200px)",width:1200},{media:"(min-width: 1440px)",width:1440}]),[(0,s.Zf)(n,!0,"small image",`${o}__image`),t[t.length-1]]}function d(e){e.querySelectorAll(`.${o}__product > div:first-child`).forEach((e=>{e.classList.add(`${o}__product-image`);const t=l(e),n=e.querySelector("a");n.text="",n.classList.add(`${o}__product-image-link`),n.append(...t),e.innerHTML="",e.append(n)}))}function u(e){e.querySelectorAll(`.${o}__product> div:last-child`).forEach((e=>{const t=(0,s.n)("div",{classes:`${o}__button-container`}),n=e.querySelectorAll(".button-container a"),a=e.querySelector(".button--primary");e.classList.add(`${o}__product-info`),[...n].forEach((e=>{const n=e.parentElement;e.classList.add("button--large"),t.appendChild(e),n.remove()})),e.appendChild(t),a?.addEventListener("mouseover",(()=>{e.previousElementSibling.classList.add(`${o}__product-image--show-background`)})),a?.addEventListener("mouseout",(()=>{e.previousElementSibling.classList.remove(`${o}__product-image--show-background`)}))}))}function p(e,t){e.forEach((e=>{e.classList.add(`${o}__segment-list`);const n=e.querySelectorAll("li"),a=Array.from(n).map((e=>{const n=e.textContent.trim().toLowerCase().replaceAll(" ","-");return t.includes(n)||t.push(n),n})),s=e.closest(`.${o}__product`);a.forEach((e=>{s.classList.add(e)}))}))}function m(e){const t=document.querySelectorAll(`.${o}__product`),n=e.target.textContent.trim().toLowerCase();document.querySelector(`.${o}__selected-item`).textContent=n,t.forEach((e=>{const t=n===(0,s.ce)("All Products").trim().toLowerCase();e.style.display=e.classList.contains(n)||t?"flex":"none";const a="flex"===e.style.display;e.style.display=a?"flex":"none",e.classList.toggle("selected-product",a)})),document.querySelectorAll(`.${o}__product`).forEach((e=>{e.classList.contains("selected-product")?(e.classList.remove("odd","even"),document.querySelectorAll(".selected-product").forEach(((e,t)=>{t%2==0?(e.classList.remove("even-row"),e.classList.add("odd-row")):(e.classList.remove("odd-row"),e.classList.add("even-row"))}))):e.classList.contains("selected-product")||e.classList.remove("odd","even")}))}function h(e){const t=(0,s.n)("div",{classes:`${o}__dropdown`}),n=(0,s.n)("div",{classes:`${o}__selected-item-wrapper`}),a=(0,s.n)("div",{classes:`${o}__selected-item`}),i=(0,s.n)("ul",{classes:`${o}__button-list`}),r=(0,s.n)("span",{classes:[`${o}__icon`,"icon","icon-dropdown-caret"]});return n.append(a),n.appendChild(r),t.append(n),t.append(i),e.forEach(((e,t)=>{const n=(0,s.n)("li"),r=(0,s.n)("button",{classes:`${o}__segment-button`});r.textContent=e,0===t&&(r.classList.add("active"),a.textContent=e),i.appendChild(n),n.append(r),r.addEventListener("click",m)})),t}function v(e){document.addEventListener("click",(t=>{t.target.closest(`.${o}__selected-item-wrapper`)?e.classList.toggle(`${o}__dropdown--open`):e.classList.remove(`${o}__dropdown--open`)}))}function f(e){if((0,s.qy)(e.classList,r,o),e.querySelectorAll(`.${o} > div`).forEach((e=>{e.classList.add(`${o}__product`),d(e),u(e)})),e.parentElement.classList.add("full-width"),document.querySelectorAll(`.${o}__product > div + div > h3`).forEach((e=>{e.parentNode.parentNode.classList.add(e.id)})),e.classList.contains(`${o}--with-filter`)){const t=document.querySelectorAll(`.${o}__product > div > ul`),n=[(0,s.ce)("All Products")];p(t,n);const a=h(n);e.prepend(a),v(a),c()}else document.querySelectorAll(`.${o}__product > div > ul`).forEach((e=>{e.classList.add(`${o}__detail-list`)}));(0,s.sT)(e)}a()}catch(y){a(y)}}))},1547:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>l});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-pull-quote",r=["half-width"];let c=!0;function l(e){(0,s.qy)(e.classList,r,o);const t=e.parentElement,n=e.classList.contains(`${o}--half-width`),a=t.previousElementSibling.lastChild;n&&a&&(t.classList.add(`${o}-wrapper--half-width`,c?"quote-right":"quote-left"),c=!c,a.classList.add("half-width-text"),t.prepend(a)),(0,s.m1)(e)}a()}catch(d){a(d)}}))},8429:(e,t,n)=>{"use strict";async function a(e){const t="v2-resources";e.querySelector(":scope > div").classList.add(`${t}__content-wrapper`);const n=[...e.querySelectorAll(":scope > div > div")],[a,s]=n;a.classList.add(`${t}__header`),s.classList.add(`${t}__content`),[...a.querySelectorAll("h1, h2, h3, h4, h5, h6")][0].classList.add(`${t}__heading`),[...s.querySelectorAll("h1, h2, h3, h4, h5, h6")].forEach((e=>e.classList.add(`${t}__subtitle`)));const i=[...s.children];i.forEach(((e,t)=>{const n=e.tagName.toLowerCase(),a=[...e.classList].includes("button-container");if("p"===n&&a){const n=e.querySelector("a");n.classList.add("standalone-link"),i[t-1].insertAdjacentElement("afterend",n),e.remove()}}))}n.r(t),n.d(t,{default:()=>a})},8123:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>c});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o="v2-slider";function r(e){e.querySelector(`.${o}__input`).addEventListener("input",(t=>{const n=`${t.target.value}%`;e.style.setProperty("--exposure",n)}))}async function c(e){e.querySelector(":scope > div").classList.add(`${o}__content-wrapper`);const t=e.querySelector(":scope > div > div");t.classList.add(`${o}__content`);const n=[...t.querySelectorAll("p > picture")],a=2===n.length;a&&e.classList.add("two-images");const i=(0,s.n)("div",{classes:`${o}__header`}),c=[...t.querySelectorAll("h1, h2, h3, h4, h5, h6")][0];c.classList.add(`${o}__title`,"with-marker");const l=c.nextElementSibling,d=l.querySelector("picture");i.append(c),d||(l.classList.add(`${o}__subtitle`),i.append(l)),t.prepend(i);const u=(0,s.n)("div",{classes:`${o}__images`}),p=(0,s.n)("div",{classes:`${o}__models`});if(a){n.forEach(((e,t)=>{e.classList.add("image",`image-${t+1}`);const n=e.parentElement;n.textContent.trim().length>0&&(n.classList.add("model",`model-${t+1}`),p.appendChild(n)),u.appendChild(e)}));const a=(0,s.n)("div",{classes:`${o}__image-divider`}),i=(0,s.n)("label",{classes:`${o}__label`}),c=(0,s.n)("input",{classes:`${o}__input`});c.type="range",c.min="0",c.max="100",i.appendChild(c),u.append(i,a),t.append(u,p),r(e)}else u.appendChild(n[0]),t.appendChild(u);const m=[...t.querySelectorAll("p.button-container")];m.length>0&&m.forEach((e=>t.appendChild(e)))}a()}catch(l){a(l)}}))},7383:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>o});var s=n(5545),i=e([s]);function o(e){const t=e.querySelector(":scope > div > div");(0,s.vm)(t),(0,s.m1)(e)}s=(i.then?(await i)():i)[0],a()}catch(r){a(r)}}))},2083:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>c});var s=n(3927),i=n(5545),o=e([i]);i=(o.then?(await o)():o)[0];const r="v2-specifications";async function c(e){const t=[...e.classList].find((e=>e.startsWith("id-"))),n=e.querySelectorAll(":scope > div");let a,o,c;const l=(0,i.n)("div",{classes:["block","v2-accordion",t],props:{"data-block-name":"v2-accordion"}}),d=(0,i.n)("div",{classes:["v2-accordion-wrapper"]});d.appendChild(l),e.appendChild(d);const u=e.closest(".section").dataset.header||3,p=u.charAt(u.length-1),m=["h1","h2","h3","h4","h5","h6"].slice(p);[...n].forEach((t=>{const n=t.querySelector(`h${p}`),s=t.querySelector("picture"),d=t.querySelector(".button-container a"),u=m.join(",");[...e.querySelectorAll(u)].forEach((e=>e.classList.add(`${r}__subtitle`,"h5")));const h=t.querySelectorAll(`.${r}__subtitle`).length;if(n){a&&(l.appendChild(a),c.appendChild(o),e.appendChild(c));const n=`id-${(0,i.Yv)(t.textContent.trim())}`;c=(0,i.n)("div",{classes:[`${r}__accordion-wrapper`]}),o=(0,i.n)("div",{classes:[`${r}__accordion-content`,n],props:{"data-block-status":"loaded"}}),a=(0,i.n)("div");const s=t.querySelector(":scope > div");s.classList.add(`${r}__title`),a.appendChild(s);const d=(0,i.n)("div");d.textContent=`#${n}`,a.appendChild(d),t.remove()}const v=[];h&&v.push(`${r}__list--subtitle`),s&&v.push(`${r}__list--with-pictures`),d&&(v.push(`${r}__list--with-downloads`),t.querySelectorAll(".button-container a").forEach((e=>{e.classList.add("standalone-link")}))),s||d||n||v.push(`${r}__list--with-text`),t.classList.add(...v),o.appendChild(t)})),a&&(l.appendChild(a),c.appendChild(o),e.appendChild(c)),(0,i.F1)(e),await(0,s.ez)(l)}a()}catch(l){a(l)}}))},4695:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>_});var s=n(5545),i=n(3927),o=e([s]);s=(o.then?(await o)():o)[0];const r="v2-sub-navigation",c=e=>t=>{t.target.closest(`.${r}__active-item-wrapper`)?e.classList.toggle(`${r}__dropdown--open`):e.classList.remove(`${r}__dropdown--open`)},l=async e=>{const t=await fetch(`${e}.plain.html`);if(!t.ok)throw new Error("Failed to fetch sub-navigation content");return document.createRange().createContextualFragment(await t.text())},d=e=>{const t=e.querySelectorAll("li");return t.forEach((e=>{e.className=`${r}__item`})),t},u=e=>{const t=(0,s.n)("div",{classes:`${r}__active-item-wrapper`}),n=(0,s.n)("span",{classes:[`${r}__icon`,"icon","icon-dropdown-caret"]});return t.append(e,n),t},p=(e,t)=>{const n=(0,s.n)("div",{classes:`${r}__dropdown`});return n.append(u(e),t),n},m=e=>{const[t,n]=[...e.querySelectorAll("p a")];return t&&n?{mobileAnchorText:t.textContent,desktopAnchorText:n.textContent,anchorHref:t.href||n.href,anchorTitle:n.title}:null},h=e=>{const t=(0,s.n)("a",{classes:["button","button--large","button--red",`${r}__cta`],props:{href:e.anchorHref,title:e.anchorTitle}}),n=(0,s.n)("span",{classes:[`${r}__cta--mobile`]}),a=(0,s.n)("span",{classes:[`${r}__cta--desktop`]});return n.textContent=e.mobileAnchorText,a.textContent=e.desktopAnchorText,t.append(n,a),t},v=(e,t)=>{const n=window.location.href;let a=null;for(const s of e){const e=s.querySelector("a");if(e){const i=new URL(e.getAttribute("href"),window.location.origin).href;if(a||(a=e),i===n)return s.classList.add(t),e.textContent}}return a?(a.closest("li").classList.add(t),a.textContent):null},f=()=>{const e=document.documentElement.clientWidth<1200?"168px":"218px";document.documentElement.style.setProperty("--v2-sub-navigation-height",e)},y=()=>{new ResizeObserver((()=>f())).observe(document.documentElement),f()},g=(e,t)=>{t&&e.parentElement.parentElement.classList.add(`${r}__custom--${t}`)},b=async(e,t)=>{try{const n=await l(t),a=n.querySelector("ul");if(!a)return;a.className=`${r}__items`;const o=d(a),u=(0,s.n)("div",{classes:`${r}__active-item`}),f=v(o,`${r}__item--active`);u.textContent=f||"";const b=(0,s.n)("div",{classes:`${r}__wrapper`}),_=p(u,a),w=m(n);if(!w)return;const $=h(w);b.append(_,$);const L=n.querySelector("picture");if(L){const t=(0,s.n)("div",{classes:`${r}__image-wrapper`});t.append(L),e.append(t,b),y()}else e.append(b);const S=(0,i.yb)("custom-subnav-style");g(e,S),document.addEventListener("click",c(_))}catch(e){console.error(e.message)}},_=async e=>{const t=document.head.querySelector('meta[name="v2-sub-navigation"]');t&&(await b(e,t.content),(0,s.sT)(e))};a()}catch(e){a(e)}}))},9849:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>m});var s=n(5545),i=n(2431),o=e([s,i]);[s,i]=o.then?(await o)():o;const r="v2-tabbed-carousel",c=["fade-in","small-tabs"],l=c.reduce(((e,t)=>(e[t.replace(/-([a-z])/g,(e=>e[1].toUpperCase()))]=t,e)),{}),d=(e,t,n)=>{const{x:a}=n.getBoundingClientRect(),{x:s,width:i}=t.getBoundingClientRect();Object.assign(e.style,{left:s+n.scrollLeft-a+"px",width:`${i}px`})},u=(e,t)=>{e.forEach(((e,n)=>{if(e===t.target&&t.intersectionRatio>=.75){const t=e.parentElement,a=e.parentElement.nextElementSibling,s=a.querySelector(`.${r}__navigation-line`);[t,a].forEach((e=>e.querySelectorAll(".active").forEach((e=>e.classList.remove("active"))))),t.children[n].classList.add("active"),a.children[n].classList.add("active");const i=a.children[n];d(s,i,a);const o=a.querySelector(".active");if(a&&o){const{clientWidth:e,offsetLeft:t}=o,n=t-(a.clientWidth-e)/2;a.scrollTo({left:n,behavior:"smooth"})}}}))},p=(e,t,n)=>{const{width:a}=e.firstElementChild.getBoundingClientRect(),s=n.querySelector(`.${r}__navigation-line`);e.querySelector(".active").classList.remove("active"),n.querySelector(".active").classList.remove("active"),e.children[t].classList.add("active"),n.children[t].classList.add("active"),d(s,n.children[t],n),e.style.transform=`translateX(-${t*a}px)`};function m(e){const t=c.find((t=>e.classList.contains(t)))||null;(0,s.qy)(e.classList,c,r);const n=(0,s.n)("div",{classes:`${r}__container`}),a=(0,s.n)("ul",{classes:`${r}__items`});n.append(a);const o=(0,s.n)("ul",{classes:`${r}__navigation`}),m=(0,s.n)("li",{classes:`${r}__navigation-line`});let h;e.querySelectorAll(":scope > div").forEach(((n,c)=>{if(n.querySelector("picture")){const u=(0,s.n)("li",{classes:`${r}__item`}),v=(0,s.n)("figure",{classes:`${r}__figure`}),f=n.querySelector("p");v.append(f.querySelector("picture"));const y=[...f.childNodes].at(-1);if(y.nodeType===Node.TEXT_NODE&&""!==y.textContent.trim()){const e=(0,s.n)("figcaption");e.append(y),v.append(e)}u.append(v),a.appendChild(u);const g=n.querySelector("h3"),b=function(n,c){const u=(0,s.n)("li",{classes:`${r}__navigation-item`}),v=(0,s.n)("button"),f=t&&t===l.fadeIn?()=>p(a,c-1,o):()=>(0,i.IC)(a,c-1);return v.addEventListener("click",f),v.addEventListener("mouseover",(e=>{clearTimeout(h),d(m,e.currentTarget,o)})),v.addEventListener("mouseout",(()=>{h=setTimeout((()=>{const t=e.querySelector(`.${r}__navigation-item.active`);d(m,t,o)}),600)})),v.innerHTML=n,u.append(v),u}(g.innerHTML,c);o.append(b),g.remove(),n.innerHTML=""}else{const e=n.querySelector("h2");e?.classList.add(`${r}__title`);const t=n.querySelector("p");t?.classList.add(`${r}__text`),n.classList.add(`${r}__heading-wrapper`)}})),o.append(m),n.append(o),e.append(n);const v=a.querySelectorAll(":scope > *");(0,i.tl)(a,v,u,.75),(0,s.m1)(e)}a()}catch(h){a(h)}}))},729:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>p});var s=n(2246),i=n(5545),o=e([s,i]);[s,i]=o.then?(await o)():o;const r="v2-testimonial",c=["media-left","media-right","overlap"],l=e=>{const t=(0,s.AR)(e);e.forEach((e=>{e!==t&&e.parentElement.remove()})),t?t.classList.add(`${r}__video-link`):console.warn(`[${r}]: No proper video link provided for current cookie settings!`)},d=e=>{const t=[...e.querySelectorAll("a")].filter(s.uW);if(0===t.length)return;l(t);const n=e.querySelector("p");n.classList.add(`${r}__video-section`),n.setAttribute("data-theme","gold"),n.append(e.querySelector(`.${r}__video-link`))},u=(e,t)=>{let n=e.querySelectorAll("blockquote");if(0===n.length){console.warn(`[${r}]: No blockquote found in the column! Will try to create a blockquote from the text.`);const n=e.querySelector(`.${r}__blockquote-container`).querySelectorAll("p:only-child, p:not(:last-child)");if(0===n.length)return void console.error(`[${r}]: No paragraphs found in the column!`);const a=document.createElement("blockquote");n.forEach((e=>{a.append(e)})),t.insertAdjacentElement("afterend",a)}n=e.querySelectorAll("blockquote"),n.forEach((e=>{const t=e.querySelector("em");t&&(t.outerHTML=t.innerHTML),e.classList.add(`${r}__blockquote`)}))};async function p(e){(0,i.qy)(e.classList,c,r),e.parentElement.classList.add("full-width");const t=e.querySelectorAll(":scope > div > div"),n=e.querySelectorAll("h1, h2, h3, h4, h5, h6"),a=n[0];t.forEach((e=>{e.contains(a)&&(e.parentElement.classList.add(`${r}__column`,`${r}__column--text`),e.classList.add(`${r}__blockquote-container`),n.forEach((e=>{e.classList.add(`${r}__heading`)})),a.classList.add("with-marker")),[...e.querySelectorAll("img")].forEach((e=>{e.classList.add(`${r}__image`),e.parentElement.classList.add(`${r}__column`,`${r}__column--media`)})),d(e)})),u(e,a),(0,i.m1)(e,{ignoreDataAlign:!0}),(0,i.F1)(e)}a()}catch(m){a(m)}}))},3009:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>h});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o=1200,r=()=>window.innerWidth>=o,c="v2-truck-builder",l=["hide-description","media-right"],d=e=>{const t=e.querySelector("picture");if(t)t.classList.add(`${c}__item-image`);else{const t=e.querySelector(":is(h1, h2, h3, h4, h5, h6)");t&&t.classList.add(`${c}__item-title`),e.querySelectorAll("p").forEach((e=>e.classList.add(`${c}__item-description`)))}},u=e=>{const t=e.querySelectorAll(`.${c}__item`),n=new IntersectionObserver((e=>{e.forEach((e=>{e.isIntersecting&&!r()?e.target.classList.add("active"):r()||e.target.classList.remove("active")}))}),{threshold:.5});t.forEach((e=>{r()?n.disconnect():n.observe(e)}))},p=e=>{let t;return[...e.closest("button").parentElement.classList].forEach((e=>{"number-"===e.substring(0,7)&&(t=e.split("-").pop())})),Number(t)},m=e=>{if(r()){const t=e.querySelectorAll(`.${c}__item`);t.forEach((e=>{e.classList.remove("active")})),t[0].classList.add("active")}else u(e)};function h(e){(0,s.qy)(e.classList,l,c);const t=e.querySelector(":scope > div:first-child > div > :first-child"),n=e.querySelector(":scope > div:nth-child(2) > div > :last-child"),a=e.querySelector(":scope > div:nth-child(2) > div"),i=e.querySelector(":scope > div:nth-child(3) > div > :last-child");i.classList.add(`${c}__bg-image`);const o=[...e.querySelectorAll(":scope > div:nth-child(n+4)")],h=(0,s.n)("div",{classes:`${c}__accordion-container`}),v=(0,s.n)("div",{classes:`${c}__items-container`});e.parentElement.classList.add("full-width"),t.parentElement.classList.add(`${c}__header-wrapper`),t.parentElement.parentElement.classList.add(`${c}__header-container`),t.classList.add(`${c}__header`,"with-marker"),o.forEach(((e,t)=>{const n=(0,s.n)("button",{classes:`${c}__item-header-button`,props:{type:"button"}}),a=[...e.querySelectorAll(":scope > div")];e.classList.add(`${c}__item`,`number-item-${t+1}`),0===t&&r()&&e.classList.add("active"),a.forEach((e=>d(e,t))),n.prepend(e.querySelector(`.${c}__item-title`),e.querySelector(`.${c}__item-description`)),n.onclick=t=>{if(r()){const t=h.querySelector(".active");t&&t!==e&&t.classList.remove("active"),e.classList.add("active")}else{const e=p(t.target),n=v.querySelector(`.${c}__item.number-item-${e}`),{x:a}=n.getBoundingClientRect();v.scrollLeft+=a}},e.prepend(n),v.appendChild(e)})),n.classList.add("button--large",`${c}__builder-button`),v.append(a),h.append(i,v),e.appendChild(h),window.addEventListener("resize",(()=>m(v))),u(v),(0,s.m1)(e,{ignoreDataAlign:!0}),(0,s.F1)(e)}a()}catch(v){a(v)}}))},6823:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>h});var s=n(5545),i=n(7658),o=e([s,i]);[s,i]=o.then?(await o)():o;const r="v2-truck-features",c=window.matchMedia("(min-width: 1200px)"),l=200,d=400;let u=c.matches?l:d;c.addEventListener("change",(e=>{u=e.matches?l:d}));const p=e=>{const t=[...(0,i.cB)(e.querySelectorAll("ul"),":scope > li > picture")];if(0===t)return;t.forEach((e=>{e.style.display="none"}));const n=c.matches?"-1":"0";t.at(n).style.display="block",t.at(n).classList.add(`${r}__images-list`)},m=(e,t)=>{const n=getComputedStyle(document.documentElement).getPropertyValue("--nav-height"),a=Number.parseInt(n,10),s=getComputedStyle(document.documentElement).getPropertyValue("--inpage-navigation-height"),i=Number.parseInt(s,10),o=window.innerHeight,r=u*t+(o-a-i);e.style.height=`${r}px`};async function h(e){const t=`${r}__slide--active`,n=`${r}__slide-image--active`;(0,s.qy)(e.classList,["image-left","image-shadow"],r),[...e.querySelectorAll(":scope > div")].forEach(s.m1);const a=e.querySelector(":scope > div > :is(h1, h2, h3, h4, h5, h6)"),i=[...e.querySelectorAll(":scope > div")].slice(1),o=(0,s.n)("ul",{classes:`${r}__slides`}),c=(0,s.n)("div",{classes:`${r}__content`});a.parentElement.replaceWith(a),a.classList.add(`${r}__heading`),c.append(a,o),e.append(c),i.forEach((e=>{const t=(0,s.n)("li",{classes:`${r}__slide`}),n=(0,s.n)("div",{classes:`${r}__text-wrapper`});t.innerHTML=e.innerHTML;const a=t.querySelector(":scope > :is(h1, h2, h3, h4, h5, h6)"),i=t.querySelector(":scope > p");a.replaceWith(n),n.append(a,i),e.remove(),o.append(t),p(t)}));const l=o.querySelectorAll(`.${r}__images-list picture`).length;m(e,l);let d=o.children[0];d.classList.add(t);let h=d.querySelector(`.${r}__images-list li`);h.classList.add(n);let v=0;window.addEventListener("scroll",(()=>{const a=getComputedStyle(document.documentElement).getPropertyValue("--nav-height"),s=Number.parseInt(a,10),i=getComputedStyle(document.documentElement).getPropertyValue("--inpage-navigation-height"),o=Number.parseInt(i,10),{top:c,bottom:p}=e.getBoundingClientRect();if(c<s+o&&p>s+o){const a=Math.abs(c-s-o),i=Math.floor(a/u);if(i>l)return;i>v&&(()=>{const a=e.querySelector(`.${n} + li`);let s=!0;if(a)h.classList.remove(n),a.classList.add(n),h=a;else{const a=e.querySelector(`.${t} + li`);a?(d.classList.remove(t),a.classList.add(t),d=a,h.classList.remove(n),h=a.querySelector(`.${r}__images-list li`),h.classList.add(n)):s=!1}})(),i<v&&(()=>{const a=e.querySelector(`.${n}`).previousElementSibling;let s=!0;if(a)h.classList.remove(n),a.classList.add(n),h=a;else{const a=e.querySelector(`.${t}`).previousElementSibling;a?(d.classList.remove(t),a.classList.add(t),d=a,h.classList.remove(n),h=a.querySelector(`.${r}__images-list li:last-of-type`),h.classList.add(n)):s=!1}})(),v=i}}))}a()}catch(v){a(v)}}))},5903:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{default:()=>f});var s=n(5545),i=n(2431),o=e([s,i]);[s,i]=o.then?(await o)():o;const r="v2-truck-lineup",c=`.${r}__content`;function l(e,t){if(t!==e&&""===t.innerHTML.trim()){const n=t.parentNode;t.remove(),l(e,n)}}const d=(e,t,n)=>{const{x:a}=n.getBoundingClientRect(),{x:s,width:i}=t.getBoundingClientRect();Object.assign(e.style,{left:s+n.scrollLeft-a+"px",width:`${i}px`})},u=e=>{const t=e.offsetWidth,n=document.documentElement.clientWidth,a=e.querySelectorAll(`.${r}__navigation-item`);let s=0;[...a].forEach((e=>{s+=e.getBoundingClientRect().width})),s+32<=t?1040===t&&n>=1200?e.style.setProperty("--truck-lineup-border-scale",`${t}`):e.style.setProperty("--truck-lineup-border-scale",""+(t-32)):e.style.setProperty("--truck-lineup-border-scale",`${s}`)};function p(e,t){const n=(0,s.n)("div",{classes:`${r}__navigation-container`}),a=(0,s.n)("ul",{classes:`${r}__navigation`}),i=(0,s.n)("li",{classes:`${r}__navigation-line`});let o;return[...e].forEach(((e,n)=>{const l=(0,s.n)("li",{classes:`${r}__navigation-item`}),u=(0,s.n)("button");u.addEventListener("click",(()=>t(n))),u.addEventListener("mouseover",(e=>{clearTimeout(o),d(i,e.currentTarget,a)})),u.addEventListener("mouseout",(()=>{o=setTimeout((()=>{const e=document.querySelector(`.${r}__navigation-item.active button`);d(i,e,a)}),600)}));const p=e.querySelector(c),m=p&&p?.dataset.truckCarouselIcon,h=m?`<span class="icon icon-${m}"></span>`:"";u.innerHTML=`${p.dataset.truckCarousel}${h}`,l.append(u),a.append(l)})),a.append(i),n.append(a),n}const m=e=>{const t=document.querySelector(`.${r}__images-container`),n=document.querySelector(`.${r}__description-container`),a=document.querySelector(`.${r}__navigation`),s=document.querySelector(`.${r}__navigation-line`),i=document.querySelector(`.${r}__navigation`);[t,n,a].forEach((e=>e.querySelectorAll(".active").forEach((e=>e.classList.remove("active"))))),t.children[e].classList.add("active"),n.children[e].classList.add("active"),a.children[e].classList.add("active");const o=a.children[e].querySelector("button");d(s,o,a),u(i);const c=a.querySelector(".active");if(a&&c){const{clientWidth:e,offsetLeft:t}=c,n=t-(a.clientWidth-e)/2;a.scrollTo({left:n,behavior:"smooth"})}const l=n.offsetWidth;n.scrollTo({left:l*e,behavior:"smooth"})},h=(e,t)=>{e.forEach(((e,n)=>{e===t.target&&t.intersectionRatio>=.9&&m(n)}))},v=document.createRange().createContextualFragment(`<li>\n  <button aria-label="${(0,s.ce)("Previous")}">\n    <span class="icon icon-arrow-left" />\n  </button>\n</li>\n<li>\n  <button aria-label="${(0,s.ce)("Next")}">\n    <span class="icon icon-arrow-right" />\n  </button>\n</li>`);async function f(e){const t=e.querySelector(":scope > div");t.classList.add(`${r}__description-container`);const n=e.querySelectorAll(":scope > div > div"),a=(0,s.n)("div",{classes:`${r}__slider-wrapper`}),o=(0,s.n)("div",{classes:`${r}__images-container`});t.parentNode.prepend(a),a.appendChild(o);const d=p(n,(e=>{(0,i.IC)(o,e)}));(0,i.UZ)(o,`.${r}__image-item.active`,[`${r}__arrow-controls`],v),t.parentNode.append(d),n.forEach((e=>{e.classList.add(`${r}__desc-item`);const t=e.querySelector(c);[...t?t.querySelectorAll("h1, h2, h3, h4, h5, h6"):[]].forEach((e=>e.classList.add(`${r}__title`)));const n=e.querySelector("picture"),a=(0,s.n)("div",{classes:`${r}__image-item`});a.appendChild(n),o.appendChild(a),t.querySelectorAll("p, div").forEach((e=>{l(t,e)})),[...t.querySelectorAll("p:not(.button-container)")].forEach((e=>e.classList.add(`${r}__description`)));const i=(0,s.n)("div",{classes:`${r}__text`}),d=t.querySelector(".default-content-wrapper")?.querySelectorAll(":scope > *:not(.button-container)");if(d){const e=d[0].parentNode;i.append(...d),e.appendChild(i)}const u=(0,s.n)("div",{classes:`${r}__buttons-container`}),p=t.querySelectorAll(".button-container");if(p.length){const e=p[0].parentNode;u.append(...p),e.appendChild(u)}}));const f=o.querySelectorAll(":scope > *");(0,i.tl)(o,f,h,.9),window.addEventListener("resize",(()=>{const e=o.querySelector(`.${r}__image-item.active`),t=[...e.parentNode.children].indexOf(e);m(t),setTimeout((()=>{u(d)}),100)})),(0,s.sT)(e)}a()}catch(y){a(y)}}))},2726:(e,t,n)=>{var a={"./v2-accordion-column/v2-accordion-column.js":7983,"./v2-accordion/v2-accordion.js":9523,"./v2-all-trucks/v2-all-trucks.js":2303,"./v2-breadcrumb/v2-breadcrumb.js":31,"./v2-cards/v2-cards.js":8845,"./v2-category-collage/v2-category-collage.js":9415,"./v2-columns/v2-columns.js":2213,"./v2-dealer-locator/v2-dealer-locator.js":7027,"./v2-embed/v2-embed.js":1321,"./v2-explore-articles/v2-explore-articles.js":327,"./v2-feature-carousel/v2-feature-carousel.js":7719,"./v2-forms/v2-forms.js":9009,"./v2-hero/v2-hero.js":2039,"./v2-hotspots-spot/v2-hotspots-spot.js":7053,"./v2-hotspots/v2-hotspots.js":3879,"./v2-icon-cards/v2-icon-cards.js":5839,"./v2-image-banner/v2-image-banner.js":483,"./v2-images-grid/v2-images-grid.js":345,"./v2-inpage-navigation/v2-inpage-navigation.js":5773,"./v2-intro-section/v2-intro-section.js":1447,"./v2-magazine-tabbed-carousel/v2-magazine-tabbed-carousel.js":8911,"./v2-media-with-content/v2-media-with-content.js":2099,"./v2-navigation-hub/v2-navigation-hub.js":2919,"./v2-newsletter/v2-newsletter.js":995,"./v2-pencil-promo/v2-pencil-promo.js":4063,"./v2-product-listing/v2-product-listing.js":9051,"./v2-pull-quote/v2-pull-quote.js":1547,"./v2-resources/v2-resources.js":8429,"./v2-slider/v2-slider.js":8123,"./v2-solutions/v2-solutions.js":7383,"./v2-specifications/v2-specifications.js":2083,"./v2-sub-navigation/v2-sub-navigation.js":4695,"./v2-tabbed-carousel/v2-tabbed-carousel.js":9849,"./v2-testimonial/v2-testimonial.js":729,"./v2-truck-builder/v2-truck-builder.js":3009,"./v2-truck-features/v2-truck-features.js":6823,"./v2-truck-lineup/v2-truck-lineup.js":5903};function s(e){return i(e).then(n)}function i(e){return Promise.resolve().then((()=>{if(!n.o(a,e)){var t=new Error("Cannot find module '"+e+"'");throw t.code="MODULE_NOT_FOUND",t}return a[e]}))}s.keys=()=>Object.keys(a),s.resolve=i,s.id=2726,e.exports=s},5541:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.r(t),n.d(t,{hideModal:()=>h,showModal:()=>m});var s=n(3927),i=n(2246),o=n(5545),r=e([i,o]);[i,o]=r.then?(await r)():r;const{videoIdRegex:c}=i.ci,l=new i.bO;class d{constructor(e){this.videoId=e,this.blockName="modal",l.register(this.videoId,this.blockName,(e=>(0,i.Hj)(e,this.videoId,this.blockName)))}unregister(){l.unregister(this.videoId,this.blockName)}}const u="modal-hidden",p=()=>{const e=(0,o.n)("div",{classes:["modal-background",u]});e.addEventListener("click",(()=>{m()}));const t=e=>{"Escape"===e.key&&m()},n=(0,o.n)("div",{classes:"modal-content"});e.appendChild(n),e.style="height: 0; opacity: 0;",document.body.appendChild(e);const a=(0,o.ce)("Close modal"),r=(0,o.n)("button",{classes:"modal-close-button",props:{"aria-label":`${a}`}}),l=(0,o.n)("span",{classes:["icon","icon-close"]});r.append(l),e.appendChild(r),r.addEventListener("click",(()=>m())),(0,o.sT)(r);const p=()=>{n.innerHTML="",n.className="modal-content"};function m(){let n;e.classList.add(u),window.removeEventListener("keydown",t),document.body.classList.remove("disable-scroll"),document.querySelector(".modal-content video")?.pause(),document.querySelector(".modal-content iframe")?.setAttribute("src","");const a=t=>{t.target===e&&(p(),n&&e.removeEventListener("transitioncancel",n))};n=t=>{t.target===e&&e.removeEventListener("transitionend",a)},e.addEventListener("transitionend",a,{once:!0}),e.addEventListener("transitioncancel",n,{once:!0})}return{showModal:async function(a,{beforeBanner:l,beforeIframe:m,classes:h=[]}={}){if(await(0,s.y6)(`${window.hlx.codeBasePath}/common/modal/modal-component.css`),e.style="",window.addEventListener("keydown",t),a&&"string"!=typeof a)p(),n.classList.add(...h),n.append(a),n.appendChild(r);else if(a){p();let e=null;if((0,i.Ty)(a))e=(0,o.n)("video",{classes:"modal-video",props:{src:a,controls:"",autoplay:"autoplay",playsinline:""}}),n.append(e);else if(i.Ys){let t;const s=a.match(c);s&&([t]=s),new d(t),e=(0,i.g5)(null,a,"modal-video",{autoplay:"any",disablePictureInPicture:!0,loop:!1,muted:!1,playsinline:!0,title:"video",language:document.documentElement.lang},!1,t),n.append(e)}else e=(0,i.hw)(a,{parentEl:n,classes:"modal-video"});if(l){const t=(0,o.n)("div",{classes:"modal-before-banner"});t.addEventListener("click",(e=>e.stopPropagation())),t.appendChild(l),e.parentElement.insertBefore(t,e)}if(m){const t=(0,o.n)("div",{classes:"modal-before-iframe"});t.appendChild(m),e.parentElement.insertBefore(t,e)}e.parentElement.insertBefore(r,e)}e.classList.remove(u),document.body.classList.add("disable-scroll"),n.addEventListener("click",(e=>{e.stopPropagation()}))},hideModal:m}},{showModal:m,hideModal:h}=p();a()}catch(e){a(e)}}))},3927:(e,t,n)=>{"use strict";function a(e,t={}){const n="aem-rum";a.baseURL=a.baseURL||new URL(null==window.RUM_BASE?"https://rum.hlx.page":window.RUM_BASE,window.location),a.defer=a.defer||[];const s=e=>{a[e]=a[e]||((...t)=>a.defer.push({fnname:e,args:t}))};a.drain=a.drain||((e,t)=>{a[e]=t,a.defer.filter((({fnname:t})=>e===t)).forEach((({fnname:e,args:t})=>a[e](...t)))}),a.always=a.always||[],a.always.on=(e,t)=>{a.always[e]=t},a.on=(e,t)=>{a.cases[e]=t},s("observe"),s("cwv");try{if(window.hlx=window.hlx||{},!window.hlx.rum){const e="on"===new URLSearchParams(window.location.search).get("rum")?1:100,t=Array.from({length:75},((e,t)=>String.fromCharCode(48+t))).filter((e=>/\d|[A-Z]/i.test(e))).filter((()=>75*Math.random()>70)).join(""),s=Math.random(),i=s*e<1,o=window.performance?window.performance.timeOrigin:Date.now(),r={full:()=>window.location.href,origin:()=>window.location.origin,path:()=>window.location.href.replace(/\?.*$/,"")},c=sessionStorage.getItem(n)?JSON.parse(sessionStorage.getItem(n)):{};c.pages=(c.pages?c.pages:0)+1+(Math.floor(20*Math.random())-10),sessionStorage.setItem(n,JSON.stringify(c)),window.hlx.rum={weight:e,id:t,random:s,isSelected:i,firstReadTime:o,sampleRUM:a,sanitizeURL:r[window.hlx.RUM_MASK_URL||"path"],rumSessionStorage:c}}const{weight:s,id:i,firstReadTime:o}=window.hlx.rum;if(window.hlx&&window.hlx.rum&&window.hlx.rum.isSelected){const n=["weight","id","referer","checkpoint","t","source","target","cwv","CLS","FID","LCP","INP","TTFB"],r=(r=t)=>{const c=Math.round(window.performance?window.performance.now():Date.now()-o),l=JSON.stringify({weight:s,id:i,referer:window.hlx.rum.sanitizeURL(),checkpoint:e,t:c,...t},n),d=new URL(`.rum/${s}`,a.baseURL).href;navigator.sendBeacon(d,l),console.debug(`ping:${e}`,r)};a.cases=a.cases||{load:()=>a("pagesviewed",{source:window.hlx.rum.rumSessionStorage.pages})||!0,cwv:()=>a.cwv(t)||!0,lazy:()=>{const e=document.createElement("script");return e.src=new URL(".rum/@adobe/helix-rum-enhancer@^1/src/index.js",a.baseURL).href,document.head.appendChild(e),!0}},r(t),a.cases[e]&&a.cases[e]()}a.always[e]&&a.always[e](t)}catch(e){}}function s(e){return"string"==typeof e?e.toLowerCase().replace(/[^0-9a-z]/gi,"-").replace(/-+/g,"-").replace(/^-|-$/g,""):""}function i(e){return s(e).replace(/-([a-z])/g,(e=>e[1].toUpperCase()))}function o(e){const t={};return e.querySelectorAll(":scope > div").forEach((e=>{if(e.children){const n=[...e.children];if(n[1]){const a=n[1],i=s(n[0].textContent);let o="";if(a.querySelector("a")){const e=[...a.querySelectorAll("a")];o=1===e.length?e[0].href:e.map((e=>e.href))}else if(a.querySelector("img")){const e=[...a.querySelectorAll("img")];o=1===e.length?e[0].src:e.map((e=>e.src))}else if(a.querySelector("p")){const e=[...a.querySelectorAll("p")];o=1===e.length?e[0].textContent:e.map((e=>e.textContent))}else o=e.children[1].textContent;t[i]=o}}})),t}async function r(e){return new Promise(((t,n)=>{if(document.querySelector(`head > link[href="${e}"]`))t();else{const a=document.createElement("link");a.rel="stylesheet",a.href=e,a.onload=t,a.onerror=n,document.head.append(a)}}))}async function c(e,t){return new Promise(((n,a)=>{if(document.querySelector(`head > script[src="${e}"]`))n();else{const s=document.createElement("script");if(s.src=e,t)for(const e in t)s.setAttribute(e,t[e]);s.onload=n,s.onerror=a,document.head.append(s)}}))}function l(e,t=document){const n=e&&e.includes(":")?"property":"name";return[...t.head.querySelectorAll(`meta[${n}="${e}"]`)].map((e=>e.content)).join(", ")||""}function d(e,t="",n=!1,a=[{media:"(min-width: 600px)",width:"2000"},{width:"750"}]){const s=new URL(e,window.location.href),i=document.createElement("picture"),{pathname:o}=s,r=o.substring(o.lastIndexOf(".")+1);return a.forEach((e=>{const t=document.createElement("source");e.media&&t.setAttribute("media",e.media),t.setAttribute("type","image/webp"),t.setAttribute("srcset",`${o}?width=${e.width}&format=webply&optimize=medium`),i.appendChild(t)})),a.forEach(((e,s)=>{if(s<a.length-1){const t=document.createElement("source");e.media&&t.setAttribute("media",e.media),t.setAttribute("srcset",`${o}?width=${e.width}&format=${r}&optimize=medium`),i.appendChild(t)}else{const a=document.createElement("img");a.setAttribute("loading",n?"eager":"lazy"),a.setAttribute("alt",t),i.appendChild(a),a.setAttribute("src",`${o}?width=${e.width}&format=${r}&optimize=medium`)}})),i}function u(){const e=(e,t)=>{t.split(",").forEach((t=>{e.classList.add(s(t.trim()))}))},t=l("template");t&&e(document.body,t);const n=l("theme");n&&e(document.body,n)}function p(e){const t=[...e.querySelectorAll(":scope > div.section")];for(let e=0;e<t.length;e+=1){const n=t[e];if("loaded"!==n.dataset.sectionStatus){if(n.querySelector('.block[data-block-status="initialized"], .block[data-block-status="loading"]')){n.dataset.sectionStatus="loading";break}n.dataset.sectionStatus="loaded",n.style.display=null}}}function m(e,t){const n=Array.isArray(t)?t:[[t]],a=document.createElement("div");return a.classList.add(e),n.forEach((e=>{const t=document.createElement("div");e.forEach((e=>{const n=document.createElement("div");(e.elems?e.elems:[e]).forEach((e=>{e&&("string"==typeof e?n.innerHTML+=e:n.appendChild(e))})),t.appendChild(n)})),a.appendChild(t)})),a}async function h(e){const t=e.dataset.blockStatus;if("loading"!==t&&"loaded"!==t){e.dataset.blockStatus="loading";const{blockName:t}=e.dataset;try{const a=!0,s=new Promise((a=>{(async()=>{try{let a;if("header"===t)a=await Promise.resolve().then(n.bind(n,9687));else if("footer"===t)a=await Promise.resolve().then(n.bind(n,6939));else if(t.startsWith("v2-")){const e=t.replace("v2-","");a=await n(2726)(`./v2-${e}/v2-${e}.js`)}else a=await import(`${window.hlx.codeBasePath}/blocks/${t}/${t}.js`);a.default&&await a.default(e)}catch(e){console.log(`failed to load module for ${t}`,e)}a()})()}));await Promise.all([a,s])}catch(e){console.log(`failed to load block ${t}`,e)}e.dataset.blockStatus="loaded"}return e}async function v(e){p(e);const t=[...e.querySelectorAll("div.block")];for(let n=0;n<t.length;n+=1)await h(t[n]),p(e)}function f(e){const t=e.classList[0];if(t){e.classList.add("block"),e.dataset.blockName=t,e.dataset.blockStatus="initialized",function(e){const t=["P","PRE","UL","OL","PICTURE","TABLE","H1","H2","H3","H4","H5","H6"],n=e=>{const t=document.createElement("p");t.append(...e.childNodes),e.append(t)};e.querySelectorAll(":scope > div > div").forEach((e=>{e.hasChildNodes()&&(e.firstElementChild&&t.some((t=>e.firstElementChild.tagName===t))?"PICTURE"===e.firstElementChild.tagName&&(e.children.length>1||e.textContent.trim())&&n(e):n(e))}))}(e),e.parentElement.classList.add(`${t}-wrapper`);const n=e.closest(".section");n&&n.classList.add(`${t}-container`)}}function y(e){e.querySelectorAll("div.section > div > div").forEach(f)}async function g(e){const t=m("header","");return e.append(t),f(t),h(t)}async function b(e){const t=m("footer","");return e.append(t),f(t),h(t)}async function _(e){const t=document.querySelector(".block");t&&e.includes(t.dataset.blockName)&&await h(t),document.body.style.display=null;const n=document.querySelector("main img");await new Promise((e=>{n&&!n.complete?(n.setAttribute("loading","eager"),n.addEventListener("load",e),n.addEventListener("error",e)):e()}))}n.d(t,{Cb:()=>i,KG:()=>m,L4:()=>s,O3:()=>u,W1:()=>_,Y7:()=>g,cB:()=>o,dC:()=>a,ez:()=>h,fg:()=>f,gD:()=>d,iB:()=>b,iK:()=>y,k0:()=>c,tB:()=>v,y6:()=>r,yb:()=>l}),function(){window.hlx=window.hlx||{},window.hlx.RUM_MASK_URL="full",window.hlx.codeBasePath="",window.hlx.lighthouse="on"===new URLSearchParams(window.location.search).get("lighthouse");const e=document.querySelector('script[src$="/scripts/scripts.js"]');if(e)try{[window.hlx.codeBasePath]=new URL(e.src).pathname.split("/scripts/scripts.js")}catch(e){console.log(e)}}(),a("top"),window.addEventListener("load",(()=>a("load"))),["error","unhandledrejection"].forEach((e=>{window.addEventListener(e,(({reason:e,error:t})=>{a("error",{source:(e||t).stack.split("\n").filter((e=>e.match(/https?:\/\//))).shift().replace(/at ([^ ]+) \((.+)\)/,"$1@$2"),target:(e||t).toString()})}))}))},2431:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.d(t,{IC:()=>r,UZ:()=>c,tl:()=>o});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o=(e,t,n,a=1)=>{const s=new IntersectionObserver((e=>{e.forEach((e=>{e.isIntersecting&&n(t,e)}))}),{root:e,threshold:a});t.forEach((e=>{s.observe(e)}))},r=(e,t)=>{const n=e.firstElementChild,a=n.getBoundingClientRect().width,s=window.getComputedStyle(n),i=parseFloat(s.marginLeft);e.scrollTo({left:t*a+i,behavior:"smooth"})},c=(e,t,n,a)=>{function i(n){const a=e.querySelector(t);let s=[...a.parentNode.children].indexOf(a);"left"===n?(s-=1,-1===s&&(s=e.childElementCount)):(s+=1,s>e.childElementCount-1&&(s=0)),r(e,s)}const o=(0,s.n)("ul",{classes:n});o.append(...a.children),e.insertAdjacentElement("beforebegin",o);const[c,l]=o.querySelectorAll(":scope button");c.addEventListener("click",(()=>i("left"))),l.addEventListener("click",(()=>i("right")))};a()}catch(e){a(e)}}))},5545:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.d(t,{$C:()=>G,$N:()=>Z,F1:()=>v,IY:()=>ee,OB:()=>D,PM:()=>m,Qn:()=>N,UY:()=>U,Xk:()=>z,Yv:()=>g,Z5:()=>H,Zf:()=>Y,_Q:()=>B,ax:()=>_,ce:()=>c,dF:()=>X,e0:()=>T,gO:()=>K,h1:()=>x,lk:()=>r,m1:()=>f,n:()=>l,qy:()=>y,rz:()=>h,sT:()=>p,sg:()=>W,sh:()=>d,vm:()=>V,xH:()=>M});var s=n(3927);let i=null;const o=()=>{const{pathname:e}=new URL(window.location.href),t=e.match("^(/[a-z]{2}(-[a-z]{2})?/).*");return t?t[1]:"/"};async function r(){const e=`${o()}placeholder.json`;i=await fetch(e).then((e=>e.json()))}function c(e){return i.data.find((t=>t.Key===e))?.Text||e}function l(e,t={}){const{classes:n=[],props:a={}}=t,s=document.createElement(e),i="string"==typeof n;if(n||i&&""!==n||!i&&n.length>0){const e=i?[n]:n;s.classList.add(...e)}return i||0!==n.length||s.removeAttribute("class"),a&&Object.keys(a).forEach((e=>{if("allowfullscreen"===e||"autoplay"===e||"muted"===e||"controls"===e)a[e]&&s.setAttribute(e,"");else{const t=a[e];s.setAttribute(e,t)}})),s}function d(e){const t=l("link",{props:{rel:"icon",type:"image/svg+xml",href:e}}),n=document.querySelector('head link[rel="icon"]');n?n.parentElement.replaceChild(t,n):document.getElementsByTagName("head")[0].appendChild(t)}const u={};async function p(e){let t=document.getElementById("franklin-svg-sprite");if(!t){const e=document.createElement("div");e.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" id="franklin-svg-sprite" style="display: none"></svg>',t=e.firstElementChild,document.body.append(e.firstElementChild)}const n=[...e.querySelectorAll("span.icon")];await Promise.all(n.map((async e=>{const t=Array.from(e.classList).find((e=>e.startsWith("icon-"))).substring(5);if(!u[t]){u[t]=!0;try{const e=await fetch(`${window.hlx.codeBasePath}/icons/${t}.svg`);if(!e.ok)return void(u[t]=!1);const n=await e.text();n.match(/(<style | class=)/)?u[t]={styled:!0,html:n}:u[t]={html:n.replace("<svg",`<symbol id="icons-sprite-${t}"`).replace(/ width=".*?"/,"").replace(/ height=".*?"/,"").replace("</svg>","</symbol>")}}catch(e){u[t]=!1,console.error(e)}}})));const a=Object.keys(u).filter((e=>!t.querySelector(`#icons-sprite-${e}`))).map((e=>u[e])).filter((e=>!e.styled)).map((e=>e.html)).join("\n");t.innerHTML+=a,n.forEach((e=>{const t=Array.from(e.classList).find((e=>e.startsWith("icon-"))).substring(5),n="A"===e.firstElementChild?.tagName?e.firstElementChild:e;u[t].styled?n.innerHTML=u[t].html:n.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg"><use href="#icons-sprite-${t}"/></svg>`}))}async function m(e,t){console.log("loadTemplate",t);try{await(0,s.y6)(`${window.hlx.codeBasePath}/templates/${t}/${t}.css`);const a=new Promise((a=>{(async()=>{try{const a=await n(9091)(`./${t}/${t}.js`);a.default&&await a.default(e)}catch(e){console.log(`failed to load module for ${t}`,e)}a()})()}));await a}catch(e){console.log(`failed to load block ${t}`,e)}}function h(){window.setTimeout((()=>{console.log("delayed"),n.e(596).then(n.bind(n,7596))}),300)}const v=e=>{e.querySelectorAll("*").forEach((e=>{const t=`</${e.tagName}>`;e.outerHTML.slice(-1*t.length).toUpperCase()===t&&0===e.innerHTML.trim().length&&e.remove()}))},f=(e,t={})=>{const n=[e],{ignoreDataAlign:a=!1}=t;for(;n.length>0;){const e=n.pop();let t=0;for(;t<e.children.length;){const s=e.children[t],i=[...s.attributes].filter((e=>a?!(e.name.startsWith("data-align")||e.name.startsWith("data-valign")):e)).length;if("DIV"===s.tagName&&0===i){for(;s.firstChild;)e.insertBefore(s.firstChild,s);s.remove()}else n.push(s),t+=1}}},y=(e,t,n)=>{t.forEach((t=>{e.contains(t)&&(e.remove(t),e.add(`${n}--${t}`))}))},g=e=>e.toString().toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"-").replace(/&/g,"-and-").replace(/[^\w-]+/g,"").replace(/--+/g,"-");async function b(){const e=`${o()}constants.json`;let t;try{const n=await fetch(e).then((e=>e.json()));n.ok||(t=n)}catch(e){console.error("Error with constants file",e)}return t}const _=e=>{const t={};for(const n of e)try{if("string"!=typeof n||!n.includes(":"))throw new TypeError(`Invalid input: "${n}". Expected a string: "key: value".`);const[e,a]=n.split(":",2);t[e.trim()]=a.trim()}catch(e){console.warn(`Error with item: "${n}"`,e)}return t},w=e=>{const t={};return e&&e.forEach((({name:e,value:n})=>t[e]=n)),t},{searchUrls:$,cookieValues:L,magazineConfig:S,headerConfig:E,tools:q,truckConfiguratorUrls:k,newsFeedConfig:A,bodyBuilderNewsConfig:C}=await b(),x=(w($?.data),w(L?.data)),T=(w(S?.data),w(E?.data)),N=w(q?.data),M=w(k?.data);function R(e,t=!1){const n=decodeURIComponent(document.cookie.split(";").find((e=>e.trim().startsWith("OptanonConsent="))));return t||n.includes(`${e}:1`)}w(A?.data),w(C?.data);const{PERFORMANCE_COOKIE:I=!1,FUNCTIONAL_COOKIE:O=!1,TARGETING_COOKIE:j=!1,SOCIAL_COOKIE:P=!1}=x;function H(){return R(I)}function B(){return R(j)}function D(){return R(P)}function W(e,t=200){let n;return(...a)=>{clearTimeout(n),n=setTimeout((()=>{e.apply(this,a)}),t)}}const U=async e=>{try{const t=await fetch(e);return t.ok?await t.json():null}catch(e){console.error("getJsonFromUrl:",{error:e})}return null},z=e=>e.replace(/[\[\]\\'"]+/g,"").split(",").map((e=>e.trim())).filter((e=>e));let F=0;const G=(e="id")=>(F+=1,`${e}-${F}`),V=e=>{const t="h1, h2, h3, h4, h5, h6";[...e.querySelectorAll(t)].forEach((e=>{const n=e.nextElementSibling?.matches(t);if(n&&Number(e.tagName[1])>Number(e.nextElementSibling.tagName[1])){const t=l("span",{classes:["pretitle"]});t.append(...e.childNodes),e.replaceWith(t)}}))};function K(e){return e.map((e=>e.querySelector("img").getAttribute("src").split("?")[0]))}function Y(e,t,n,a){const s=document.createElement("picture");let i="",o="";function r(e,t,n){const a=`${e}?format=${n}&optimize=medium`;return`${a}&width=${t} 1x, ${a}&width=${2*t} 2x`}e.forEach((e=>{const t=e.src.split(".").pop();e.breakpoints.forEach((n=>{if(!n.media)return;const a=r(e.src,n.width,"webp"),i=r(e.src,n.width,t),o=l("source",{props:{type:"image/webp",srcset:a,media:n.media}}),c=l("source",{props:{type:`image/${t}`,srcset:i,media:n.media}});s.insertBefore(c,s.firstChild),s.insertBefore(o,c)}));const n=e.breakpoints.find((e=>!e.media));n&&!o&&(i=n.width,o=`${e.src}?width=${i}&format=${t}&optimize=medium`)}));const c=l("img",{classes:a,props:{src:o,alt:n,loading:t?"eager":"lazy",width:i}});return s.appendChild(c),s}const Z=(e,t)=>{let n=e;return"object"==typeof n&&null!==n||(n={}),Object.keys(t).forEach((e=>{const a=t[e],s=n[e],i="[object Object]"===Object.prototype.toString.call(a),o="[object Object]"===Object.prototype.toString.call(s);i&&o?(n[e]=n[e]||{},Z(n[e],a)):n[e]=a})),n},X=e=>(Array.from(e.attributes).forEach((t=>{e.removeAttribute(t.name)})),e);function J(e=[]){return Array.isArray(e)&&0!==e.length?e.map((e=>Object.values(e)[0])):[]}function Q(e,t){if(!e||!t)return"";const n=[...t].filter((t=>e.includes(t.content))).map((e=>e.content));return n&&n?.length>0?n.join(", "):""}async function ee(e){const t=document.head.querySelectorAll('meta[property="article:tag"]')||[],n=await U("/magazine/articles/tags.json");return Q(n&&n[e]&&J(n[e].data),t)}a()}catch(te){a(te)}}),1)},7658:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.d(t,{P2:()=>A,cB:()=>N,gp:()=>_});var s=n(3927),i=n(5545),o=n(2246),r=n(9249),c=e([i,o,r]);[i,o,r]=c.then?(await c)():c;const l="true"===(0,s.yb)("disable-header").toLowerCase(),d="true"===(0,s.yb)("disable-footer").toLowerCase();function u(e,t){e.classList.add("background"),e.style.backgroundImage=`url('${t}')`}function p(e){e.querySelectorAll(":scope > div").forEach((e=>{const t=[];let n=!1;[...e.children].forEach((e=>{if("DIV"===e.tagName||!n){const a=document.createElement("div");t.push(a),n="DIV"!==e.tagName,n&&a.classList.add("default-content-wrapper")}t[t.length-1].append(e)})),t.forEach((t=>e.append(t))),e.classList.add("section"),e.dataset.sectionStatus="initialized",e.style.display="none";const a=e.querySelector("div.section-metadata");if(a){const t=(0,s.cB)(a);Object.keys(t).forEach((n=>{"style"===n&&t.style.split(",").map((e=>(0,s.L4)(e.trim()))).forEach((t=>e.classList.add(t))),"background"===n?a.querySelector("picture")&&u(e,t[n]):e.dataset[(0,s.Cb)(n)]=t[n]})),a.parentNode.remove()}}))}const m=e=>{const t=e.parentNode;for(;e.firstChild;)t.insertBefore(e.firstChild,e);e.remove()},h=(e,t)=>{const n=e.tagName,a=t.tagName;if(1===t.childNodes.length){if("STRONG"===n&&"P"===a)return"button button--primary";if("STRONG"===n&&"LI"===a)return"button arrowed";if("EM"===n&&"P"===a)return"button button--secondary"}return"STRONG"!==n&&"EM"!==n||"STRONG"!==a&&"EM"!==a?"":"button button--red"},v=e=>{1===e.childNodes.length&&["P","DIV","LI"].includes(e.tagName)&&e.classList.add("button-container")},f=e=>{const t=e.parentElement,n=t.parentElement,a=n.parentElement;if("redesign-v2"===(0,s.yb)("style")){["STRONG","EM"].includes(t.tagName)&&m(t),["STRONG","EM"].includes(n.tagName)&&m(n);const s=h(t,n);s&&(e.className=`${s}`),v(t),v(n),v(a)}else{if("P"!==t.tagName&&"DIV"!==t.tagName||(e.className="button button--primary",t.className="button-container"),"STRONG"===t.tagName&&1===n.childNodes.length&&"P"===n.tagName&&(e.className="button button--primary",n.className="button-container"),"EM"===t.tagName&&1===n.childNodes.length&&"P"===n.tagName&&(e.className="button button--secondary",n.className="button-container"),"STRONG"===t.tagName&&1===n.childNodes.length&&"LI"===n.tagName){const t=(0,i.n)("span",{classes:["fa","fa-arrow-right"]});e.className="button arrowed",n.parentElement.className="button-container",e.appendChild(t)}if("LI"===t.tagName&&1===n.children.length&&e.children.length>0&&"STRONG"===e.firstElementChild.tagName){const t=(0,i.n)("span",{classes:["fa","fa-arrow-right"]});e.className="button arrowed",n.className="button-container",e.appendChild(t)}}},y=e=>(e.title=e.title||e.textContent,e.href!==e.textContent&&!e.querySelector("img")&&1===e.parentElement.childNodes.length),g=e=>{e.querySelectorAll("a").forEach((e=>{y(e)&&f(e)}))},b=[];function _(e){[...e.querySelectorAll("picture ~ a")].forEach((e=>{let t=e.previousElementSibling;"br"===t.tagName.toLowerCase()&&(t=t.previousElementSibling),"picture"===t.tagName.toLowerCase()&&(e.innerHTML="",e.appendChild(t),e.setAttribute("target","_blank"),e.classList.add("image-link"))}))}function w(e){if("redesign-v2"===(0,s.yb)("style"))return;const t=e.querySelector("h1"),n=e.querySelector("picture");if(!e.querySelector(".hero, .v2-hero")&&t&&n&&t.compareDocumentPosition(n)&Node.DOCUMENT_POSITION_PRECEDING){const a=document.createElement("div");a.append((0,s.KG)("hero",{elems:[n,t]})),a.querySelector(".hero").classList.add("auto-block"),e.prepend(a)}}function $(e,t){const n=t.querySelector('meta[name="sub-navigation"]');if(n&&n.content.startsWith("/")){const t=(0,s.KG)("sub-nav",[]);e.previousElementSibling.prepend(t),(0,s.fg)(t)}}window.hlx.RUM_GENERATION="project-1",window.mack=window.mack||{},window.mack.newsData=window.mack.newsData||{news:[],offset:0,allLoaded:!1};const L=(e,t)=>{const n=t.querySelector('meta[name="v2-sub-navigation"]');if(n&&n.content.startsWith("/")){const t=(0,s.KG)("v2-sub-navigation",[]),n=(0,i.n)("div");n.append(t),(0,s.fg)(n),e.prepend(n)}};function S(e,t){try{w(e),t&&($(e,t),L(e,t))}catch(e){console.error("Auto Blocking failed",e)}}function E(e){const t=["light-gray-background","primary-gray-background","gray-background","graphite-background","black-background","background-with-dots","no-gap","no-vertical-padding"];e.querySelectorAll(":scope > .section").forEach((e=>{(0,i.qy)(e.classList,t,"section");const n=e.dataset.backgroundImage;if(n){const t=(0,s.gD)(n,"",!1);e.prepend(t),e.classList.add("section--with-background")}}))}const q=e=>{const t=[],n=[];return[...e.querySelectorAll(":scope > div")].forEach((e=>{const t=e.dataset.inpage;if(t){const a=n.filter((e=>e.title===t))?.length||0,s=parseFloat(e.dataset.inpageOrder),o=a>0?(0,i.Yv)(`${e.dataset.inpage}-${a}`):(0,i.Yv)(e.dataset.inpage),r={title:t,id:o};s&&(r.order=s),n.push(r),e.dataset.inpageid=o}})),n.slice().sort(((e,t)=>(e.order??1/0)-(t.order??1/0))).forEach((e=>{const n=(0,i.n)("div"),a=(0,i.n)("button",{props:{"data-id":e.id,title:e.title}});a.textContent=e.title,n.append(a),t.push(a)})),t};function k(e,t){const n=q(e);if(n.length>0){const a=(0,i.n)("div");Object.assign(a.style,{height:"48px",overflow:"hidden"}),a.append((0,s.KG)(t,{elems:n})),e.insertBefore(a,e.children[1]),(0,s.fg)(a.querySelector(`.${t}`))}}function A(e,t){if(t){const n=t.querySelector('[name="style"]')?.content;n&&n.split(",").map((e=>(0,s.L4)(e.trim()))).forEach((t=>e.classList.add(t)))}g(e),(0,i.sT)(e),S(e,t),p(e),(0,s.iK)(e),E(e),[...e.querySelectorAll("a")].filter((({href:e})=>!!e)).forEach((e=>{if((0,o.uW)(e))return void(0,o.md)(e);if(e.getAttribute("href").startsWith("/#id-modal"))return void e.addEventListener("click",(t=>{t.preventDefault();const n=e.getAttribute("href").split("#")[1],a=new CustomEvent("open-modal",{detail:{modalId:n}});document.dispatchEvent(a,{bubbles:!0})}));const t=new URL(e.href),n=!t.host.match("macktrucks")&&!t.host.match(".hlx.(page|live)")&&!t.host.match("localhost");(t.host.match("build.macktrucks")||t.pathname.endsWith(".pdf")||n)&&(e.target="_blank")})),R(e,"v2-truck-lineup"),k(e,"v2-inpage-navigation")}async function C(e){(0,s.O3)();const t=e.querySelector("main"),{head:n}=e;if(t){A(t,n),document.body.classList.add("appear");const a=(0,s.yb)("locale")||"en";document.documentElement.lang=a;const o=(0,s.yb)("template");o&&await(0,i.PM)(e,o),await(0,s.W1)(b)}else document.documentElement.lang="en";await(0,i.lk)()}async function x(e){const t=e.querySelector("main");await(0,s.tB)(t);const{hash:n}=window.location,a=!!n&&e.getElementById(n.substring(1));n&&a&&a.scrollIntoView();const o=e.querySelector("header"),r=o.querySelector(".block.sub-nav");l||(0,s.Y7)(o),d||(0,s.iB)(e.querySelector("footer")),r&&((0,s.ez)(r),o.appendChild(r)),(0,i.sh)(`${window.hlx.codeBasePath}/styles/favicon.svg`),(0,s.dC)("lazy"),s.dC.observe(t.querySelectorAll("div[data-block-name]")),s.dC.observe(t.querySelectorAll("picture > img"))}async function T(){await C(document),await x(document),(0,i.rz)()}function N(e,t,n=!1){return n?[...e].filter((e=>!e.querySelector(t))):[...e].filter((e=>e.querySelector(t)))}function M(e,t){const n=(0,i.n)("div",{classes:"section"});n.dataset.sectionStatus="initialized";const a=(0,i.n)("div");n.append(a);const o=(0,s.KG)(t,[e]);return a.append(o),n}function R(e,t){const n=[];let a;const o=[...e.querySelectorAll(":scope > div")];if(o.forEach(((e,s)=>{if(!e.dataset.truckCarousel)return;a=o[s+1];const r=e.dataset.truckCarousel,c=(0,i.n)("div",{classes:`${t}__content`});c.dataset.truckCarousel=r,e.dataset.truckCarouselIcon&&(c.dataset.truckCarouselIcon=e.dataset.truckCarouselIcon),c.innerHTML=e.innerHTML;const l=c.querySelector("p > picture");c.prepend(l),n.push(c),e.remove()})),n.length>0){const o=M(n,t);a?e.insertBefore(o,a):e.append(o),(0,i.sT)(o),(0,s.fg)(o.querySelector(`.${t}`))}}T(),new Map,[...document.querySelectorAll("a"),...document.querySelectorAll("button")].forEach((e=>{const t=e.innerText;if("["!==t[0])return;const n=t.match(/^\[(.*?)\]/),a=n&&n[1],s=a?.split(",");s?.forEach((t=>{t.trimStart(),"new-tab"===t&&(e.setAttribute("target","_blank"),e.setAttribute("rel","noopener noreferrer"))}));const i=t.indexOf("]"),o=t.slice(i+1);e.title=o,e.innerText=o}));const I=(e,t="main")=>{document.querySelector(t).classList.contains(e)&&(document.documentElement.classList.add(e),document.querySelector(t).classList.remove(e))};if(I("redesign-v2"),I("truck-configurator"),document.documentElement.classList.contains("truck-configurator")){const O=(0,s.yb)("allowed-countries"),j=(0,s.yb)("redirect-url");O&&j&&(0,r.P4)(O,j);const P=(0,i.n)("div",{props:{id:"configurator"}}),H=document.querySelector("main");H.innerHTML="",H.append(P);const B=(0,i.Xk)(i.xH.JS),D=(0,i.Xk)(i.xH.CSS);B.forEach((e=>{(0,s.k0)(e,{type:"text/javascript",charset:"UTF-8",defer:"defer"})})),D.forEach((e=>{(0,s.y6)(e)})),window.addEventListener("reactRouterChange",(e=>{const t=e.detail;console.info("[truck-configurator]: React Router location changed:",t),t.pathname&&"/"!==t.pathname&&l&&document.documentElement.classList.add("truck-configurator--detail-page"),!t.pathname||"/"!==t.pathname&&""!==t.pathname||document.documentElement.classList.remove("truck-configurator--detail-page")}))}if((0,s.yb)("truck-configurator-page")){const W=(0,s.yb)("truck-configurator-page").toLowerCase(),U=window.location.hash;l&&document.documentElement.classList.add("truck-configurator--detail-page"),U.startsWith(`#/${W}`)||(document.location.hash=`#/${W}`)}[...document.querySelectorAll("em")].forEach((e=>{const t=e.textContent.length,{nextSibling:n}=e;1===t&&n.nodeType===Node.TEXT_NODE&&n.nodeValue.startsWith(" ")&&(n.nodeValue=n.nodeValue.slice(1))})),a()}catch(z){a(z)}}))},9249:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.d(t,{P4:()=>u});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const{GOOGLE_API_KEY:o}=s.Qn,r="en",c=e=>e.split(",").map((e=>e.trim())),l=async(e,t)=>{const n=`https://maps.googleapis.com/maps/api/geocode/json?latlng=${e},${t}&language=${r}&key=${o}`,a=await(0,s.UY)(n),i=a?.plus_code.compound_code;return i},d=(e,t,n)=>{if(!e.includes(t)){console.error("Truck configurator not avaliable for:",t);const e=window.location.origin+n;window.location.replace(e)}},u=async(e,t)=>{const n=c(e);navigator.geolocation.getCurrentPosition((async e=>{const{latitude:a,longitude:s}=e.coords,i=await l(a,s);if(!i)return;const o=c(i).reverse()[0];o&&d(n,o,t)}),(e=>{console.error("Error:",e)}))};a()}catch(e){a(e)}}))},2246:(e,t,n)=>{"use strict";n.a(e,(async(e,a)=>{try{n.d(t,{AR:()=>y,Hj:()=>x,Ty:()=>h,X5:()=>p,Ys:()=>v,bO:()=>T,ci:()=>o,g5:()=>k,hw:()=>_,md:()=>b,uW:()=>f});var s=n(5545),i=e([s]);s=(i.then?(await i)():i)[0];const o={aemCloudDomain:".adobeaemcloud.com",videoURLRegex:/\/assets\/urn:aaid:aem:[\w-]+\/play/,videoIdRegex:/urn:aaid:aem:[0-9a-fA-F-]+/},{aemCloudDomain:r,videoURLRegex:c}=o,l={aem:"aem",youtube:"youtube",local:"local",both:"both"},d={autoplay:!1,muted:!1,controls:!0,disablePictureInPicture:!1,currentTime:0,playsinline:!0},u={},p=(e,t={})=>{u[e]||(u[e]=(0,s.$N)({},d)),(0,s.$N)(u[e],t)},m=e=>u[e];function h(e){return e.split("?")[0].endsWith(".mp4")}function v(e){return c.test(e)}function f(e){const t=e.getAttribute("href");return(t.includes("youtube.com/embed/")||c.test(t)||h(t))&&null===e.closest(".block.embed")}function y(e,t,n=l.both){const a=Array.isArray(e)?e:[...e],i=(0,s.OB)(),o=n===l.both,r=i&&"local"!==t||!o&&n===l.youtube,d=e=>a.find((t=>e(t.getAttribute("href")))),u=d((e=>c.test(e))),p=d((e=>e.includes("youtube.com/embed/"))),m=d((e=>e.split("?")[0].endsWith(".mp4")));return u||(r&&p?p:m)}function g(){const e=(0,s.ce)("Low resolution video message"),t=(0,s.ce)("Change cookie settings"),n=(0,s.n)("div",{classes:"low-resolution-banner"});return n.innerHTML=`${e} <button class="low-resolution-banner-cookie-settings">${t}</button>`,n.querySelector("button").addEventListener("click",(()=>{window.OneTrust.ToggleInfoDisplay()})),n}function b(e){e.classList.add("text-link-with-video"),e.addEventListener("click",(t=>{var a;t.preventDefault(),a=e.getAttribute("href"),Promise.resolve().then(n.bind(n,5541)).then((e=>{let t={};h(a)&&(t=g()),e.showModal(a,t)}))}))}function _(e,{parentEl:t,classes:n=[]}){const a=(0,s.n)("iframe",{classes:Array.isArray(n)?n:[n],props:{frameborder:"0",allowfullscreen:!0,src:e}});return t&&t.appendChild(a),a}const w=(e,t,n)=>{const a=(0,s.n)("video",{classes:t}),i=(0,s.n)("source",{props:{src:e,type:"video/mp4"}});return a.appendChild(i),!0===n.muted&&(a.muted=n.muted),!0===n.autoplay?a.autoplay=n.autoplay:a.removeAttribute("autoplay"),n&&Object.keys(n).forEach((e=>{a.setAttribute(e,n[e])})),a},$=(e,t,n,a)=>(p(a,n),(0,s.n)("iframe",{classes:t,props:{...n,allow:"autoplay; fullscreen",allowfullscreen:!0,src:e}})),L=()=>{const e=(0,s.n)("button",{props:{type:"button",class:"v2-video__playback-button"}}),t=(0,s.n)("span",{classes:["icon","icon-pause-video"]}),n=(0,s.n)("span",{classes:["icon","icon-play-video"]});return e.append(t,n),e},S=(e,t,n,a)=>{t.style.display=e?"flex":"none",n.style.display=e?"none":"flex",a.setAttribute("aria-label",(0,s.ce)(e?"Play video":"Pause video"))},E=(e,t,n)=>{const a=t.querySelector(".icon-play-video"),s=t.querySelector(".icon-pause-video");!1===n.autoplay&&S(!0,a,s,t),t.addEventListener("click",(()=>{e[e.paused?"play":"pause"]()})),e.addEventListener("playing",(()=>S(!1,a,s,t))),e.addEventListener("pause",(()=>S(!0,a,s,t))),!0===n.autoplay?e.addEventListener("loadedmetadata",(()=>{setTimeout((()=>{e.paused&&(console.warn("Failed to autoplay video, fallback code executed"),e.play())}),500)}),{once:!0}):e.removeAttribute("autoplay")},q=(e,t,n,a)=>{const s=w(e,t,n),i=L();return a&&(a.prepend(s),a.insertBefore(i,s.nextSibling)),E(s,i,n),s},k=(e,t,n="",a={},s=!0,i="")=>s?q(t,n,a,e):$(t,n,a,i),A=(e,t,n,a="video")=>{console.info(`[${a}] ${e} for ${t} at ${n}`)},C=e=>`${e.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit",second:"2-digit"})}.${e.getMilliseconds().toString().padStart(3,"0")}`,x=(e,t,n="video")=>{if(e.origin.endsWith(r)&&"embedded-video-player-event"===e.data.type){const a=C(new Date);A(e.data.name,e.data.videoId,a,n),"video-config"===e.data.name&&e.data.videoId===t&&(console.info("Sending video config:",m(t),a),e.source.postMessage(JSON.stringify(m(t)),"*"))}};class T{constructor(){this.registrations=[],window.addEventListener("message",this.handleMessage.bind(this))}register(e,t,n){this.registrations.push({videoId:e,blockName:t,callback:n})}unregister(e,t){this.registrations=this.registrations.filter((n=>n.videoId!==e||n.blockName!==t))}handleMessage(e){this.registrations.forEach((({videoId:t,blockName:n,callback:a})=>{"embedded-video-player-event"===e.data.type&&e.data.videoId===t&&a(e,t,n)}))}}a()}catch(N){a(N)}}))},9091:(e,t,n)=>{var a={"./body-builder-news/body-builder-news.js":[2058,58],"./mack-news/mack-news.js":[8362,362],"./magazine/magazine.js":[9620,620]};function s(e){if(!n.o(a,e))return Promise.resolve().then((()=>{var t=new Error("Cannot find module '"+e+"'");throw t.code="MODULE_NOT_FOUND",t}));var t=a[e],s=t[0];return n.e(t[1]).then((()=>n(s)))}s.keys=()=>Object.keys(a),s.id=9091,e.exports=s}},r={};function c(e){var t=r[e];if(void 0!==t)return t.exports;var n=r[e]={exports:{}};return o[e](n,n.exports,c),n.exports}c.m=o,e="function"==typeof Symbol?Symbol("webpack queues"):"__webpack_queues__",t="function"==typeof Symbol?Symbol("webpack exports"):"__webpack_exports__",n="function"==typeof Symbol?Symbol("webpack error"):"__webpack_error__",a=e=>{e&&e.d<1&&(e.d=1,e.forEach((e=>e.r--)),e.forEach((e=>e.r--?e.r++:e())))},c.a=(s,i,o)=>{var r;o&&((r=[]).d=-1);var c,l,d,u=new Set,p=s.exports,m=new Promise(((e,t)=>{d=t,l=e}));m[t]=p,m[e]=e=>(r&&e(r),u.forEach(e),m.catch((e=>{}))),s.exports=m,i((s=>{var i;c=(s=>s.map((s=>{if(null!==s&&"object"==typeof s){if(s[e])return s;if(s.then){var i=[];i.d=0,s.then((e=>{o[t]=e,a(i)}),(e=>{o[n]=e,a(i)}));var o={};return o[e]=e=>e(i),o}}var r={};return r[e]=e=>{},r[t]=s,r})))(s);var o=()=>c.map((e=>{if(e[n])throw e[n];return e[t]})),l=new Promise((t=>{(i=()=>t(o)).r=0;var n=e=>e!==r&&!u.has(e)&&(u.add(e),e&&!e.d&&(i.r++,e.push(i)));c.map((t=>t[e](n)))}));return i.r?l:o()}),(e=>(e?d(m[n]=e):l(p),a(r)))),r&&r.d<0&&(r.d=0)},c.d=(e,t)=>{for(var n in t)c.o(t,n)&&!c.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},c.f={},c.e=e=>Promise.all(Object.keys(c.f).reduce(((t,n)=>(c.f[n](e,t),t)),[])),c.u=e=>e+".js",c.miniCssF=e=>{},c.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),s={},i="@adobe/helix-project-boilerplate:",c.l=(e,t,n,a)=>{if(s[e])s[e].push(t);else{var o,r;if(void 0!==n)for(var l=document.getElementsByTagName("script"),d=0;d<l.length;d++){var u=l[d];if(u.getAttribute("src")==e||u.getAttribute("data-webpack")==i+n){o=u;break}}o||(r=!0,(o=document.createElement("script")).charset="utf-8",o.timeout=120,c.nc&&o.setAttribute("nonce",c.nc),o.setAttribute("data-webpack",i+n),o.src=e),s[e]=[t];var p=(t,n)=>{o.onerror=o.onload=null,clearTimeout(m);var a=s[e];if(delete s[e],o.parentNode&&o.parentNode.removeChild(o),a&&a.forEach((e=>e(n))),t)return t(n)},m=setTimeout(p.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=p.bind(null,o.onerror),o.onload=p.bind(null,o.onload),r&&document.head.appendChild(o)}},c.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},c.p="/dist/",(()=>{var e={792:0};c.f.j=(t,n)=>{var a=c.o(e,t)?e[t]:void 0;if(0!==a)if(a)n.push(a[2]);else{var s=new Promise(((n,s)=>a=e[t]=[n,s]));n.push(a[2]=s);var i=c.p+c.u(t),o=new Error;c.l(i,(n=>{if(c.o(e,t)&&(0!==(a=e[t])&&(e[t]=void 0),a)){var s=n&&("load"===n.type?"missing":n.type),i=n&&n.target&&n.target.src;o.message="Loading chunk "+t+" failed.\n("+s+": "+i+")",o.name="ChunkLoadError",o.type=s,o.request=i,a[1](o)}}),"chunk-"+t,t)}};var t=(t,n)=>{var a,s,[i,o,r]=n,l=0;if(i.some((t=>0!==e[t]))){for(a in o)c.o(o,a)&&(c.m[a]=o[a]);r&&r(c)}for(t&&t(n);l<i.length;l++)s=i[l],c.o(e,s)&&e[s]&&e[s][0](),e[s]=0},n=self.webpackChunk_adobe_helix_project_boilerplate=self.webpackChunk_adobe_helix_project_boilerplate||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),c(7658)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./scripts/aem.js":
+/*!************************!*\
+  !*** ./scripts/aem.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   buildBlock: () => (/* binding */ buildBlock),
+/* harmony export */   createOptimizedPicture: () => (/* binding */ createOptimizedPicture),
+/* harmony export */   decorateBlock: () => (/* binding */ decorateBlock),
+/* harmony export */   decorateBlocks: () => (/* binding */ decorateBlocks),
+/* harmony export */   decorateButtons: () => (/* binding */ decorateButtons),
+/* harmony export */   decorateIcons: () => (/* binding */ decorateIcons),
+/* harmony export */   decorateSections: () => (/* binding */ decorateSections),
+/* harmony export */   decorateTemplateAndTheme: () => (/* binding */ decorateTemplateAndTheme),
+/* harmony export */   fetchPlaceholders: () => (/* binding */ fetchPlaceholders),
+/* harmony export */   getMetadata: () => (/* binding */ getMetadata),
+/* harmony export */   loadBlock: () => (/* binding */ loadBlock),
+/* harmony export */   loadBlocks: () => (/* binding */ loadBlocks),
+/* harmony export */   loadCSS: () => (/* binding */ loadCSS),
+/* harmony export */   loadFooter: () => (/* binding */ loadFooter),
+/* harmony export */   loadHeader: () => (/* binding */ loadHeader),
+/* harmony export */   loadScript: () => (/* binding */ loadScript),
+/* harmony export */   readBlockConfig: () => (/* binding */ readBlockConfig),
+/* harmony export */   sampleRUM: () => (/* binding */ sampleRUM),
+/* harmony export */   setup: () => (/* binding */ setup),
+/* harmony export */   toCamelCase: () => (/* binding */ toCamelCase),
+/* harmony export */   toClassName: () => (/* binding */ toClassName),
+/* harmony export */   updateSectionsStatus: () => (/* binding */ updateSectionsStatus),
+/* harmony export */   waitForLCP: () => (/* binding */ waitForLCP),
+/* harmony export */   wrapTextNodes: () => (/* binding */ wrapTextNodes)
+/* harmony export */ });
+/*
+ * Copyright 2024 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+/* eslint-env browser */
+
+/**
+ * log RUM if part of the sample.
+ * @param {string} checkpoint identifies the checkpoint in funnel
+ * @param {Object} data additional data for RUM sample
+ * @param {string} data.source DOM node that is the source of a checkpoint event,
+ * identified by #id or .classname
+ * @param {string} data.target subject of the checkpoint event,
+ * for instance the href of a link, or a search term
+ */
+function sampleRUM(checkpoint, data = {}) {
+  const SESSION_STORAGE_KEY = 'aem-rum';
+  sampleRUM.baseURL = sampleRUM.baseURL
+    || new URL(window.RUM_BASE == null ? 'https://rum.hlx.page' : window.RUM_BASE, window.location);
+  sampleRUM.defer = sampleRUM.defer || [];
+  const defer = (fnname) => {
+    sampleRUM[fnname] = sampleRUM[fnname] || ((...args) => sampleRUM.defer.push({ fnname, args }));
+  };
+  sampleRUM.drain = sampleRUM.drain
+    || ((dfnname, fn) => {
+      sampleRUM[dfnname] = fn;
+      sampleRUM.defer
+        .filter(({ fnname }) => dfnname === fnname)
+        .forEach(({ fnname, args }) => sampleRUM[fnname](...args));
+    });
+  sampleRUM.always = sampleRUM.always || [];
+  sampleRUM.always.on = (chkpnt, fn) => {
+    sampleRUM.always[chkpnt] = fn;
+  };
+  sampleRUM.on = (chkpnt, fn) => {
+    sampleRUM.cases[chkpnt] = fn;
+  };
+  defer('observe');
+  defer('cwv');
+  try {
+    window.hlx = window.hlx || {};
+    if (!window.hlx.rum) {
+      const usp = new URLSearchParams(window.location.search);
+      const weight = usp.get('rum') === 'on' ? 1 : 100; // with parameter, weight is 1. Defaults to 100.
+      const id = Array.from({ length: 75 }, (_, i) => String.fromCharCode(48 + i))
+        .filter((a) => /\d|[A-Z]/i.test(a))
+        .filter(() => Math.random() * 75 > 70)
+        .join('');
+      const random = Math.random();
+      const isSelected = random * weight < 1;
+      const firstReadTime = window.performance ? window.performance.timeOrigin : Date.now();
+      const urlSanitizers = {
+        full: () => window.location.href,
+        origin: () => window.location.origin,
+        path: () => window.location.href.replace(/\?.*$/, ''),
+      };
+      // eslint-disable-next-line max-len
+      const rumSessionStorage = sessionStorage.getItem(SESSION_STORAGE_KEY)
+        ? JSON.parse(sessionStorage.getItem(SESSION_STORAGE_KEY))
+        : {};
+      // eslint-disable-next-line max-len
+      rumSessionStorage.pages = (rumSessionStorage.pages ? rumSessionStorage.pages : 0)
+        + 1
+        /* noise */ + (Math.floor(Math.random() * 20) - 10);
+      sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(rumSessionStorage));
+      // eslint-disable-next-line object-curly-newline, max-len
+      window.hlx.rum = {
+        weight,
+        id,
+        random,
+        isSelected,
+        firstReadTime,
+        sampleRUM,
+        sanitizeURL: urlSanitizers[window.hlx.RUM_MASK_URL || 'path'],
+        rumSessionStorage,
+      };
+    }
+
+    const { weight, id, firstReadTime } = window.hlx.rum;
+    if (window.hlx && window.hlx.rum && window.hlx.rum.isSelected) {
+      const knownProperties = [
+        'weight',
+        'id',
+        'referer',
+        'checkpoint',
+        't',
+        'source',
+        'target',
+        'cwv',
+        'CLS',
+        'FID',
+        'LCP',
+        'INP',
+        'TTFB',
+      ];
+      const sendPing = (pdata = data) => {
+        // eslint-disable-next-line max-len
+        const t = Math.round(
+          window.performance ? window.performance.now() : Date.now() - firstReadTime,
+        );
+        // eslint-disable-next-line object-curly-newline, max-len, no-use-before-define
+        const body = JSON.stringify(
+          {
+            weight, id, referer: window.hlx.rum.sanitizeURL(), checkpoint, t, ...data,
+          },
+          knownProperties,
+        );
+        const url = new URL(`.rum/${weight}`, sampleRUM.baseURL).href;
+        navigator.sendBeacon(url, body);
+        // eslint-disable-next-line no-console
+        console.debug(`ping:${checkpoint}`, pdata);
+      };
+      sampleRUM.cases = sampleRUM.cases || {
+        load: () => sampleRUM('pagesviewed', { source: window.hlx.rum.rumSessionStorage.pages }) || true,
+        cwv: () => sampleRUM.cwv(data) || true,
+        lazy: () => {
+          // use classic script to avoid CORS issues
+          const script = document.createElement('script');
+          script.src = new URL(
+            '.rum/@adobe/helix-rum-enhancer@^1/src/index.js',
+            sampleRUM.baseURL,
+          ).href;
+          document.head.appendChild(script);
+          return true;
+        },
+      };
+      sendPing(data);
+      if (sampleRUM.cases[checkpoint]) {
+        sampleRUM.cases[checkpoint]();
+      }
+    }
+    if (sampleRUM.always[checkpoint]) {
+      sampleRUM.always[checkpoint](data);
+    }
+  } catch (error) {
+    // something went wrong
+  }
+}
+
+/**
+ * Setup block utils.
+ */
+function setup() {
+  window.hlx = window.hlx || {};
+  window.hlx.RUM_MASK_URL = 'full';
+  window.hlx.codeBasePath = '';
+  window.hlx.lighthouse = new URLSearchParams(window.location.search).get('lighthouse') === 'on';
+
+  const scriptEl = document.querySelector('script[src$="/scripts/scripts.js"]');
+  if (scriptEl) {
+    try {
+      [window.hlx.codeBasePath] = new URL(scriptEl.src).pathname.split('/scripts/scripts.js');
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    }
+  }
+}
+
+/**
+ * Auto initializiation.
+ */
+
+function init() {
+  setup();
+  sampleRUM('top');
+
+  window.addEventListener('load', () => sampleRUM('load'));
+
+  ['error', 'unhandledrejection'].forEach((event) => {
+    window.addEventListener(event, ({ reason, error }) => {
+      const source = (reason || error).stack
+        .split('\n')
+        .filter((line) => line.match(/https?:\/\//))
+        .shift()
+        .replace(/at ([^ ]+) \((.+)\)/, '$1@$2');
+      const target = (reason || error).toString();
+      sampleRUM('error', { source, target });
+    });
+  });
+}
+
+/**
+ * Sanitizes a string for use as class name.
+ * @param {string} name The unsanitized string
+ * @returns {string} The class name
+ */
+function toClassName(name) {
+  return typeof name === 'string'
+    ? name
+      .toLowerCase()
+      .replace(/[^0-9a-z]/gi, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '')
+    : '';
+}
+
+/**
+ * Sanitizes a string for use as a js property name.
+ * @param {string} name The unsanitized string
+ * @returns {string} The camelCased name
+ */
+function toCamelCase(name) {
+  return toClassName(name).replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+}
+
+/**
+ * Extracts the config from a block.
+ * @param {Element} block The block element
+ * @returns {object} The block config
+ */
+// eslint-disable-next-line import/prefer-default-export
+function readBlockConfig(block) {
+  const config = {};
+  block.querySelectorAll(':scope > div').forEach((row) => {
+    if (row.children) {
+      const cols = [...row.children];
+      if (cols[1]) {
+        const col = cols[1];
+        const name = toClassName(cols[0].textContent);
+        let value = '';
+        if (col.querySelector('a')) {
+          const as = [...col.querySelectorAll('a')];
+          if (as.length === 1) {
+            value = as[0].href;
+          } else {
+            value = as.map((a) => a.href);
+          }
+        } else if (col.querySelector('img')) {
+          const imgs = [...col.querySelectorAll('img')];
+          if (imgs.length === 1) {
+            value = imgs[0].src;
+          } else {
+            value = imgs.map((img) => img.src);
+          }
+        } else if (col.querySelector('p')) {
+          const ps = [...col.querySelectorAll('p')];
+          if (ps.length === 1) {
+            value = ps[0].textContent;
+          } else {
+            value = ps.map((p) => p.textContent);
+          }
+        } else value = row.children[1].textContent;
+        config[name] = value;
+      }
+    }
+  });
+  return config;
+}
+
+/**
+ * Loads a CSS file.
+ * @param {string} href URL to the CSS file
+ */
+async function loadCSS(href) {
+  return new Promise((resolve, reject) => {
+    if (!document.querySelector(`head > link[href="${href}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.onload = resolve;
+      link.onerror = reject;
+      document.head.append(link);
+    } else {
+      resolve();
+    }
+  });
+}
+
+/**
+ * Loads a non module JS file.
+ * @param {string} src URL to the JS file
+ * @param {Object} attrs additional optional attributes
+ */
+async function loadScript(src, attrs) {
+  return new Promise((resolve, reject) => {
+    if (!document.querySelector(`head > script[src="${src}"]`)) {
+      const script = document.createElement('script');
+      script.src = src;
+      if (attrs) {
+        // eslint-disable-next-line no-restricted-syntax, guard-for-in
+        for (const attr in attrs) {
+          script.setAttribute(attr, attrs[attr]);
+        }
+      }
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.append(script);
+    } else {
+      resolve();
+    }
+  });
+}
+
+/**
+ * Retrieves the content of metadata tags.
+ * @param {string} name The metadata name (or property)
+ * @param {Document} doc Document object to query for metadata. Defaults to the window's document
+ * @returns {string} The metadata value(s)
+ */
+function getMetadata(name, doc = document) {
+  const attr = name && name.includes(':') ? 'property' : 'name';
+  const meta = [...doc.head.querySelectorAll(`meta[${attr}="${name}"]`)]
+    .map((m) => m.content)
+    .join(', ');
+  return meta || '';
+}
+
+/**
+ * Returns a picture element with webp and fallbacks
+ * @param {string} src The image URL
+ * @param {string} [alt] The image alternative text
+ * @param {boolean} [eager] Set loading attribute to eager
+ * @param {Array} [breakpoints] Breakpoints and corresponding params (eg. width)
+ * @returns {Element} The picture element
+ */
+function createOptimizedPicture(
+  src,
+  alt = '',
+  eager = false,
+  breakpoints = [{ media: '(min-width: 600px)', width: '2000' }, { width: '750' }],
+) {
+  const url = new URL(src, window.location.href);
+  const picture = document.createElement('picture');
+  const { pathname } = url;
+  const ext = pathname.substring(pathname.lastIndexOf('.') + 1);
+
+  // webp
+  breakpoints.forEach((br) => {
+    const source = document.createElement('source');
+    if (br.media) source.setAttribute('media', br.media);
+    source.setAttribute('type', 'image/webp');
+    source.setAttribute('srcset', `${pathname}?width=${br.width}&format=webply&optimize=medium`);
+    picture.appendChild(source);
+  });
+
+  // fallback
+  breakpoints.forEach((br, i) => {
+    if (i < breakpoints.length - 1) {
+      const source = document.createElement('source');
+      if (br.media) source.setAttribute('media', br.media);
+      source.setAttribute('srcset', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
+      picture.appendChild(source);
+    } else {
+      const img = document.createElement('img');
+      img.setAttribute('loading', eager ? 'eager' : 'lazy');
+      img.setAttribute('alt', alt);
+      picture.appendChild(img);
+      img.setAttribute('src', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
+    }
+  });
+
+  return picture;
+}
+
+/**
+ * Set template (page structure) and theme (page styles).
+ */
+function decorateTemplateAndTheme() {
+  const addClasses = (element, classes) => {
+    classes.split(',').forEach((c) => {
+      element.classList.add(toClassName(c.trim()));
+    });
+  };
+  const template = getMetadata('template');
+  if (template) addClasses(document.body, template);
+  const theme = getMetadata('theme');
+  if (theme) addClasses(document.body, theme);
+}
+
+/**
+ * Wrap inline text content of block cells within a <p> tag.
+ * @param {Element} block the block element
+ */
+function wrapTextNodes(block) {
+  const validWrappers = [
+    'P',
+    'PRE',
+    'UL',
+    'OL',
+    'PICTURE',
+    'TABLE',
+    'H1',
+    'H2',
+    'H3',
+    'H4',
+    'H5',
+    'H6',
+  ];
+
+  const wrap = (el) => {
+    const wrapper = document.createElement('p');
+    wrapper.append(...el.childNodes);
+    el.append(wrapper);
+  };
+
+  block.querySelectorAll(':scope > div > div').forEach((blockColumn) => {
+    if (blockColumn.hasChildNodes()) {
+      const hasWrapper = !!blockColumn.firstElementChild
+        && validWrappers.some((tagName) => blockColumn.firstElementChild.tagName === tagName);
+      if (!hasWrapper) {
+        wrap(blockColumn);
+      } else if (
+        blockColumn.firstElementChild.tagName === 'PICTURE'
+        && (blockColumn.children.length > 1 || !!blockColumn.textContent.trim())
+      ) {
+        wrap(blockColumn);
+      }
+    }
+  });
+}
+
+/**
+ * Decorates paragraphs containing a single link as buttons.
+ * @param {Element} element container element
+ */
+function decorateButtons(element) {
+  element.querySelectorAll('a').forEach((a) => {
+    a.title = a.title || a.textContent;
+    if (a.href !== a.textContent) {
+      const up = a.parentElement;
+      const twoup = a.parentElement.parentElement;
+      if (!a.querySelector('img')) {
+        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
+          a.className = 'button'; // default
+          up.classList.add('button-container');
+        }
+        if (
+          up.childNodes.length === 1
+          && up.tagName === 'STRONG'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
+        ) {
+          a.className = 'button primary';
+          twoup.classList.add('button-container');
+        }
+        if (
+          up.childNodes.length === 1
+          && up.tagName === 'EM'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
+        ) {
+          a.className = 'button secondary';
+          twoup.classList.add('button-container');
+        }
+      }
+    }
+  });
+}
+
+/**
+ * Add <img> for icon, prefixed with codeBasePath and optional prefix.
+ * @param {Element} [span] span element with icon classes
+ * @param {string} [prefix] prefix to be added to icon src
+ * @param {string} [alt] alt text to be added to icon
+ */
+function decorateIcon(span, prefix = '', alt = '') {
+  const iconName = Array.from(span.classList)
+    .find((c) => c.startsWith('icon-'))
+    .substring(5);
+  const img = document.createElement('img');
+  img.dataset.iconName = iconName;
+  img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
+  img.alt = alt;
+  img.loading = 'lazy';
+  span.append(img);
+}
+
+/**
+ * Add <img> for icons, prefixed with codeBasePath and optional prefix.
+ * @param {Element} [element] Element containing icons
+ * @param {string} [prefix] prefix to be added to icon the src
+ */
+function decorateIcons(element, prefix = '') {
+  const icons = [...element.querySelectorAll('span.icon')];
+  icons.forEach((span) => {
+    decorateIcon(span, prefix);
+  });
+}
+
+/**
+ * Decorates all sections in a container element.
+ * @param {Element} main The container element
+ */
+function decorateSections(main) {
+  main.querySelectorAll(':scope > div').forEach((section) => {
+    const wrappers = [];
+    let defaultContent = false;
+    [...section.children].forEach((e) => {
+      if (e.tagName === 'DIV' || !defaultContent) {
+        const wrapper = document.createElement('div');
+        wrappers.push(wrapper);
+        defaultContent = e.tagName !== 'DIV';
+        if (defaultContent) wrapper.classList.add('default-content-wrapper');
+      }
+      wrappers[wrappers.length - 1].append(e);
+    });
+    wrappers.forEach((wrapper) => section.append(wrapper));
+    section.classList.add('section');
+    section.dataset.sectionStatus = 'initialized';
+    section.style.display = 'none';
+
+    // Process section metadata
+    const sectionMeta = section.querySelector('div.section-metadata');
+    if (sectionMeta) {
+      const meta = readBlockConfig(sectionMeta);
+      Object.keys(meta).forEach((key) => {
+        if (key === 'style') {
+          const styles = meta.style
+            .split(',')
+            .filter((style) => style)
+            .map((style) => toClassName(style.trim()));
+          styles.forEach((style) => section.classList.add(style));
+        } else {
+          section.dataset[toCamelCase(key)] = meta[key];
+        }
+      });
+      sectionMeta.parentNode.remove();
+    }
+  });
+}
+
+/**
+ * Gets placeholders object.
+ * @param {string} [prefix] Location of placeholders
+ * @returns {object} Window placeholders object
+ */
+// eslint-disable-next-line import/prefer-default-export
+async function fetchPlaceholders(prefix = 'default') {
+  window.placeholders = window.placeholders || {};
+  if (!window.placeholders[prefix]) {
+    window.placeholders[prefix] = new Promise((resolve) => {
+      fetch(`${prefix === 'default' ? '' : prefix}/placeholders.json`)
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          }
+          return {};
+        })
+        .then((json) => {
+          const placeholders = {};
+          json.data
+            .filter((placeholder) => placeholder.Key)
+            .forEach((placeholder) => {
+              placeholders[toCamelCase(placeholder.Key)] = placeholder.Text;
+            });
+          window.placeholders[prefix] = placeholders;
+          resolve(window.placeholders[prefix]);
+        })
+        .catch(() => {
+          // error loading placeholders
+          window.placeholders[prefix] = {};
+          resolve(window.placeholders[prefix]);
+        });
+    });
+  }
+  return window.placeholders[`${prefix}`];
+}
+
+/**
+ * Updates all section status in a container element.
+ * @param {Element} main The container element
+ */
+function updateSectionsStatus(main) {
+  const sections = [...main.querySelectorAll(':scope > div.section')];
+  for (let i = 0; i < sections.length; i += 1) {
+    const section = sections[i];
+    const status = section.dataset.sectionStatus;
+    if (status !== 'loaded') {
+      const loadingBlock = section.querySelector(
+        '.block[data-block-status="initialized"], .block[data-block-status="loading"]',
+      );
+      if (loadingBlock) {
+        section.dataset.sectionStatus = 'loading';
+        break;
+      } else {
+        section.dataset.sectionStatus = 'loaded';
+        section.style.display = null;
+      }
+    }
+  }
+}
+
+/**
+ * Builds a block DOM Element from a two dimensional array, string, or object
+ * @param {string} blockName name of the block
+ * @param {*} content two dimensional array or string or object of content
+ */
+function buildBlock(blockName, content) {
+  const table = Array.isArray(content) ? content : [[content]];
+  const blockEl = document.createElement('div');
+  // build image block nested div structure
+  blockEl.classList.add(blockName);
+  table.forEach((row) => {
+    const rowEl = document.createElement('div');
+    row.forEach((col) => {
+      const colEl = document.createElement('div');
+      const vals = col.elems ? col.elems : [col];
+      vals.forEach((val) => {
+        if (val) {
+          if (typeof val === 'string') {
+            colEl.innerHTML += val;
+          } else {
+            colEl.appendChild(val);
+          }
+        }
+      });
+      rowEl.appendChild(colEl);
+    });
+    blockEl.appendChild(rowEl);
+  });
+  return blockEl;
+}
+
+/**
+ * Loads JS and CSS for a block.
+ * @param {Element} block The block element
+ */
+async function loadBlock(block) {
+  const status = block.dataset.blockStatus;
+  if (status !== 'loading' && status !== 'loaded') {
+    block.dataset.blockStatus = 'loading';
+    const { blockName } = block.dataset;
+    try {
+      //const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
+      const cssLoaded = true;
+      const decorationComplete = new Promise((resolve) => {
+        (async () => {
+          try {
+            const mod = await import(/* webpackIgnore: true */ `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
+            if (mod.default) {
+              await mod.default(block);
+            }
+          } catch (error) {
+            // eslint-disable-next-line no-console
+            console.log(`failed to load module for ${blockName}`, error);
+          }
+          resolve();
+        })();
+      });
+      await Promise.all([cssLoaded, decorationComplete]);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(`failed to load block ${blockName}`, error);
+    }
+    block.dataset.blockStatus = 'loaded';
+  }
+  return block;
+}
+
+/**
+ * Loads JS and CSS for all blocks in a container element.
+ * @param {Element} main The container element
+ */
+async function loadBlocks(main) {
+  updateSectionsStatus(main);
+  const blocks = [...main.querySelectorAll('div.block')];
+  for (let i = 0; i < blocks.length; i += 1) {
+    // eslint-disable-next-line no-await-in-loop
+    await loadBlock(blocks[i]);
+    updateSectionsStatus(main);
+  }
+}
+
+/**
+ * Decorates a block.
+ * @param {Element} block The block element
+ */
+function decorateBlock(block) {
+  const shortBlockName = block.classList[0];
+  if (shortBlockName) {
+    block.classList.add('block');
+    block.dataset.blockName = shortBlockName;
+    block.dataset.blockStatus = 'initialized';
+    wrapTextNodes(block);
+    const blockWrapper = block.parentElement;
+    blockWrapper.classList.add(`${shortBlockName}-wrapper`);
+    const section = block.closest('.section');
+    if (section) section.classList.add(`${shortBlockName}-container`);
+  }
+}
+
+/**
+ * Decorates all blocks in a container element.
+ * @param {Element} main The container element
+ */
+function decorateBlocks(main) {
+  main.querySelectorAll('div.section > div > div').forEach(decorateBlock);
+}
+
+/**
+ * Loads a block named 'header' into header
+ * @param {Element} header header element
+ * @returns {Promise}
+ */
+async function loadHeader(header) {
+  const headerBlock = buildBlock('header', '');
+  header.append(headerBlock);
+  decorateBlock(headerBlock);
+  return loadBlock(headerBlock);
+}
+
+/**
+ * Loads a block named 'footer' into footer
+ * @param footer footer element
+ * @returns {Promise}
+ */
+async function loadFooter(footer) {
+  const footerBlock = buildBlock('footer', '');
+  footer.append(footerBlock);
+  decorateBlock(footerBlock);
+  return loadBlock(footerBlock);
+}
+
+/**
+ * Load LCP block and/or wait for LCP in default content.
+ * @param {Array} lcpBlocks Array of blocks
+ */
+async function waitForLCP(lcpBlocks) {
+  const block = document.querySelector('.block');
+  const hasLCPBlock = block && lcpBlocks.includes(block.dataset.blockName);
+  if (hasLCPBlock) await loadBlock(block);
+
+  document.body.style.display = null;
+  const lcpCandidate = document.querySelector('main img');
+
+  await new Promise((resolve) => {
+    if (lcpCandidate && !lcpCandidate.complete) {
+      lcpCandidate.setAttribute('loading', 'eager');
+      lcpCandidate.addEventListener('load', resolve);
+      lcpCandidate.addEventListener('error', resolve);
+    } else {
+      resolve();
+    }
+  });
+}
+
+init();
+
+
+
+
+/***/ }),
+
+/***/ "./scripts/common.js":
+/*!***************************!*\
+  !*** ./scripts/common.js ***!
+  \***************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BODY_BUILDER_NEWS_CONFIGS: () => (/* binding */ BODY_BUILDER_NEWS_CONFIGS),
+/* harmony export */   COOKIE_CONFIGS: () => (/* binding */ COOKIE_CONFIGS),
+/* harmony export */   HEADER_CONFIGS: () => (/* binding */ HEADER_CONFIGS),
+/* harmony export */   MAGAZINE_CONFIGS: () => (/* binding */ MAGAZINE_CONFIGS),
+/* harmony export */   NEWS_FEED_CONFIGS: () => (/* binding */ NEWS_FEED_CONFIGS),
+/* harmony export */   SEARCH_URLS: () => (/* binding */ SEARCH_URLS),
+/* harmony export */   TOOLS_CONFIGS: () => (/* binding */ TOOLS_CONFIGS),
+/* harmony export */   TRUCK_CONFIGURATOR_URLS: () => (/* binding */ TRUCK_CONFIGURATOR_URLS),
+/* harmony export */   addFavIcon: () => (/* binding */ addFavIcon),
+/* harmony export */   adjustPretitle: () => (/* binding */ adjustPretitle),
+/* harmony export */   checkOneTrustGroup: () => (/* binding */ checkOneTrustGroup),
+/* harmony export */   clearElementAttributes: () => (/* binding */ clearElementAttributes),
+/* harmony export */   createElement: () => (/* binding */ createElement),
+/* harmony export */   createResponsivePicture: () => (/* binding */ createResponsivePicture),
+/* harmony export */   debounce: () => (/* binding */ debounce),
+/* harmony export */   decorateIcons: () => (/* binding */ decorateIcons),
+/* harmony export */   deepMerge: () => (/* binding */ deepMerge),
+/* harmony export */   extractObjectFromArray: () => (/* binding */ extractObjectFromArray),
+/* harmony export */   formatStringToArray: () => (/* binding */ formatStringToArray),
+/* harmony export */   formatValues: () => (/* binding */ formatValues),
+/* harmony export */   generateId: () => (/* binding */ generateId),
+/* harmony export */   getArticleTags: () => (/* binding */ getArticleTags),
+/* harmony export */   getHref: () => (/* binding */ getHref),
+/* harmony export */   getImageURLs: () => (/* binding */ getImageURLs),
+/* harmony export */   getJsonFromUrl: () => (/* binding */ getJsonFromUrl),
+/* harmony export */   getLanguagePath: () => (/* binding */ getLanguagePath),
+/* harmony export */   getOrigin: () => (/* binding */ getOrigin),
+/* harmony export */   getPlaceholders: () => (/* binding */ getPlaceholders),
+/* harmony export */   getTextLabel: () => (/* binding */ getTextLabel),
+/* harmony export */   isFunctionalAllowed: () => (/* binding */ isFunctionalAllowed),
+/* harmony export */   isPerformanceAllowed: () => (/* binding */ isPerformanceAllowed),
+/* harmony export */   isSocialAllowed: () => (/* binding */ isSocialAllowed),
+/* harmony export */   isTargetingAllowed: () => (/* binding */ isTargetingAllowed),
+/* harmony export */   loadDelayed: () => (/* binding */ loadDelayed),
+/* harmony export */   loadLazy: () => (/* binding */ loadLazy),
+/* harmony export */   loadTemplate: () => (/* binding */ loadTemplate),
+/* harmony export */   removeEmptyTags: () => (/* binding */ removeEmptyTags),
+/* harmony export */   slugify: () => (/* binding */ slugify),
+/* harmony export */   unwrapDivs: () => (/* binding */ unwrapDivs),
+/* harmony export */   variantsClassesToBEM: () => (/* binding */ variantsClassesToBEM)
+/* harmony export */ });
+/* harmony import */ var _aem_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aem.js */ "./scripts/aem.js");
+
+
+let placeholders = null;
+
+const getLanguagePath = () => {
+  const { pathname } = new URL(window.location.href);
+  const langCodeMatch = pathname.match('^(/[a-z]{2}(-[a-z]{2})?/).*');
+  return langCodeMatch ? langCodeMatch[1] : '/';
+};
+
+async function getPlaceholders() {
+  const url = `${getLanguagePath()}placeholder.json`;
+  placeholders = await fetch(url).then((resp) => resp.json());
+}
+
+function getTextLabel(key) {
+  return "abc"; // @TODO: convert to async func
+  return placeholders.data.find((el) => el.Key === key)?.Text || key;
+}
+
+/**
+ * Returns the true origin of the current page in the browser.
+ * If the page is running in a iframe with srcdoc, the ancestor origin is returned.
+ * @returns {String} The true origin
+ */
+function getOrigin() {
+  return window.location.href === 'about:srcdoc' ? window.parent.location.origin : window.location.origin;
+}
+
+/**
+ * Returns the true of the current page in the browser.mac
+ * If the page is running in a iframe with srcdoc,
+ * the ancestor origin + the path query param is returned.
+ * @returns {String} The href of the current page or the href of the block running in the library
+ */
+function getHref() {
+  if (window.location.href !== 'about:srcdoc') return window.location.href;
+
+  const urlParams = new URLSearchParams(window.parent.location.search);
+  return `${window.parent.location.origin}${urlParams.get('path')}`;
+}
+
+/**
+ * Create an element with the given id and classes.
+ * @param {string} tagName the tag
+ * @param {Object} options the element options
+ * @param {string[]|string} [options.classes=[]] the class or classes to add
+ * @param {Object} [options.props={}] any other attributes to add to the element
+ * @returns {HTMLElement} the element
+ */
+function createElement(tagName, options = {}) {
+  const { classes = [], props = {} } = options;
+  const elem = document.createElement(tagName);
+  const isString = typeof classes === 'string';
+  if (classes || (isString && classes !== '') || (!isString && classes.length > 0)) {
+    const classesArr = isString ? [classes] : classes;
+    elem.classList.add(...classesArr);
+  }
+  if (!isString && classes.length === 0) elem.removeAttribute('class');
+
+  if (props) {
+    Object.keys(props).forEach((propName) => {
+      const isBooleanAttribute = propName === 'allowfullscreen' || propName === 'autoplay' || propName === 'muted' || propName === 'controls';
+
+      // For boolean attributes, add the attribute without a value if it's truthy
+      if (isBooleanAttribute) {
+        if (props[propName]) {
+          elem.setAttribute(propName, '');
+        }
+      } else {
+        const value = props[propName];
+        elem.setAttribute(propName, value);
+      }
+    });
+  }
+
+  return elem;
+}
+
+/**
+ * Adds the favicon.
+ * @param {string} href The favicon URL
+ */
+function addFavIcon(href) {
+  const link = createElement('link', { props: { rel: 'icon', type: 'image/svg+xml', href } });
+  const existingLink = document.querySelector('head link[rel="icon"]');
+  if (existingLink) {
+    existingLink.parentElement.replaceChild(link, existingLink);
+  } else {
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+}
+
+const ICONS_CACHE = {};
+/**
+ * Replace icons with inline SVG and prefix with codeBasePath.
+ * @param {Element} [element] Element containing icons
+ */
+async function decorateIcons(element) {
+  // Prepare the inline sprite
+  let svgSprite = document.getElementById('franklin-svg-sprite');
+  if (!svgSprite) {
+    const div = document.createElement('div');
+    div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" id="franklin-svg-sprite" style="display: none"></svg>';
+    svgSprite = div.firstElementChild;
+    document.body.append(div.firstElementChild);
+  }
+
+  // Download all new icons
+  const icons = [...element.querySelectorAll('span.icon')];
+
+  await Promise.all(icons.map(async (span) => {
+    const iconName = Array.from(span.classList).find((c) => c.startsWith('icon-')).substring(5);
+    if (!ICONS_CACHE[iconName]) {
+      ICONS_CACHE[iconName] = true;
+      try {
+        const response = await fetch(`${window.hlx.codeBasePath}/icons/${iconName}.svg`);
+        if (!response.ok) {
+          ICONS_CACHE[iconName] = false;
+          return;
+        }
+        // Styled icons don't play nice with the sprite approach because of shadow dom isolation
+        const svg = await response.text();
+        if (svg.match(/(<style | class=)/)) {
+          ICONS_CACHE[iconName] = { styled: true, html: svg };
+        } else {
+          ICONS_CACHE[iconName] = {
+            html: svg
+              .replace('<svg', `<symbol id="icons-sprite-${iconName}"`)
+              .replace(/ width=".*?"/, '')
+              .replace(/ height=".*?"/, '')
+              .replace('</svg>', '</symbol>'),
+          };
+        }
+      } catch (error) {
+        ICONS_CACHE[iconName] = false;
+        // eslint-disable-next-line no-console
+        console.error(error);
+      }
+    }
+  }));
+
+  const symbols = Object
+    .keys(ICONS_CACHE).filter((k) => !svgSprite.querySelector(`#icons-sprite-${k}`))
+    .map((k) => ICONS_CACHE[k])
+    .filter((v) => !v.styled)
+    .map((v) => v.html)
+    .join('\n');
+  svgSprite.innerHTML += symbols;
+
+  /*
+  icons.forEach((span) => {
+    const iconName = Array.from(span.classList).find((c) => c.startsWith('icon-')).substring(5);
+    const parent = span.firstElementChild?.tagName === 'A' ? span.firstElementChild : span;
+    // Styled icons need to be inlined as-is, while unstyled ones can leverage the sprite
+    if (ICONS_CACHE[iconName].styled) {
+      parent.innerHTML = ICONS_CACHE[iconName].html;
+    } else {
+      parent.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"><use href="#icons-sprite-${iconName}"/></svg>`;
+    }
+  });
+  */
+}
+
+async function loadTemplate(doc, templateName) {
+  console.log('loadTemplate', templateName);
+
+  try {
+    await (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadCSS)(`${window.hlx.codeBasePath}/templates/${templateName}/${templateName}.css`);
+    const decorationComplete = new Promise((resolve) => {
+      (async () => {
+        try {
+          const mod = await __webpack_require__("./templates lazy recursive ^\\.\\/.*\\/.*\\.js$")(`./${templateName}/${templateName}.js`);
+          if (mod.default) {
+            await mod.default(doc);
+          }
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.log(`failed to load module for ${templateName}`, error);
+        }
+        resolve();
+      })();
+    });
+    await decorationComplete;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(`failed to load block ${templateName}`, error);
+  }
+}
+
+/**
+ * loads everything that doesn't need to be delayed.
+ */
+async function loadLazy(doc) {
+  const main = doc.querySelector('main');
+  //await loadBlocks(main);
+
+  const { hash } = window.location;
+  const element = hash ? doc.getElementById(hash.substring(1)) : false;
+  if (hash && element) element.scrollIntoView();
+  const header = doc.querySelector('header');
+
+  (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadHeader)(header);
+  (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadFooter)(doc.querySelector('footer'));
+
+  const subnav = header?.querySelector('.block.sub-nav');
+  if (subnav) {
+    (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadBlock)(subnav);
+  }
+
+  (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadCSS)(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  addFavIcon(`${window.hlx.codeBasePath}/styles/favicon.svg`);
+  (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.sampleRUM)('lazy');
+  _aem_js__WEBPACK_IMPORTED_MODULE_0__.sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
+  _aem_js__WEBPACK_IMPORTED_MODULE_0__.sampleRUM.observe(main.querySelectorAll('picture > img'));
+}
+
+/**
+ * loads everything that happens a lot later, without impacting
+ * the user experience.
+ */
+function loadDelayed() {
+  // eslint-disable-next-line import/no-cycle
+  window.setTimeout(() => {
+    console.log('delayed');
+
+    // eslint-disable-next-line import/no-cycle
+    __webpack_require__.e(/*! import() */ "scripts_delayed_js").then(__webpack_require__.bind(__webpack_require__, /*! ./delayed.js */ "./scripts/delayed.js"));
+  }, 300);
+  // load anything that can be postponed to the latest here
+}
+
+const removeEmptyTags = (block) => {
+  block.querySelectorAll('*').forEach((x) => {
+    const tagName = `</${x.tagName}>`;
+
+    // checking that the tag is not autoclosed to make sure we don't remove <meta />
+    // checking the innerHTML and trim it to make sure the content inside the tag is 0
+    if (
+      x.outerHTML.slice(tagName.length * -1).toUpperCase() === tagName
+      // && x.childElementCount === 0
+      && x.innerHTML.trim().length === 0) {
+      x.remove();
+    }
+  });
+};
+
+/**
+ * This function recursively traverses the child elements of a given element
+ * and removes all <div> elements that have no attributes,
+ * moving their children to the parent element.
+ * @param {HTMLElement} element the parent element to remove its children
+ * @param {Object} options the unwrap options
+ * @param {boolean} [options.ignoreDataAlign=false] whether to ignore divs with data-align attribute
+ * @returns {void}
+ */
+const unwrapDivs = (element, options = {}) => {
+  const stack = [element];
+  const { ignoreDataAlign = false } = options;
+
+  while (stack.length > 0) {
+    const currentElement = stack.pop();
+
+    let i = 0;
+    while (i < currentElement.children.length) {
+      const node = currentElement.children[i];
+      const attributesLength = [...node.attributes].filter((el) => {
+        if (ignoreDataAlign) {
+          return !(el.name.startsWith('data-align') || el.name.startsWith('data-valign'));
+        }
+
+        return el;
+      }).length;
+
+      if (node.tagName === 'DIV' && attributesLength === 0) {
+        while (node.firstChild) {
+          currentElement.insertBefore(node.firstChild, node);
+        }
+        node.remove();
+      } else {
+        stack.push(node);
+        i += 1;
+      }
+    }
+  }
+};
+
+const variantsClassesToBEM = (blockClasses, expectedVariantsNames, blockName) => {
+  expectedVariantsNames.forEach((variant) => {
+    if (blockClasses.contains(variant)) {
+      blockClasses.remove(variant);
+      blockClasses.add(`${blockName}--${variant}`);
+    }
+  });
+};
+
+const slugify = (text) => (
+  text.toString().toLowerCase().trim()
+    // separate accent from letter
+    .normalize('NFD')
+    // remove all separated accents
+    .replace(/[\u0300-\u036f]/g, '')
+    // replace spaces with -
+    .replace(/\s+/g, '-')
+    // replace & with 'and'
+    .replace(/&/g, '-and-')
+    // remove all non-word chars
+    .replace(/[^\w-]+/g, '')
+    // replace multiple '-' with single '-'
+    .replace(/--+/g, '-')
+);
+
+/**
+ * loads the constants file where configuration values are stored
+ */
+async function getConstantValues() {
+  const url = `${getLanguagePath()}constants.json`;
+  let constants;
+  try {
+    const response = await fetch(url).then((resp) => resp.json());
+    if (!response.ok) {
+      constants = response;
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error with constants file', error);
+  }
+  return constants;
+}
+
+const extractObjectFromArray = (data) => {
+  const obj = {};
+  for (const item of data) {
+    try {
+      if (typeof item !== 'string' || !item.includes(':')) {
+        throw new TypeError(`Invalid input: "${item}". Expected a string: "key: value".`);
+      }
+      const [key, value] = item.split(':', 2);
+      obj[key.trim()] = value.trim();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.warn(`Error with item: "${item}"`, error);
+    }
+  }
+  return obj;
+};
+
+const formatValues = (values) => {
+  const obj = {};
+  /* eslint-disable-next-line */
+  if (values) values.forEach(({ name, value }) => obj[name] = value);
+  return obj;
+};
+
+const {
+  searchUrls,
+  cookieValues,
+  magazineConfig,
+  headerConfig,
+  tools,
+  truckConfiguratorUrls,
+  newsFeedConfig,
+  bodyBuilderNewsConfig,
+} = await getConstantValues();
+
+// This data comes from the sharepoint 'constants.xlsx' file
+const SEARCH_URLS = formatValues(searchUrls?.data);
+const COOKIE_CONFIGS = formatValues(cookieValues?.data);
+const MAGAZINE_CONFIGS = formatValues(magazineConfig?.data);
+const HEADER_CONFIGS = formatValues(headerConfig?.data);
+const TOOLS_CONFIGS = formatValues(tools?.data);
+const TRUCK_CONFIGURATOR_URLS = formatValues(truckConfiguratorUrls?.data);
+const NEWS_FEED_CONFIGS = formatValues(newsFeedConfig?.data);
+const BODY_BUILDER_NEWS_CONFIGS = formatValues(bodyBuilderNewsConfig?.data);
+
+/**
+ * Check if one trust group is checked.
+ * @param {String} groupName the one trust group like: C0002
+ */
+function checkOneTrustGroup(groupName, cookieCheck = false) {
+  const oneTrustCookie = decodeURIComponent(document.cookie.split(';').find((cookie) => cookie.trim().startsWith('OptanonConsent=')));
+  return cookieCheck || oneTrustCookie.includes(`${groupName}:1`);
+}
+
+const {
+  PERFORMANCE_COOKIE = false,
+  FUNCTIONAL_COOKIE = false,
+  TARGETING_COOKIE = false,
+  SOCIAL_COOKIE = false,
+} = COOKIE_CONFIGS;
+
+function isPerformanceAllowed() {
+  return checkOneTrustGroup(PERFORMANCE_COOKIE);
+}
+
+function isFunctionalAllowed() {
+  return checkOneTrustGroup(FUNCTIONAL_COOKIE);
+}
+
+function isTargetingAllowed() {
+  return checkOneTrustGroup(TARGETING_COOKIE);
+}
+
+function isSocialAllowed() {
+  return checkOneTrustGroup(SOCIAL_COOKIE);
+}
+
+/**
+ * Helper for delaying a function
+ * @param {function} func callback function
+ * @param {number} timeout time to debouce in ms, default 200
+*/
+function debounce(func, timeout = 200) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
+}
+
+/**
+ * Returns a list of properties listed in the block
+ * @param {string} route get the Json data from the route
+ * @returns {Object} the json data object
+*/
+const getJsonFromUrl = async (route) => {
+  try {
+    const response = await fetch(route);
+    if (!response.ok) return null;
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('getJsonFromUrl:', { error });
+  }
+  return null;
+};
+
+/**
+ * See https://www.aem.live/developer/spreadsheets#arrays
+ * Converts a string representation of an array, removing all brackets, backslashes, and quotes,
+ * into an actual JavaScript array. Splits on commas, trims each string, and filters out empty
+ * strings to ensure all elements contain valid data.
+ *
+ * @param {string} inputString - The string to be converted. It should mimic a serialized array,
+ *                               often found in JSON-like structures where arrays are represented
+ *                               as strings due to data transmission constraints.
+ * @returns {string[]} An array of strings derived from the cleaned input string. Each element
+ *                     is a trimmed, non-empty string that was separated by a comma in the
+ *                     original input.
+ */
+const formatStringToArray = (inputString) => {
+  // eslint-disable-next-line no-useless-escape
+  const cleanedString = inputString.replace(/[\[\]\\'"]+/g, '');
+  return cleanedString.split(',')
+    .map((item) => item.trim())
+    .filter((item) => item);
+};
+
+/*
+  The generateId function should be used only
+  for generating the id for UI elements
+*/
+let idValue = 0;
+
+const generateId = (prefix = 'id') => {
+  idValue += 1;
+  return `${prefix}-${idValue}`;
+};
+
+const adjustPretitle = (element) => {
+  const headingSelector = 'h1, h2, h3, h4, h5, h6';
+
+  [...element.querySelectorAll(headingSelector)].forEach((heading) => {
+    const isNextElHeading = heading.nextElementSibling?.matches(headingSelector);
+    if (!isNextElHeading) {
+      return;
+    }
+
+    const currentLevel = Number(heading.tagName[1]);
+    const nextElLevel = Number(heading.nextElementSibling.tagName[1]);
+
+    if (currentLevel > nextElLevel) {
+      const pretitle = createElement('span', { classes: ['pretitle'] });
+      pretitle.append(...heading.childNodes);
+
+      heading.replaceWith(pretitle);
+    }
+  });
+};
+
+/**
+ * Extracts the URL without query parameters of images from an array of picture elements
+ * @param {HTMLElement} images - An array of picture elements
+ * @returns {Array} Array of src strings
+ */
+function getImageURLs(pictures) {
+  return pictures.map((picture) => {
+    const imgElement = picture.querySelector('img');
+    return imgElement.getAttribute('src').split('?')[0];
+  });
+}
+
+/**
+ * Creates a picture element based on provided image data and breakpoints
+ * @param {Array} images - Array of objects defining image data and breakpoints
+ * @param {boolean} eager - Whether to load images eagerly
+ * @param {string} alt - Alt text for the image
+ * @param {string[]|string} imageClass - Class for the image
+ * @returns {HTMLElement} The created picture element
+ */
+function createResponsivePicture(images, eager, alt, imageClass) {
+  const picture = document.createElement('picture');
+  let fallbackWidth = '';
+  let fallbackSrc = '';
+
+  function constructSrcset(src, width, format) {
+    const baseUrl = `${src}?format=${format}&optimize=medium`;
+    return `${baseUrl}&width=${width} 1x, ${baseUrl}&width=${width * 2} 2x`;
+  }
+
+  images.forEach((image) => {
+    const originalFormat = image.src.split('.').pop();
+
+    image.breakpoints.forEach((bp) => {
+      if (!bp.media) return;
+
+      const srcsetWebp = constructSrcset(image.src, bp.width, 'webp');
+      const srcsetOriginal = constructSrcset(image.src, bp.width, originalFormat);
+
+      const webpSource = createElement('source', {
+        props: {
+          type: 'image/webp',
+          srcset: srcsetWebp,
+          media: bp.media,
+        },
+      });
+
+      const originalSource = createElement('source', {
+        props: {
+          type: `image/${originalFormat}`,
+          srcset: srcsetOriginal,
+          media: bp.media,
+        },
+      });
+
+      picture.insertBefore(originalSource, picture.firstChild);
+      picture.insertBefore(webpSource, originalSource);
+    });
+
+    const fallbackBreakpoint = image.breakpoints.find((bp) => !bp.media);
+    if (fallbackBreakpoint && !fallbackSrc) {
+      fallbackWidth = fallbackBreakpoint.width;
+      fallbackSrc = `${image.src}?width=${fallbackWidth}&format=${originalFormat}&optimize=medium`;
+    }
+  });
+
+  const img = createElement('img', {
+    classes: imageClass,
+    props: {
+      src: fallbackSrc,
+      alt,
+      loading: eager ? 'eager' : 'lazy',
+      width: fallbackWidth,
+    },
+  });
+
+  picture.appendChild(img);
+
+  return picture;
+}
+
+const deepMerge = (originalTarget, source) => {
+  let target = originalTarget;
+  // Initialize target as an empty object if it's undefined or null
+  if (typeof target !== 'object' || target === null) {
+    target = {};
+  }
+
+  Object.keys(source).forEach((key) => {
+    const sourceValue = source[key];
+    const targetValue = target[key];
+    const sourceIsPlainObject = Object.prototype.toString.call(sourceValue) === '[object Object]';
+    const targetIsPlainObject = Object.prototype.toString.call(targetValue) === '[object Object]';
+
+    if (sourceIsPlainObject && targetIsPlainObject) {
+      target[key] = target[key] || {};
+      deepMerge(target[key], sourceValue);
+    } else {
+      target[key] = sourceValue;
+    }
+  });
+  return target;
+};
+
+/**
+ * Clear/removes all of the attributes of an element by reference
+ * @param {HTMLElement} element - Element to clear attributes from
+ * @returns {HTMLElement} The created picture element
+ *
+ * USAGE:
+ * Clean by reference:
+ *
+ * clearElementAttributes(element);
+ * // Then do things on the clean element...
+ *
+ * OR, leverage the return of the element and do chaining operations:
+ *
+ * removeAllAttributes(element).classList.add('SOME-CLASS-NAME');
+ *
+ */
+const clearElementAttributes = (element) => {
+  // Get all attributes of the element
+  const attributes = Array.from(element.attributes);
+
+  // Loop through the attributes and remove them
+  attributes.forEach((attr) => {
+    element.removeAttribute(attr.name);
+  });
+
+  return element;
+};
+
+// Magazine common functions
+/**
+ * Extracts the values from an array of objects and returns an array of values
+ * example: [{ key: 'value' }] => ['value']
+ * @param {Array} array - An array of objects
+ * @returns {Array} An array of values
+ */
+function getValuesFromObjectsArray(array = []) {
+  if (!Array.isArray(array) || array.length === 0) return [];
+  return array.map((item) => Object.values(item)[0]);
+}
+
+/**
+ * Extracts the matching tags from an array of tags and an array of article tags
+ * and returns a string of matching tags
+ * @param {Array} tags - An array of tags from the JSON file
+ * @param {Array} articleTags - An array of article:tags
+ * @returns {string} A string of matching tags
+ */
+function getMetadataFromTags(tags, articleTags) {
+  if (!tags || !articleTags) {
+    return '';
+  }
+
+  const matchingTags = [...articleTags]
+    .filter((tag) => tags.includes(tag.content))
+    .map((tag) => tag.content);
+  return matchingTags && matchingTags?.length > 0 ? matchingTags.join(', ') : '';
+}
+
+/**
+ * Get the article tags from the JSON file and the article tags from the document
+ * and return the matching tags
+ * @param {string} tagType - The type of tag to get such as 'categories', 'topics' or 'trucks'
+ * @returns {string} A string of matching tags
+ */
+async function getArticleTags(tagType) {
+  const articleTags = document.head.querySelectorAll('meta[property="article:tag"]') || [];
+  const tagItems = await getJsonFromUrl('/magazine/articles/tags.json');
+  const tags = tagItems && tagItems[tagType]
+    && getValuesFromObjectsArray(tagItems[tagType].data);
+  return getMetadataFromTags(tags, articleTags);
+}
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } }, 1);
+
+/***/ }),
+
+/***/ "./scripts/scripts.js":
+/*!****************************!*\
+  !*** ./scripts/scripts.js ***!
+  \****************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   a: () => (/* binding */ a),
+/* harmony export */   button: () => (/* binding */ button),
+/* harmony export */   debounce: () => (/* binding */ debounce),
+/* harmony export */   decorateButtons: () => (/* binding */ decorateButtons),
+/* harmony export */   decorateLinks: () => (/* binding */ decorateLinks),
+/* harmony export */   decorateMain: () => (/* binding */ decorateMain),
+/* harmony export */   decorateSections: () => (/* binding */ decorateSections),
+/* harmony export */   div: () => (/* binding */ div),
+/* harmony export */   domEl: () => (/* binding */ domEl),
+/* harmony export */   findAndCreateImageLink: () => (/* binding */ findAndCreateImageLink),
+/* harmony export */   form: () => (/* binding */ form),
+/* harmony export */   getAllElWithChildren: () => (/* binding */ getAllElWithChildren),
+/* harmony export */   h1: () => (/* binding */ h1),
+/* harmony export */   h2: () => (/* binding */ h2),
+/* harmony export */   h3: () => (/* binding */ h3),
+/* harmony export */   h4: () => (/* binding */ h4),
+/* harmony export */   h5: () => (/* binding */ h5),
+/* harmony export */   h6: () => (/* binding */ h6),
+/* harmony export */   i: () => (/* binding */ i),
+/* harmony export */   img: () => (/* binding */ img),
+/* harmony export */   input: () => (/* binding */ input),
+/* harmony export */   li: () => (/* binding */ li),
+/* harmony export */   loadAsBlock: () => (/* binding */ loadAsBlock),
+/* harmony export */   loadScriptIfNotLoadedYet: () => (/* binding */ loadScriptIfNotLoadedYet),
+/* harmony export */   p: () => (/* binding */ p),
+/* harmony export */   span: () => (/* binding */ span),
+/* harmony export */   ul: () => (/* binding */ ul)
+/* harmony export */ });
+/* harmony import */ var _aem_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aem.js */ "./scripts/aem.js");
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common.js */ "./scripts/common.js");
+/* harmony import */ var _video_helper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./video-helper.js */ "./scripts/video-helper.js");
+/* harmony import */ var _validate_countries_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./validate-countries.js */ "./scripts/validate-countries.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_common_js__WEBPACK_IMPORTED_MODULE_1__, _video_helper_js__WEBPACK_IMPORTED_MODULE_2__, _validate_countries_js__WEBPACK_IMPORTED_MODULE_3__]);
+([_common_js__WEBPACK_IMPORTED_MODULE_1__, _video_helper_js__WEBPACK_IMPORTED_MODULE_2__, _validate_countries_js__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
+
+
+
+const disableHeader = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('disable-header').toLowerCase() === 'true';
+const disableFooter = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('disable-footer').toLowerCase() === 'true';
+
+/**
+ * Add the image as background
+ * @param {Element} section the section container
+ * @param {string} picture the picture's link
+ */
+function addBackgroundImage(section, picture) {
+  section.classList.add('background');
+  section.style.backgroundImage = `url('${picture}')`;
+}
+
+/**
+ * Decorates all sections in a container element.
+ * @param {Element} main The container element
+ */
+function decorateSections(main) {
+  main.querySelectorAll(':scope > div').forEach((section) => {
+    const wrappers = [];
+    let defaultContent = false;
+    [...section.children].forEach((e) => {
+      if (e.tagName === 'DIV' || !defaultContent) {
+        const wrapper = document.createElement('div');
+        wrappers.push(wrapper);
+        defaultContent = e.tagName !== 'DIV';
+        if (defaultContent) wrapper.classList.add('default-content-wrapper');
+      }
+      wrappers[wrappers.length - 1].append(e);
+    });
+    wrappers.forEach((wrapper) => section.append(wrapper));
+    section.classList.add('section');
+    section.dataset.sectionStatus = 'initialized';
+    section.style.display = 'none';
+
+    /* process section metadata */
+    const sectionMeta = section.querySelector('div.section-metadata');
+    if (sectionMeta) {
+      const meta = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.readBlockConfig)(sectionMeta);
+      Object.keys(meta).forEach((key) => {
+        if (key === 'style') {
+          const styles = meta.style.split(',').map((style) => (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.toClassName)(style.trim()));
+          styles.forEach((style) => section.classList.add(style));
+        } if (key === 'background') {
+          const picture = sectionMeta.querySelector('picture');
+          if (picture) addBackgroundImage(section, meta[key]);
+        } else {
+          section.dataset[(0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.toCamelCase)(key)] = meta[key];
+        }
+      });
+      sectionMeta.parentNode.remove();
+    }
+  });
+}
+
+/**
+ * Reparents all child elements of a given element to its parent element.
+ * @param {Element} element - The element whose children need to be reparented.
+ */
+const reparentChildren = (element) => {
+  const parent = element.parentNode;
+  while (element.firstChild) {
+    parent.insertBefore(element.firstChild, element);
+  }
+  element.remove();
+};
+
+/**
+ * Determines the appropriate button class based on the element hierarchy.
+ * @param {Element} up - The parent element of the anchor tag.
+ * @param {Element} twoUp - The grandparent element of the anchor tag.
+ * @returns {string} - The button class to be applied.
+ */
+const getButtonClass = (up, twoUp) => {
+  const isSingleChild = (element) => element.childNodes.length === 1;
+
+  const upTag = up.tagName;
+  const twoUpTag = twoUp.tagName;
+
+  if (isSingleChild(twoUp)) {
+    if (upTag === 'STRONG' && twoUpTag === 'P') return 'button button--primary';
+    if (upTag === 'STRONG' && twoUpTag === 'LI') return 'button arrowed';
+    if (upTag === 'EM' && twoUpTag === 'P') return 'button button--secondary';
+  }
+
+  if ((upTag === 'STRONG' || upTag === 'EM') && (twoUpTag === 'STRONG' || twoUpTag === 'EM')) {
+    return 'button button--red';
+  }
+
+  return '';
+};
+
+/**
+ * Adds the 'button-container' class to an element if it meets certain criteria.
+ * @param {Element} element - The element to add the class to.
+ */
+const addClassToContainer = (element) => {
+  if (element.childNodes.length === 1 && ['P', 'DIV', 'LI'].includes(element.tagName)) {
+    element.classList.add('button-container');
+  }
+};
+
+/**
+ * Handles the decoration of a single link element.
+ * @param {HTMLAnchorElement} link - The anchor tag to decorate.
+ */
+const handleLinkDecoration = (link) => {
+  const up = link.parentElement;
+  const twoUp = up.parentElement;
+  const threeUp = twoUp.parentElement;
+
+  if ((0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('style') === 'redesign-v2') {
+    if (['STRONG', 'EM'].includes(up.tagName)) reparentChildren(up);
+    if (['STRONG', 'EM'].includes(twoUp.tagName)) reparentChildren(twoUp);
+
+    const buttonClass = getButtonClass(up, twoUp);
+    if (buttonClass) link.className = `${buttonClass}`;
+
+    addClassToContainer(up);
+    addClassToContainer(twoUp);
+    addClassToContainer(threeUp);
+  } else {
+    // TODO: remove v1 button decoration logic when v2 is fully used
+    if (up.tagName === 'P' || up.tagName === 'DIV') {
+      link.className = 'button button--primary'; // default
+      up.className = 'button-container';
+    }
+    if (up.tagName === 'STRONG' && twoUp.childNodes.length === 1 && twoUp.tagName === 'P') {
+      link.className = 'button button--primary';
+      twoUp.className = 'button-container';
+    }
+    if (up.tagName === 'EM' && twoUp.childNodes.length === 1 && twoUp.tagName === 'P') {
+      link.className = 'button button--secondary';
+      twoUp.className = 'button-container';
+    }
+    if (up.tagName === 'STRONG' && twoUp.childNodes.length === 1 && twoUp.tagName === 'LI') {
+      const arrow = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('span', { classes: ['fa', 'fa-arrow-right'] });
+      link.className = 'button arrowed';
+      twoUp.parentElement.className = 'button-container';
+      link.appendChild(arrow);
+    }
+    if (up.tagName === 'LI' && twoUp.children.length === 1
+      && link.children.length > 0 && link.firstElementChild.tagName === 'STRONG') {
+      const arrow = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('span', { classes: ['fa', 'fa-arrow-right'] });
+      link.className = 'button arrowed';
+      twoUp.className = 'button-container';
+      link.appendChild(arrow);
+    }
+  }
+};
+
+/**
+ * Checks if an anchor tag should be decorated as a button.
+ * @param {HTMLAnchorElement} link - The anchor tag to check.
+ * @returns {boolean} - Returns true if the link should be decorated, otherwise false.
+ */
+const shouldDecorateLink = (link) => {
+  link.title = link.title || link.textContent;
+  return link.href !== link.textContent && !link.querySelector('img') && link.parentElement.childNodes.length === 1;
+};
+
+/**
+ * Applies button styling to anchor tags within a specified element,
+ * decorating them as button-like if they meet certain criteria.
+ * @param {Element} element - The container element within which to search and style anchor tags.
+ */
+const decorateButtons = (element) => {
+  element.querySelectorAll('a').forEach((link) => {
+    if (shouldDecorateLink(link)) {
+      handleLinkDecoration(link);
+    }
+  });
+};
+
+const LCP_BLOCKS = []; // add your LCP blocks to the list
+window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
+window.mack = window.mack || {};
+window.mack.newsData = window.mack.newsData || {
+  news: [],
+  offset: 0,
+  allLoaded: false,
+};
+
+function findAndCreateImageLink(node) {
+  const links = node.querySelectorAll('picture ~ a');
+
+  [...links].forEach((link) => {
+    let prevEl = link.previousElementSibling;
+
+    if (prevEl.tagName.toLowerCase() === 'br') {
+      prevEl = prevEl.previousElementSibling;
+    }
+
+    if (prevEl.tagName.toLowerCase() === 'picture') {
+      link.innerHTML = '';
+      link.appendChild(prevEl);
+      link.setAttribute('target', '_blank');
+      link.classList.add('image-link');
+    }
+  });
+}
+
+/**
+ * Builds hero block and prepends to main in a new section.
+ * @param {Element} main The container element
+ */
+function buildHeroBlock(main) {
+  // switching off hero autoblock for redesign
+  if ((0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('style') === 'redesign-v2') {
+    return;
+  }
+
+  const header = main.querySelector('h1');
+  const picture = main.querySelector('picture');
+  const heroBlock = main.querySelector('.hero, .v2-hero');
+  if (heroBlock) return;
+  // eslint-disable-next-line no-bitwise
+  if (header && picture
+    // eslint-disable-next-line no-bitwise
+    && (header.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
+    const section = document.createElement('div');
+    section.append((0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.buildBlock)('hero', { elems: [picture, header] }));
+    section.querySelector('.hero').classList.add('auto-block');
+    main.prepend(section);
+  }
+}
+
+function buildSubNavigation(main, head) {
+  const subnav = head.querySelector('meta[name="sub-navigation"]');
+  if (subnav && subnav.content.startsWith('/')) {
+    const block = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.buildBlock)('sub-nav', []);
+    main.previousElementSibling.prepend(block);
+    (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.decorateBlock)(block);
+  }
+}
+
+/**
+ * Builds and inserts a v2-sub-navigation block as the first child of the element preceding
+ * the main element if the v2-sub-navigation meta tag is present and its content starts with a '/'.
+ *
+ * @param {HTMLElement} main - The main element, used to find the preceding sibling element where
+ * the block will be inserted.
+ * @param {HTMLElement} head - The head element where the meta tag is located.
+ */
+const buildV2SubNavigation = (main, head) => {
+  const v2SubNavigation = head.querySelector('meta[name="v2-sub-navigation"]');
+  if (v2SubNavigation && v2SubNavigation.content.startsWith('/')) {
+    const block = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.buildBlock)('v2-sub-navigation', []);
+    const v2SubNavigationContainer = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div');
+    v2SubNavigationContainer.append(block);
+    (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.decorateBlock)(v2SubNavigationContainer);
+    main.prepend(v2SubNavigationContainer);
+  }
+};
+
+/**
+ * Builds all synthetic blocks in a container element.
+ * @param {Element} main The container element
+ */
+function buildAutoBlocks(main, head) {
+  try {
+    buildHeroBlock(main);
+    if (head) {
+      buildSubNavigation(main, head);
+      buildV2SubNavigation(main, head);
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Auto Blocking failed', error);
+  }
+}
+
+function decorateLinks(block) {
+  [...block.querySelectorAll('a')]
+    .filter(({ href }) => !!href)
+    .forEach((link) => {
+      /* eslint-disable no-use-before-define */
+      if ((0,_video_helper_js__WEBPACK_IMPORTED_MODULE_2__.isVideoLink)(link)) {
+        (0,_video_helper_js__WEBPACK_IMPORTED_MODULE_2__.addVideoShowHandler)(link);
+        return;
+      }
+
+      // handling modal links
+      if (link.getAttribute('href').startsWith('/#id-modal')) {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const modalId = link.getAttribute('href').split('#')[1];
+          const modalEvent = new CustomEvent('open-modal', {
+            detail: {
+              modalId,
+            },
+          });
+
+          document.dispatchEvent(modalEvent, { bubbles: true });
+        });
+        return;
+      }
+
+      const url = new URL(link.href);
+      const external = !url.host.match('macktrucks') && !url.host.match('.hlx.(page|live)') && !url.host.match('localhost');
+      if (url.host.match('build.macktrucks') || url.pathname.endsWith('.pdf') || external) {
+        link.target = '_blank';
+      }
+    });
+}
+
+function decorateSectionBackgrounds(main) {
+  const variantClasses = [
+    'light-gray-background',
+    'primary-gray-background',
+    'gray-background',
+    'graphite-background',
+    'black-background',
+    'background-with-dots',
+    'no-gap',
+    'no-vertical-padding',
+  ];
+
+  main.querySelectorAll(':scope > .section').forEach((section) => {
+    // transform background color variants into BEM classnames
+    (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.variantsClassesToBEM)(section.classList, variantClasses, 'section');
+
+    // If the section contains a background image
+    const src = section.dataset.backgroundImage;
+
+    if (src) {
+      const picture = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.createOptimizedPicture)(src, '', false);
+      section.prepend(picture);
+      section.classList.add('section--with-background');
+    }
+  });
+}
+
+const createInpageNavigation = (main) => {
+  const navItems = [];
+  const tabItemsObj = [];
+
+  // Extract the inpage navigation info from sections
+  [...main.querySelectorAll(':scope > div')].forEach((section) => {
+    const title = section.dataset.inpage;
+    if (title) {
+      const countDuplicated = tabItemsObj.filter((item) => item.title === title)?.length || 0;
+      const order = parseFloat(section.dataset.inpageOrder);
+      const anchorID = (countDuplicated > 0) ? (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.slugify)(`${section.dataset.inpage}-${countDuplicated}`) : (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.slugify)(section.dataset.inpage);
+      const obj = {
+        title,
+        id: anchorID,
+      };
+
+      if (order) {
+        obj.order = order;
+      }
+
+      tabItemsObj.push(obj);
+
+      // Set section with ID
+      section.dataset.inpageid = anchorID;
+    }
+  });
+
+  // Sort the object by order
+  const sortedObject = tabItemsObj.slice().sort((obj1, obj2) => {
+    const order1 = obj1.order ?? Infinity; // Fallback to a large number if 'order' is not present
+    const order2 = obj2.order ?? Infinity;
+
+    return order1 - order2;
+  });
+
+  // From the array of objects create the DOM
+  sortedObject.forEach((item) => {
+    const subnavItem = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div');
+    const subnavLink = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('button', {
+      props: {
+        'data-id': item.id,
+        title: item.title,
+      },
+    });
+
+    subnavLink.textContent = item.title;
+
+    subnavItem.append(subnavLink);
+    navItems.push(subnavLink);
+  });
+
+  return navItems;
+};
+
+function buildInpageNavigationBlock(main, classname) {
+  const items = createInpageNavigation(main);
+
+  if (items.length > 0) {
+    const section = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div');
+    Object.assign(section.style, {
+      height: '48px',
+      overflow: 'hidden',
+    });
+
+    section.append((0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.buildBlock)(classname, { elems: items }));
+    // insert in second position, assumption is that Hero should be first
+    main.insertBefore(section, main.children[1]);
+
+    (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.decorateBlock)(section.querySelector(`.${classname}`));
+  }
+}
+
+/**
+ * Decorates the main element.
+ * @param {Element} main The main element
+ */
+// eslint-disable-next-line import/prefer-default-export
+function decorateMain(main, head) {
+  (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.decorateIcons)(document.body);
+
+}
+
+/**
+ * Loads everything needed to get to LCP.
+ * @param {Element} doc The container element
+ */
+async function loadEager(doc) {
+  (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.decorateTemplateAndTheme)();
+
+  const main = doc.querySelector('main');
+  const { head } = doc;
+  if (main) {
+    decorateMain(main, head);
+    document.body.classList.add('appear');
+    const language = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('locale') || 'en';
+    document.documentElement.lang = language;
+    const templateName = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('template');
+    if (templateName) await (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.loadTemplate)(doc, templateName);
+    await (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.waitForLCP)(LCP_BLOCKS);
+  } else {
+    document.documentElement.lang = 'en';
+  }
+
+  await (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.getPlaceholders)();
+}
+
+/**
+ * Loads everything that doesn't need to be delayed.
+ * @param {Element} doc The container element
+ */
+async function loadLazy(doc) {
+  const main = doc.querySelector('main');
+  //await loadBlocks(main);
+
+  const { hash } = window.location;
+  const element = hash ? doc.getElementById(hash.substring(1)) : false;
+  if (hash && element) element.scrollIntoView();
+  const header = doc.querySelector('header');
+  const subnav = header.querySelector('.block.sub-nav');
+
+  if (!disableHeader) {
+    //loadHeader(header);
+  }
+  if (!disableFooter) {
+    //loadFooter(doc.querySelector('footer'));
+  }
+
+  /*if (subnav) {
+    loadBlock(subnav);
+    header.appendChild(subnav);
+  }*/
+
+  // loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  //addFavIcon(`${window.hlx.codeBasePath}/styles/favicon.svg`);
+  (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.sampleRUM)('lazy');
+  _aem_js__WEBPACK_IMPORTED_MODULE_0__.sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
+  _aem_js__WEBPACK_IMPORTED_MODULE_0__.sampleRUM.observe(main.querySelectorAll('picture > img'));
+}
+
+async function loadPage() {
+  await loadEager(document);
+  await loadLazy(document);
+  (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.loadDelayed)();
+}
+
+loadPage();
+
+/* this function load script only when it wasn't loaded yet */
+const scriptMap = new Map();
+
+function loadScriptIfNotLoadedYet(url, attrs) {
+  if (scriptMap.has(url)) {
+    return scriptMap.get(url).promise;
+  }
+
+  const promise = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadScript)(url, attrs);
+  scriptMap.set(url, { url, attrs, promise });
+  return promise;
+}
+
+/**
+ *
+ * @param {string} blockName - block name with '-' instead of spaces
+ * @param {string} blockContent - the content that will be set as block inner HTML
+ * @param {object} options - other options like variantsClasses
+ * @returns
+ */
+function loadAsBlock(blockName, blockContent, options = {}) {
+  const { variantsClasses = [] } = options;
+  const blockEl = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', {
+    classes: ['block', blockName, ...variantsClasses],
+    props: { 'data-block-name': blockName },
+  });
+
+  blockEl.innerHTML = blockContent;
+  (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadBlock)(blockEl);
+
+  return blockEl;
+}
+
+/**
+ * Example Usage:
+ *
+ * domEl('main',
+ *  div({ class: 'card' },
+ *  a({ href: item.path },
+ *    div({ class: 'card-thumb' },
+ *     createOptimizedPicture(item.image, item.title, 'lazy', [{ width: '800' }]),
+ *    ),
+ *   div({ class: 'card-caption' },
+ *      h3(item.title),
+ *      p({ class: 'card-description' }, item.description),
+ *      p({ class: 'button-container' },
+ *       a({ href: item.path, 'aria-label': 'Read More', class: 'button primary' }, 'Read More'),
+ *     ),
+ *   ),
+ *  ),
+ * )
+ */
+
+/**
+ * Helper for more concisely generating DOM Elements with attributes and children
+ * @param {string} tag HTML tag of the desired element
+ * @param  {[Object?, ...Element]} items: First item can optionally be an object of attributes,
+ *  everything else is a child element
+ * @returns {Element} The constructred DOM Element
+ */
+function domEl(tag, ...items) {
+  const element = document.createElement(tag);
+
+  if (!items || items.length === 0) return element;
+
+  if (!(items[0] instanceof Element || items[0] instanceof HTMLElement) && typeof items[0] === 'object') {
+    const [attributes, ...rest] = items;
+    // eslint-disable-next-line no-param-reassign
+    items = rest;
+
+    Object.entries(attributes).forEach(([key, value]) => {
+      if (!key.startsWith('on')) {
+        element.setAttribute(key, Array.isArray(value) ? value.join(' ') : value);
+      } else {
+        element.addEventListener(key.substring(2).toLowerCase(), value);
+      }
+    });
+  }
+
+  items.forEach((item) => {
+    // eslint-disable-next-line no-param-reassign
+    item = item instanceof Element || item instanceof HTMLElement
+      ? item
+      : document.createTextNode(item);
+    element.appendChild(item);
+  });
+
+  return element;
+}
+
+/*
+    More shorthand functions can be added for very common DOM elements below.
+    domEl function from above can be used for one-off DOM element occurrences.
+  */
+function div(...items) { return domEl('div', ...items); }
+function p(...items) { return domEl('p', ...items); }
+function a(...items) { return domEl('a', ...items); }
+function h1(...items) { return domEl('h1', ...items); }
+function h2(...items) { return domEl('h2', ...items); }
+function h3(...items) { return domEl('h3', ...items); }
+function h4(...items) { return domEl('h4', ...items); }
+function h5(...items) { return domEl('h5', ...items); }
+function h6(...items) { return domEl('h6', ...items); }
+function ul(...items) { return domEl('ul', ...items); }
+function li(...items) { return domEl('li', ...items); }
+function i(...items) { return domEl('i', ...items); }
+function img(...items) { return domEl('img', ...items); }
+function span(...items) { return domEl('span', ...items); }
+function input(...items) { return domEl('input', ...items); }
+function form(...items) { return domEl('form', ...items); }
+function button(...items) { return domEl('button', ...items); }
+
+/* Helper for delaying something like
+takes function as argument, default timout = 200
+*/
+function debounce(func, timeout = 200) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
+}
+
+/**
+ * @param {NodeList} elements list of tested elements
+ * @param {String} childrenCheck check that will be run for every element list
+ * @param {boolean} [isOpposite=false] Flag to contemplate an edge case that is the opposite case
+ * @returns list of elements that pass the children check
+ */
+function getAllElWithChildren(elements, childrenCheck, isOpposite = false) {
+  if (isOpposite) return [...elements].filter((el) => !el.querySelector(childrenCheck));
+  return [...elements].filter((el) => el.querySelector(childrenCheck));
+}
+
+/* Adds attributes to all anchors and buttons that start with properties between [ brackets ] */
+const allLinks = [...document.querySelectorAll('a'), ...document.querySelectorAll('button')];
+allLinks.forEach((link) => {
+  const linkText = link.innerText;
+  if (linkText[0] !== '[') return;
+  const brackets = linkText.match(/^\[(.*?)\]/);
+  const rawProperties = brackets && brackets[1];
+  const propertyArray = rawProperties?.split(',');
+  propertyArray?.forEach((prop) => {
+    prop.trimStart();
+    /* Check if this link should open in new tab */
+    if (prop === 'new-tab') {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+  const firstDashIndex = linkText.indexOf(']');
+  const selectedText = linkText.slice(firstDashIndex + 1);
+  link.title = selectedText;
+  link.innerText = selectedText;
+});
+
+function createTruckLineupSection(tabItems, classname) {
+  const tabSection = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', { classes: 'section' });
+  tabSection.dataset.sectionStatus = 'initialized';
+  const wrapper = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div');
+  tabSection.append(wrapper);
+  const tabBlock = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.buildBlock)(classname, [tabItems]);
+  wrapper.append(tabBlock);
+  return tabSection;
+}
+
+function buildTruckLineupBlock(main, classname) {
+  const tabItems = [];
+  let nextElement;
+
+  const mainChildren = [...main.querySelectorAll(':scope > div')];
+  mainChildren.forEach((section, i2) => {
+    const isTruckCarousel = section.dataset.truckCarousel;
+    if (!isTruckCarousel) return;
+
+    // save carousel position
+    nextElement = mainChildren[i2 + 1];
+    const sectionMeta = section.dataset.truckCarousel;
+
+    const tabContent = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', { classes: `${classname}__content` });
+    tabContent.dataset.truckCarousel = sectionMeta;
+    if (section.dataset.truckCarouselIcon) {
+      tabContent.dataset.truckCarouselIcon = section.dataset.truckCarouselIcon;
+    }
+
+    tabContent.innerHTML = section.innerHTML;
+    const image = tabContent.querySelector('p > picture');
+    tabContent.prepend(image);
+
+    tabItems.push(tabContent);
+    section.remove();
+  });
+
+  if (tabItems.length > 0) {
+    const tabbedCarouselSection = createTruckLineupSection(tabItems, classname);
+    if (nextElement) { // if we saved a position push the carousel in that position if not
+      main.insertBefore(tabbedCarouselSection, nextElement);
+    } else {
+      main.append(tabbedCarouselSection);
+    }
+    (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.decorateIcons)(tabbedCarouselSection);
+    (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.decorateBlock)(tabbedCarouselSection.querySelector(`.${classname}`));
+  }
+}
+
+const moveClassToHtmlEl = (className, elementSelector = 'main') => {
+  if (document.querySelector(elementSelector).classList.contains(className)) {
+    document.documentElement.classList.add(className);
+    document.querySelector(elementSelector).classList.remove(className);
+  }
+};
+
+moveClassToHtmlEl('redesign-v2');
+moveClassToHtmlEl('truck-configurator');
+
+if (document.documentElement.classList.contains('truck-configurator')) {
+  const allowedCountries = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('allowed-countries');
+  const errorPageUrl = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('redirect-url');
+  if (allowedCountries && errorPageUrl) (0,_validate_countries_js__WEBPACK_IMPORTED_MODULE_3__.validateCountries)(allowedCountries, errorPageUrl);
+
+  const container = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', { props: { id: 'configurator' } });
+  const main = document.querySelector('main');
+  main.innerHTML = '';
+  main.append(container);
+
+  const jsUrls = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.formatStringToArray)(_common_js__WEBPACK_IMPORTED_MODULE_1__.TRUCK_CONFIGURATOR_URLS.JS);
+  const cssUrls = (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.formatStringToArray)(_common_js__WEBPACK_IMPORTED_MODULE_1__.TRUCK_CONFIGURATOR_URLS.CSS);
+
+  jsUrls.forEach((url) => {
+    (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadScript)(url, { type: 'text/javascript', charset: 'UTF-8', defer: 'defer' });
+  });
+
+  cssUrls.forEach((url) => {
+    (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.loadCSS)(url);
+  });
+
+  window.addEventListener('reactRouterChange', (e) => {
+    const newLocation = e.detail;
+
+    // eslint-disable-next-line no-console
+    console.info('[truck-configurator]: React Router location changed:', newLocation);
+
+    if (newLocation.pathname && newLocation.pathname !== '/' && disableHeader) {
+      document.documentElement.classList.add('truck-configurator--detail-page');
+    }
+    if (newLocation.pathname && (newLocation.pathname === '/' || newLocation.pathname === '')) {
+      document.documentElement.classList.remove('truck-configurator--detail-page');
+    }
+  });
+}
+
+if ((0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('truck-configurator-page')) {
+  const page = (0,_aem_js__WEBPACK_IMPORTED_MODULE_0__.getMetadata)('truck-configurator-page').toLowerCase();
+  const currentHash = window.location.hash;
+
+  if (disableHeader) {
+    document.documentElement.classList.add('truck-configurator--detail-page');
+  }
+  if (!currentHash.startsWith(`#/${page}`)) {
+    document.location.hash = `#/${page}`;
+  }
+}
+
+/* Checks for all <em> tags that contain only 1 character and deletes the space after it */
+const allItalics = [...document.querySelectorAll('em')];
+allItalics.forEach((emTag) => {
+  const tagLength = emTag.textContent.length;
+  const { nextSibling } = emTag;
+  if (tagLength === 1 && nextSibling.nodeType === Node.TEXT_NODE && nextSibling.nodeValue.startsWith(' ')) {
+    nextSibling.nodeValue = nextSibling.nodeValue.slice(1);
+  }
+});
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ "./scripts/validate-countries.js":
+/*!***************************************!*\
+  !*** ./scripts/validate-countries.js ***!
+  \***************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getUserCountryName: () => (/* binding */ getUserCountryName),
+/* harmony export */   splitString: () => (/* binding */ splitString),
+/* harmony export */   validateCountries: () => (/* binding */ validateCountries)
+/* harmony export */ });
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./scripts/common.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_common_js__WEBPACK_IMPORTED_MODULE_0__]);
+_common_js__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+const { GOOGLE_API_KEY } = _common_js__WEBPACK_IMPORTED_MODULE_0__.TOOLS_CONFIGS;
+const languageCode = 'en';
+
+const splitString = (str) => str.split(',').map((item) => item.trim());
+
+const getUserCountryName = async (lat, lng) => {
+  const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&language=${languageCode}&key=${GOOGLE_API_KEY}`;
+
+  const response = await (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.getJsonFromUrl)(apiUrl);
+  const locationString = response?.plus_code.compound_code;
+
+  return locationString;
+};
+
+const checkForRedirect = (list, country, url) => {
+  // Check if country is included in the list that comes from the metadata
+  if (!list.includes(country)) {
+    // eslint-disable-next-line no-console
+    console.error('Truck configurator not avaliable for:', country);
+    const completeUrl = window.location.origin + url;
+    window.location.replace(completeUrl);
+  }
+};
+
+const validateCountries = async (countries, url) => {
+  const allowedCountries = splitString(countries);
+
+  const locationSuccess = async (position) => {
+    const { latitude, longitude } = position.coords;
+    const response = await getUserCountryName(latitude, longitude);
+    if (!response) return;
+
+    const country = (splitString(response).reverse())[0];
+    if (country) checkForRedirect(allowedCountries, country, url);
+  };
+  const locationError = (error) => {
+    // eslint-disable-next-line no-console
+    console.error('Error:', error);
+  };
+
+  navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
+};
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ "./scripts/video-helper.js":
+/*!*********************************!*\
+  !*** ./scripts/video-helper.js ***!
+  \*********************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AEM_ASSETS: () => (/* binding */ AEM_ASSETS),
+/* harmony export */   VideoEventManager: () => (/* binding */ VideoEventManager),
+/* harmony export */   addPlayIcon: () => (/* binding */ addPlayIcon),
+/* harmony export */   addSoundcloudShowHandler: () => (/* binding */ addSoundcloudShowHandler),
+/* harmony export */   addVideoConfig: () => (/* binding */ addVideoConfig),
+/* harmony export */   addVideoShowHandler: () => (/* binding */ addVideoShowHandler),
+/* harmony export */   createIframe: () => (/* binding */ createIframe),
+/* harmony export */   createLowResolutionBanner: () => (/* binding */ createLowResolutionBanner),
+/* harmony export */   createVideo: () => (/* binding */ createVideo),
+/* harmony export */   getVideoConfig: () => (/* binding */ getVideoConfig),
+/* harmony export */   handleVideoMessage: () => (/* binding */ handleVideoMessage),
+/* harmony export */   isAEMVideoUrl: () => (/* binding */ isAEMVideoUrl),
+/* harmony export */   isLowResolutionVideoUrl: () => (/* binding */ isLowResolutionVideoUrl),
+/* harmony export */   isSoundcloudLink: () => (/* binding */ isSoundcloudLink),
+/* harmony export */   isVideoLink: () => (/* binding */ isVideoLink),
+/* harmony export */   selectVideoLink: () => (/* binding */ selectVideoLink),
+/* harmony export */   setPlaybackControls: () => (/* binding */ setPlaybackControls),
+/* harmony export */   showVideoModal: () => (/* binding */ showVideoModal),
+/* harmony export */   standardVideoConfig: () => (/* binding */ standardVideoConfig),
+/* harmony export */   videoConfigs: () => (/* binding */ videoConfigs),
+/* harmony export */   videoTypes: () => (/* binding */ videoTypes),
+/* harmony export */   wrapImageWithVideoLink: () => (/* binding */ wrapImageWithVideoLink)
+/* harmony export */ });
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./scripts/common.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_common_js__WEBPACK_IMPORTED_MODULE_0__]);
+_common_js__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+// videoURLRegex: verify if a given string follows a specific pattern indicating it is a video URL
+// videoIdRegex: extract the video ID from the URL
+const AEM_ASSETS = {
+  aemCloudDomain: '.adobeaemcloud.com',
+  videoURLRegex: /\/assets\/urn:aaid:aem:[\w-]+\/play/,
+  videoIdRegex: /urn:aaid:aem:[0-9a-fA-F-]+/,
+};
+
+const { aemCloudDomain, videoURLRegex } = AEM_ASSETS;
+
+const videoTypes = {
+  aem: 'aem',
+  youtube: 'youtube',
+  local: 'local',
+  both: 'both',
+};
+
+const standardVideoConfig = {
+  autoplay: false,
+  muted: false,
+  controls: true,
+  disablePictureInPicture: false,
+  currentTime: 0,
+  playsinline: true,
+};
+
+const videoConfigs = {};
+
+const addVideoConfig = (videoId, props = {}) => {
+  if (!videoConfigs[videoId]) {
+    videoConfigs[videoId] = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.deepMerge)({}, standardVideoConfig);
+  }
+  (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.deepMerge)(videoConfigs[videoId], props);
+};
+
+const getVideoConfig = (videoId) => videoConfigs[videoId];
+
+function isLowResolutionVideoUrl(url) {
+  return url.split('?')[0].endsWith('.mp4');
+}
+
+function isAEMVideoUrl(url) {
+  return videoURLRegex.test(url);
+}
+
+function isVideoLink(link) {
+  const linkString = link.getAttribute('href');
+  return (linkString.includes('youtube.com/embed/')
+    || videoURLRegex.test(linkString)
+    || isLowResolutionVideoUrl(linkString))
+    && link.closest('.block.embed') === null;
+}
+
+function selectVideoLink(links, preferredType, videoType = videoTypes.both) {
+  const linksArray = Array.isArray(links) ? links : [...links];
+  const hasConsentForSocialVideos = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.isSocialAllowed)();
+  const isTypeBoth = videoType === videoTypes.both;
+  const prefersYouTube = (hasConsentForSocialVideos && preferredType !== 'local')
+                      || (!isTypeBoth && videoType === videoTypes.youtube);
+
+  const findLinkByCondition = (conditionFn) => linksArray.find((link) => conditionFn(link.getAttribute('href')));
+
+  const aemVideoLink = findLinkByCondition((href) => videoURLRegex.test(href));
+  const youTubeLink = findLinkByCondition((href) => href.includes('youtube.com/embed/'));
+  const localMediaLink = findLinkByCondition((href) => href.split('?')[0].endsWith('.mp4'));
+
+  if (aemVideoLink) return aemVideoLink;
+  if (prefersYouTube && youTubeLink) return youTubeLink;
+  return localMediaLink;
+}
+
+function createLowResolutionBanner() {
+  const lowResolutionMessage = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.getTextLabel)('Low resolution video message');
+  const changeCookieSettings = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.getTextLabel)('Change cookie settings');
+
+  const banner = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('div', { classes: 'low-resolution-banner' });
+  banner.innerHTML = `${lowResolutionMessage} <button class="low-resolution-banner-cookie-settings">${changeCookieSettings}</button>`;
+  banner.querySelector('button').addEventListener('click', () => {
+    window.OneTrust.ToggleInfoDisplay();
+  });
+
+  return banner;
+}
+
+function showVideoModal(linkUrl) {
+  // eslint-disable-next-line import/no-cycle
+  __webpack_require__.e(/*! import() */ "common_modal_modal-component_js").then(__webpack_require__.bind(__webpack_require__, /*! ../common/modal/modal-component.js */ "./common/modal/modal-component.js")).then((modal) => {
+    let beforeBanner = {};
+
+    if (isLowResolutionVideoUrl(linkUrl)) {
+      beforeBanner = createLowResolutionBanner();
+    }
+
+    modal.showModal(linkUrl, beforeBanner);
+  });
+}
+
+function addVideoShowHandler(link) {
+  link.classList.add('text-link-with-video');
+
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    showVideoModal(link.getAttribute('href'));
+  });
+}
+
+function isSoundcloudLink(link) {
+  return link.getAttribute('href').includes('soundcloud.com/player')
+    && link.closest('.block.embed') === null;
+}
+
+function addSoundcloudShowHandler(link) {
+  link.classList.add('text-link-with-soundcloud');
+
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const thumbnail = link.closest('div')?.querySelector('picture');
+    const title = link.closest('div')?.querySelector('h1, h2, h3');
+    const text = link.closest('div')?.querySelector('p:not(.button-container, .image)');
+
+    // eslint-disable-next-line import/no-cycle
+    __webpack_require__.e(/*! import() */ "common_modal_modal-component_js").then(__webpack_require__.bind(__webpack_require__, /*! ../common/modal/modal-component.js */ "./common/modal/modal-component.js")).then((modal) => {
+      const episodeInfo = document.createElement('div');
+      episodeInfo.classList.add('modal-soundcloud');
+      episodeInfo.innerHTML = `<div class="episode-image"><picture></div>
+      <div class="episode-text">
+          <h2></h2>
+          <p></p>
+      </div>`;
+      episodeInfo.querySelector('picture').innerHTML = thumbnail?.innerHTML || '';
+      episodeInfo.querySelector('h2').innerText = title?.innerText || '';
+      episodeInfo.querySelector('p').innerText = text?.innerText || '';
+
+      modal.showModal(link.getAttribute('href'), null, episodeInfo);
+    });
+  });
+}
+
+function addPlayIcon(parent) {
+  const iconWrapper = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('div', { classes: 'video-icon-wrapper' });
+  const icon = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('i', { classes: ['fa', 'fa-play', 'video-icon'] });
+  iconWrapper.appendChild(icon);
+  parent.appendChild(iconWrapper);
+}
+
+function wrapImageWithVideoLink(videoLink, image) {
+  videoLink.innerText = '';
+  videoLink.appendChild(image);
+  videoLink.classList.add('link-with-video');
+  videoLink.classList.remove('button', 'primary', 'text-link-with-video');
+
+  addPlayIcon(videoLink);
+}
+
+function createIframe(url, { parentEl, classes = [] }) {
+  // iframe must be recreated every time otherwise the new history record would be created
+  const iframe = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('iframe', {
+    classes: Array.isArray(classes) ? classes : [classes],
+    props: {
+      frameborder: '0',
+      allowfullscreen: true,
+      src: url,
+    },
+  });
+
+  if (parentEl) {
+    parentEl.appendChild(iframe);
+  }
+
+  return iframe;
+}
+
+/**
+ * Set playback controls for video elements.
+ * This function selects all button elements that are direct children of video elements,
+ * and re-assigns them to their grandparent elements (the parent of their parent).
+ */
+const setPlaybackControls = () => {
+  const playbackControls = document.querySelectorAll('video > button');
+  playbackControls.forEach((control) => {
+    const { parentElement } = control.parentElement;
+    parentElement.append(control);
+  });
+};
+
+/**
+ * Creates a video element with a source.
+ *
+ * @param {string} src - The source URL of the video.
+ * @param {string} className - CSS class names to apply to the video element.
+ * @param {Object} props - Properties and attributes for the video element.
+ * @returns {HTMLElement} - The created video element with a source child.
+ */
+const createVideoElement = (src, className, props) => {
+  const video = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('video', { classes: className });
+  const source = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('source', { props: { src, type: 'video/mp4' } });
+  video.appendChild(source);
+
+  if (props.muted === true) {
+    video.muted = props.muted;
+  }
+
+  if (props.autoplay === true) {
+    video.autoplay = props.autoplay;
+  } else {
+    video.removeAttribute('autoplay');
+  }
+
+  if (props) {
+    Object.keys(props).forEach((propName) => {
+      video.setAttribute(propName, props[propName]);
+    });
+  }
+
+  return video;
+};
+
+/**
+ * Creates an iframe element with specified attributes.
+ *
+ * @param {string} src - The source URL of the iframe.
+ * @param {string} className - CSS class names to apply to the iframe.
+ * @param {Object} props - Properties and attributes for the iframe element.
+ * @param {string} videoId - The video ID of the iframe.
+ * @returns {HTMLElement} - The created iframe element.
+ */
+const createIframeElement = (src, className, props, videoId) => {
+  addVideoConfig(videoId, props);
+
+  return (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('iframe', {
+    classes: className,
+    props: {
+      ...props,
+      allow: 'autoplay; fullscreen',
+      allowfullscreen: true,
+      src,
+    },
+  });
+};
+
+/**
+ * Creates a play/pause button with icons.
+ *
+ * @returns {HTMLElement} - The created play/pause button.
+ */
+const createPlayPauseButton = () => {
+  const button = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('button', {
+    props: { type: 'button', class: 'v2-video__playback-button' },
+  });
+  const pauseIcon = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('span', { classes: ['icon', 'icon-pause-video'] });
+  const playIcon = (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('span', { classes: ['icon', 'icon-play-video'] });
+  button.append(pauseIcon, playIcon);
+  return button;
+};
+
+/**
+ * Toggles the display of play and pause icons.
+ *
+ * @param {boolean} isPaused - Whether the video is paused.
+ * @param {HTMLElement} playIcon - The play icon element.
+ * @param {HTMLElement} pauseIcon - The pause icon element.
+ * @param {HTMLElement} playPauseButton - The play/pause button element.
+ */
+const togglePlayPauseIcon = (isPaused, playIcon, pauseIcon, playPauseButton) => {
+  playIcon.style.display = isPaused ? 'flex' : 'none';
+  pauseIcon.style.display = isPaused ? 'none' : 'flex';
+  playPauseButton.setAttribute('aria-label', (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.getTextLabel)(isPaused ? 'Play video' : 'Pause video'));
+};
+
+/**
+ * Sets up event listeners for the video element and play/pause button.
+ *
+ * @param {HTMLElement} video - The video element.
+ * @param {HTMLElement} playPauseButton - The play/pause button element.
+ * @param {Object} props - Properties and attributes for the video element.
+ */
+const setVideoEvents = (video, playPauseButton, props) => {
+  const playIcon = playPauseButton.querySelector('.icon-play-video');
+  const pauseIcon = playPauseButton.querySelector('.icon-pause-video');
+
+  if (props.autoplay === false) {
+    togglePlayPauseIcon(true, playIcon, pauseIcon, playPauseButton);
+  }
+
+  playPauseButton.addEventListener('click', () => {
+    video[video.paused ? 'play' : 'pause']();
+  });
+
+  video.addEventListener('playing', () => togglePlayPauseIcon(false, playIcon, pauseIcon, playPauseButton));
+  video.addEventListener('pause', () => togglePlayPauseIcon(true, playIcon, pauseIcon, playPauseButton));
+
+  // Fallback to make sure the video is automatically played
+  if (props.autoplay === true) {
+    video.addEventListener('loadedmetadata', () => {
+      setTimeout(() => {
+        if (video.paused) {
+          // eslint-disable-next-line no-console
+          console.warn('Failed to autoplay video, fallback code executed');
+          video.play();
+        }
+      }, 500);
+    }, { once: true });
+  } else {
+    video.removeAttribute('autoplay');
+  }
+};
+
+/**
+ * Creates and configures a video element with play/pause controls.
+ *
+ * @param {string} src - The source URL of the video.
+ * @param {string} className - CSS class names to apply to the video element.
+ * @param {Object} props - Properties and attributes for the video element.
+ * @param {HTMLElement} block - The block to which the video element will be appended.
+ * @returns {HTMLElement} - The created and configured video element.
+ */
+const createAndConfigureVideo = (src, className, props, block) => {
+  const video = createVideoElement(src, className, props);
+  const playPauseButton = createPlayPauseButton();
+
+  if (block) {
+    block.prepend(video);
+    block.insertBefore(playPauseButton, video.nextSibling);
+  }
+
+  setVideoEvents(video, playPauseButton, props);
+  return video;
+};
+
+/**
+ * Creates a video element or an iframe for a video, depending on whether the video is local
+ * or not. Configures the element with specified classes, properties, and source.
+ *
+ * @param {HTMLElement} block - The block to which the video element or iframe will be appended.
+ * @param {string} src - The source URL of the video.
+ * @param {string} [className=''] - CSS class names to apply to the video element or iframe.
+ * @param {Object} [props={}] - Properties and attributes for the video element or iframe,
+ *                              including attributes like 'muted', 'autoplay', 'title'. All
+ *                              properties are applied as attributes.
+ * @param {boolean} [localVideo=true] - Indicates if the video is a local file. If true, creates
+ *                                      a <video> element with a <source> child. If false,
+ *                                      creates an iframe for an external video.
+ * @param {string} [videoId=''] - Identifier for the video, used for external video sources.
+ * @returns {HTMLElement} - The created video element (<video> or <iframe>) with specified configs.
+ */
+const createVideo = (block, src, className = '', props = {}, localVideo = true, videoId = '') => (
+  localVideo
+    ? createAndConfigureVideo(src, className, props, block)
+    : createIframeElement(src, className, props, videoId)
+);
+
+const logVideoEvent = (eventName, videoId, timeStamp, blockName = 'video') => {
+  // eslint-disable-next-line no-console
+  console.info(`[${blockName}] ${eventName} for ${videoId} at ${timeStamp}`);
+};
+
+const formatDebugTime = (date) => {
+  const timeOptions = {
+    hour12: false,
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  };
+  const formattedTime = date.toLocaleTimeString('en-US', timeOptions);
+  const milliseconds = date.getMilliseconds().toString().padStart(3, '0');
+
+  return `${formattedTime}.${milliseconds}`;
+};
+
+const handleVideoMessage = (event, videoId, blockName = 'video') => {
+  if (!event.origin.endsWith(aemCloudDomain)) return;
+  if (event.data.type === 'embedded-video-player-event') {
+    const timeStamp = formatDebugTime(new Date());
+
+    logVideoEvent(event.data.name, event.data.videoId, timeStamp, blockName);
+
+    if (event.data.name === 'video-config' && event.data.videoId === videoId) {
+      // eslint-disable-next-line no-console
+      console.info('Sending video config:', getVideoConfig(videoId), timeStamp);
+      event.source.postMessage(JSON.stringify(getVideoConfig(videoId)), '*');
+    }
+
+    // TODO: handle events when needed in a block
+    // switch (event.data.name) {
+    //   case 'video-playing':
+    //   case 'video-play':
+    //   case 'video-ended':
+    //   case 'video-loadedmetadata':
+    //     logVideoEvent(event.data.name, event.data.videoId, timeStamp, blockName);
+    //     break;
+    //   default:
+    //     break;
+    // }
+  }
+};
+
+class VideoEventManager {
+  constructor() {
+    this.registrations = [];
+    window.addEventListener('message', this.handleMessage.bind(this));
+  }
+
+  register(videoId, blockName, callback) {
+    this.registrations.push({ videoId, blockName, callback });
+  }
+
+  unregister(videoId, blockName) {
+    this.registrations = this.registrations.filter(
+      (reg) => reg.videoId !== videoId || reg.blockName !== blockName,
+    );
+  }
+
+  handleMessage(event) {
+    this.registrations.forEach(({ videoId, blockName, callback }) => {
+      if (event.data.type === 'embedded-video-player-event' && event.data.videoId === videoId) {
+        callback(event, videoId, blockName);
+      }
+    });
+  }
+}
+
+
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ "./templates lazy recursive ^\\.\\/.*\\/.*\\.js$":
+/*!***********************************************************!*\
+  !*** ./templates/ lazy ^\.\/.*\/.*\.js$ namespace object ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var map = {
+	"./body-builder-news/body-builder-news.js": [
+		"./templates/body-builder-news/body-builder-news.js",
+		"templates_body-builder-news_body-builder-news_js"
+	],
+	"./mack-news/mack-news.js": [
+		"./templates/mack-news/mack-news.js",
+		"templates_mack-news_mack-news_js"
+	],
+	"./magazine/magazine.js": [
+		"./templates/magazine/magazine.js",
+		"templates_magazine_magazine_js"
+	]
+};
+function webpackAsyncContext(req) {
+	if(!__webpack_require__.o(map, req)) {
+		return Promise.resolve().then(() => {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+
+	var ids = map[req], id = ids[0];
+	return __webpack_require__.e(ids[1]).then(() => {
+		return __webpack_require__(id);
+	});
+}
+webpackAsyncContext.keys = () => (Object.keys(map));
+webpackAsyncContext.id = "./templates lazy recursive ^\\.\\/.*\\/.*\\.js$";
+module.exports = webpackAsyncContext;
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/async module */
+/******/ 	(() => {
+/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
+/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
+/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
+/******/ 		var resolveQueue = (queue) => {
+/******/ 			if(queue && queue.d < 1) {
+/******/ 				queue.d = 1;
+/******/ 				queue.forEach((fn) => (fn.r--));
+/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
+/******/ 			}
+/******/ 		}
+/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
+/******/ 			if(dep !== null && typeof dep === "object") {
+/******/ 				if(dep[webpackQueues]) return dep;
+/******/ 				if(dep.then) {
+/******/ 					var queue = [];
+/******/ 					queue.d = 0;
+/******/ 					dep.then((r) => {
+/******/ 						obj[webpackExports] = r;
+/******/ 						resolveQueue(queue);
+/******/ 					}, (e) => {
+/******/ 						obj[webpackError] = e;
+/******/ 						resolveQueue(queue);
+/******/ 					});
+/******/ 					var obj = {};
+/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
+/******/ 					return obj;
+/******/ 				}
+/******/ 			}
+/******/ 			var ret = {};
+/******/ 			ret[webpackQueues] = x => {};
+/******/ 			ret[webpackExports] = dep;
+/******/ 			return ret;
+/******/ 		}));
+/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
+/******/ 			var queue;
+/******/ 			hasAwait && ((queue = []).d = -1);
+/******/ 			var depQueues = new Set();
+/******/ 			var exports = module.exports;
+/******/ 			var currentDeps;
+/******/ 			var outerResolve;
+/******/ 			var reject;
+/******/ 			var promise = new Promise((resolve, rej) => {
+/******/ 				reject = rej;
+/******/ 				outerResolve = resolve;
+/******/ 			});
+/******/ 			promise[webpackExports] = exports;
+/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
+/******/ 			module.exports = promise;
+/******/ 			body((deps) => {
+/******/ 				currentDeps = wrapDeps(deps);
+/******/ 				var fn;
+/******/ 				var getResult = () => (currentDeps.map((d) => {
+/******/ 					if(d[webpackError]) throw d[webpackError];
+/******/ 					return d[webpackExports];
+/******/ 				}))
+/******/ 				var promise = new Promise((resolve) => {
+/******/ 					fn = () => (resolve(getResult));
+/******/ 					fn.r = 0;
+/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
+/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
+/******/ 				});
+/******/ 				return fn.r ? promise : getResult();
+/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
+/******/ 			queue && queue.d < 0 && (queue.d = 0);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".js";
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "@adobe/helix-project-boilerplate:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/dist/";
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						}
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk_adobe_helix_project_boilerplate"] = self["webpackChunk_adobe_helix_project_boilerplate"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/scripts.js");
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;

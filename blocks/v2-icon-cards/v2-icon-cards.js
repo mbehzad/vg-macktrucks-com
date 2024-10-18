@@ -6,7 +6,7 @@ import {
 const blockName = 'v2-icon-cards';
 const variantClasses = ['no-background', 'alt-font-size'];
 
-export default async function decorate(block) {
+async function decorate(block) {
   variantsClassesToBEM(block.classList, variantClasses, blockName);
   const rows = [...block.querySelectorAll(':scope > div')];
   const columns = [...block.querySelectorAll(':scope > div > div')];

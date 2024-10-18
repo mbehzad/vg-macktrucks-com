@@ -447,27 +447,8 @@ function buildInpageNavigationBlock(main, classname) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main, head) {
-  if (head) {
-    const pageStyle = head.querySelector('[name="style"]')?.content;
-    if (pageStyle) {
-      pageStyle.split(',')
-        .map((style) => toClassName(style.trim()))
-        .forEach((style) => main.classList.add(style));
-    }
-  }
-  // hopefully forward compatible button decoration
-  decorateButtons(main);
-  decorateIcons(main);
-  buildAutoBlocks(main, head);
-  decorateSections(main);
-  decorateBlocks(main);
-  decorateSectionBackgrounds(main);
-  decorateLinks(main);
+  decorateIcons(document.body);
 
-  // Truck carousel
-  buildTruckLineupBlock(main, 'v2-truck-lineup');
-  // Inpage navigation
-  buildInpageNavigationBlock(main, 'v2-inpage-navigation');
 }
 
 /**
@@ -500,7 +481,7 @@ async function loadEager(doc) {
  */
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
-  await loadBlocks(main);
+  //await loadBlocks(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
@@ -509,19 +490,19 @@ async function loadLazy(doc) {
   const subnav = header.querySelector('.block.sub-nav');
 
   if (!disableHeader) {
-    loadHeader(header);
+    //loadHeader(header);
   }
   if (!disableFooter) {
-    loadFooter(doc.querySelector('footer'));
+    //loadFooter(doc.querySelector('footer'));
   }
 
-  if (subnav) {
+  /*if (subnav) {
     loadBlock(subnav);
     header.appendChild(subnav);
-  }
+  }*/
 
   // loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
-  addFavIcon(`${window.hlx.codeBasePath}/styles/favicon.svg`);
+  //addFavIcon(`${window.hlx.codeBasePath}/styles/favicon.svg`);
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));

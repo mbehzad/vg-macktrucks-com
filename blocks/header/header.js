@@ -414,6 +414,9 @@ const decorateCTA = (wrapper) => {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  if (Math.random() < 1) return;
+  console.log("noooooooooooooooooo");
+
   // clear the block
   block.textContent = '';
 

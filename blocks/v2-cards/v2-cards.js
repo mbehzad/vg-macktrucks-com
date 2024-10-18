@@ -1,6 +1,6 @@
 import { variantsClassesToBEM } from '../../scripts/common.js';
 
-export default async function decorate(block) {
+async function decorate(block) {
   const blockName = 'v2-cards';
   const variantClasses = [
     'no-background',

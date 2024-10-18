@@ -1,0 +1,253 @@
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./blocks/performance-specifications/performance-specifications.css ***!
+  \********************************************************************************************************************/
+.section.performance-specifications-container {
+  --specs-section-padding: 40px 0 0;
+  --specs-section-gap: 20px;
+
+  padding: var(--specs-section-padding);
+  gap: var(--specs-section-gap);
+}
+
+.redesign-v2 .section.performance-specifications-container > div > h2.performance-specifications__section-title {
+  margin: 0;
+}
+
+.performance-specifications {
+  --gold-button-background: var(--button-secondary-gold-enabled);
+  --specs-grid-template-columns: 1fr;
+  --navigation-line-height: 3px;
+  --category-tablist-margin: 0 -16px 24px 0;
+  --category-detail-padding: 24px 0;
+  --category-detail-margin: 0 0 24px;
+  --category-detail-gap: 24px;
+  --key-specs-margin: 0 0 1.5em;
+  --body-font-size-xxs: 12px;
+}
+
+/* START category tab list */
+
+.performance-specifications .category-tablist-wrapper {
+  overflow: hidden;
+  margin: var(--category-tablist-margin);
+}
+
+.performance-specifications .category-tablist {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  overflow: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  position: relative;
+}
+
+.performance-specifications .category-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+.performance-specifications .category-tablist .category-tab {
+  flex-grow: 1;
+  position: relative;
+  text-align: center;
+}
+
+.performance-specifications .category-tab [role="tab"] {
+  background: 0 0;
+  border: none;
+  color: var(--text-subtle);
+  display: flex;
+  font-family: var(--ff-body);
+  font-size: var(--body-1-font-size);
+  justify-content: center;
+  line-height: var(--body-1-line-height);
+  margin: 0;
+  min-width: 160px;
+  padding: 20px 15px 10px;
+  white-space: nowrap;
+  width: 100%;
+  transition: var(--duration-small) var(--easing-standard);
+  z-index: 3;
+  position: relative;
+}
+
+.performance-specifications .category-tab [role="tab"]::after {
+  background: var(--navigation-line-default-color);
+  content: "";
+  height: var(--navigation-line-height);
+  left: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.performance-specifications .category-tab [role="tab"]:focus {
+  outline: 0;
+}
+
+.performance-specifications .category-tab [role="tab"]:focus-visible {
+  outline: var(--navigation-line-active-color) auto 3px;
+}
+
+.performance-specifications .category-tab [role="tab"][aria-selected="true"],
+.performance-specifications .category-tab [role="tab"]:focus-visible,
+.performance-specifications .category-tab [role="tab"]:hover {
+  color: var(--c-primary-white);
+}
+
+.performance-specifications .category-tablist .active-line {
+  background: var(--navigation-line-active-color);
+  height: var(--navigation-line-height);
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  margin: 0;
+  position: absolute;
+  transition: all var(--duration-small) var(--easing-standard);
+  width: 0;
+}
+
+/* END category tab list */
+
+.performance-specifications .category-detail {
+  padding: var(--category-detail-padding);
+  border-bottom: 1px solid var(--c-primary-white);
+  margin: var(--category-detail-margin);
+  display: flex;
+  flex-direction: column;
+  gap: var(--category-detail-gap);
+}
+
+.performance-specifications .category-detail h3 {
+  margin: 0;
+}
+
+.performance-specifications .category-detail .category-description {
+  font-size: var(--body-font-size-s);
+  max-width: 600px;
+  margin: 0;
+}
+
+.performance-specifications .engine-ratings {
+  font-family: var(--ff-body-bold);
+  font-size: var(--body-font-size-xxs);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.performance-specifications .engine-navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 1em;
+}
+
+.performance-specifications .engine-tablist {
+  display: flex;
+  gap: 1em;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.performance-specifications .engine-tablist [role="tab"] {
+  background-color: var(--c-primary-white);
+  font-size: var(--body-font-size-xs);
+  color: var(--c-primary-black);
+  border-radius: 2px;
+  padding: 0.4em 0.7em 0.2em;
+  line-height: 18px;
+  margin: 0;
+  border-style: none;
+}
+
+.performance-specifications .engine-tablist [role="tab"][aria-selected="true"] {
+  background-color: var(--gold-button-background);
+}
+
+.performance-specifications .engine-tablist [role="tab"][aria-selected="true"]:hover {
+  background-color: var(--button-secondary-gold-hover);
+}
+
+.performance-specifications .engine-tablist [role="tab"][aria-selected="false"]:hover {
+  background-color: var(--button-tertiary-white-hover);
+}
+
+.performance-specifications .details-panel {
+  display: grid;
+  grid-template-columns: var(--specs-grid-template-columns);
+}
+
+.performance-specifications .details-panel dl dt {
+  font-family: var(--ff-body-bold);
+  font-size: var(--body-font-size-xxs);
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 0.1em;
+}
+
+.performance-specifications .details-panel dl dd {
+  line-height: 1em;
+  font-size: var(--body-font-size-s);
+  letter-spacing: -0.015em;
+  padding: 0.5em 0 0;
+  margin: var(--key-specs-margin);
+}
+
+.details-panel .key-specs {
+  max-width: 290px;
+}
+
+.details-panel .loading-spinner {
+  pointer-events: none;
+  width: 2em;
+  height: 2em;
+  border: 0.2em solid var(--button-secondary-gold-hover);
+  border-top-color: var(--c-primary-gold);
+  border-left-color: var(--c-primary-gold);
+  border-radius: 50%;
+  animation: loading-spin 3s linear infinite;
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes loading-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.performance-specifications .performance-chart {
+  width: 100%;
+  min-height: 480px;
+}
+
+@media (min-width: 768px) {
+  .performance-specifications {
+    --specs-grid-template-columns: 1fr 3fr;
+    --category-tablist-margin: 0 0 24px;
+    --key-specs-margin: 0 0 2.5em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section.performance-specifications-container {
+    --specs-section-padding: 64px 0 64px;
+    --specs-section-gap: 40px;
+  }
+
+  .performance-specifications {
+    --category-tablist-margin: 0;
+    --category-detail-padding: 40px 0 24px;
+    --category-detail-margin: 0 0 40px;
+    --category-detail-gap: 12px;
+  }
+
+  .details-panel .key-specs {
+    width: 290px;
+  }
+}
+

@@ -1,0 +1,463 @@
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./blocks/hero/hero.css ***!
+  \************************************************************************/
+/* stylelint-disable no-descending-specificity */
+
+/* auto and non-auto block shared styles */
+:root {
+  --hero-header-ff: var(--ff-helvetica-heavy);
+  --hero-text-ff: var(--ff-subheadings-medium);
+  --hero-btn-ff: var(--ff-body-bold);
+  --hero-text-size: 20px;
+}
+
+main .hero-container > div {
+    max-width: unset;
+}
+
+main .hero-container {
+    padding: 0;
+}
+
+main .hero {
+    position: relative;
+    padding: 32px;
+    min-height: 300px;
+}
+
+main .hero h1 {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--c-primary-white);
+}
+
+main .hero :is(h1, h2) {
+  font-family: var(--hero-header-ff);
+}
+
+main .hero p:not(.button-container) {
+  font-family: var(--hero-text-ff);
+  font-size: var(--hero-text-size);
+}
+
+main .hero p.button-container .button {
+  font-family: var(--hero-btn-ff);
+}
+
+main .hero picture {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+main .hero img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* default block */
+main .hero:not(.auto-block) > div {
+    position: relative;
+}
+
+.hero .hero-content-container {
+    position: absolute;
+    inset: 0;
+    margin: -32px;
+    color: var(--c-primary-white);
+}
+
+.hero .hero-content-wrapper {
+    transform: translateY(-20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1376px;
+    margin: 0 auto;
+    gap: 1rem;
+    padding-inline: 2rem;
+}
+
+.hero .hero-content-wrapper,
+.hero .hero-content-container,
+main .hero:not(.auto-block) {
+    height: 80vw;
+}
+
+.hero.dark-background .hero-content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .hero-content-wrapper h1 {
+  font-size: max(10vmin, 38px);
+  line-height: 1;
+}
+
+.hero .hero-content-wrapper h2 {
+  font-size: max(8vmin, 32px);
+  line-height: 1;
+}
+
+main .hero .hero-content-wrapper p:not(.button-container) {
+  font-size: max(4vmin, 16px);
+  line-height: 1.1;
+}
+
+.hero.dark-background .hero-content-wrapper {
+  background: rgb(0 0 0 / 50%);
+  max-height: 80vh;
+  height: auto;
+  padding: 20px;
+}
+
+@media (min-width: 480px) {
+    .hero .hero-content-wrapper h1 {
+     font-size: var(--heading-font-size-xxl);
+    }
+
+    .hero .hero-content-wrapper h2 {
+      font-size: var(--heading-font-size-xl);
+    }
+
+    main .hero .hero-content-wrapper p:not(.button-container) {
+      font-size: var(--hero-text-size);
+    }
+
+    .hero .hero-content-wrapper {
+        position: absolute;
+        left: 15%;
+        max-width: 360px;
+        padding: 0;
+    }
+}
+
+@media (min-width: 600px) {
+    .hero .hero-content-wrapper {
+        max-width: 450px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero .hero-content-wrapper {
+        max-width: 500px;
+    }
+
+    .hero .hero-content-wrapper,
+    .hero .hero-content-container,
+    main .hero:not(.auto-block) {
+        height: 100vh;
+    }
+}
+
+.hero .hero-content-wrapper > * {
+    margin: 0;
+}
+
+/* video included */
+.hero .hero-video {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero .hero-video.hide {
+    display: none;
+}
+
+.hero .hero-content-container:has(.hero-video) {
+    background-color: var(--c-primary-black);
+}
+
+/* Rule just for magazine listing page */
+main .hero.magazine .hero-content-media picture {
+    position: unset;
+}
+
+/* SPECS hero styling  */
+main .hero.specs {
+    padding: 50px;
+    background: radial-gradient(circle, rgba(255 255 255 / 100%) 0%, rgba(198 199 201 / 100%) 100%);
+    z-index: -1;
+    height: 60vh;
+}
+
+main .hero.specs::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    z-index: -2;
+    bottom: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 400px;
+    background: linear-gradient(0deg, rgba(255 255 255 / 100%) 0%, rgba(255 255 255 / 40%) 70%, rgba(255 255 255 / 0%) 100%);
+}
+
+main .hero.specs img {
+    object-fit: cover;
+    height: unset;
+    padding: 20px;
+    z-index: 1;
+    margin-top: 15vh;
+}
+
+main .hero.specs .hero-content-wrapper {
+    max-width: unset;
+    height: unset;
+    display: contents;
+    text-align: center;
+}
+
+main .hero.specs .hero-content-wrapper p {
+    display: none;
+}
+
+main .hero.specs .hero-content-wrapper h1 {
+    color: var(--c-primary-black);
+    font-family: var(--ff-body-bold);
+    font-size: 60px;
+    width: 100%;
+    margin: 50px auto;
+}
+
+main .hero.specs .hero-content-wrapper h1::after {
+    content: "®";
+    font-size: var(--body-font-size-xxl);
+    position: absolute;
+    top: 5%;
+}
+
+@media (min-width: 650px) {
+    main .hero.specs .hero-content-wrapper h1 {
+        font-size: 85px;
+    }
+
+    main .hero.specs {
+        height: 70vh;
+    }
+
+    main .hero.specs::after {
+        height: 300px;
+    }
+
+    main .hero.specs img {
+        margin-top: 20vh;
+    }
+}
+
+@media (min-width: 768px) {
+    main .hero.specs {
+        height: 70vh;
+    }
+
+    main .hero.specs img {
+        margin-top: 25vh;
+    }
+}
+
+@media (min-width: 992px) {
+    main .hero.specs img {
+        height: unset;
+        width: 1000px;
+        margin: 20vh calc((100vw - 1000px) / 2) 0;
+    }
+}
+
+/* MAGAZINE hero styling  */
+main .hero.magazine {
+    background-color: var(--c-primary-white);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: unset;
+}
+
+main .hero.magazine .hero-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    position: unset;
+    height: unset;
+}
+
+main .hero.magazine .hero-content-media {
+    background-color: var(--c-primary-white);
+}
+
+main .hero.magazine .hero-content-media p {
+    margin: 0 !important;
+}
+
+main .hero.magazine img {
+    width: 55vw;
+}
+
+main .hero.magazine .hero-content-wrapper {
+    text-align: left;
+    position: unset;
+    height: unset;
+    max-width: fit-content;
+    width: 100%;
+    color: var(--c-primary-black);
+    margin: 66px 70px 50px;
+    row-gap: 0;
+}
+
+main .hero.magazine .hero-content-wrapper h1 {
+    font-family: var(--ff-body-bold);
+    font-size: var(--heading-font-size-xxl);
+    color: var(--c-primary-black);
+}
+
+main .hero.magazine .hero-content-wrapper p {
+    font-family: var(--ff-subheadings-medium);
+    font-size: var(--body-font-size-xl);
+    height: auto;
+}
+
+main .hero.magazine .hero-content-wrapper p:first-of-type {
+    margin-bottom: 30px;
+}
+
+main .hero.magazine .hero-content-wrapper a {
+    font-family: var(--ff-body-bold);
+    font-size: var(--body-font-size-xs);
+    margin: 0;
+}
+
+main .hero.magazine .hero-content-wrapper a:hover {
+    text-decoration: unset;
+}
+
+@media (min-width: 768px) {
+    main .hero.magazine .hero-content-container {
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: var(--c-primary-black);
+    }
+
+    main .hero.magazine .hero-content-media {
+        width: 45vw;
+        max-width: 800px;
+        background-color: var(--c-primary-black);
+        padding: 50px 5vw;
+    }
+
+    main .hero.magazine .hero-content-wrapper {
+        color: var(--c-primary-white);
+        width: 50%;
+        max-width: 500px;
+    }
+
+    main .hero.magazine .hero-content-wrapper h1 {
+        color: var(--c-primary-white);
+    }
+}
+
+/* MAGAZINE CATEGORIES hero styling  */
+main .hero.magazine-categories,
+main .hero.magazine-categories .hero-content-container,
+main .hero.magazine-categories .hero-content-wrapper,
+main .hero.magazine-categories img {
+    height: 310px;
+    padding: 0 auto;
+}
+
+main .hero.magazine-categories .hero-content-wrapper {
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+main .hero.magazine-categories h4 {
+    margin: 0 0 55px;
+}
+
+main .hero.magazine-categories em {
+    font-style: unset;
+}
+
+@media (min-width: 768px) {
+    main .hero.magazine-categories,
+    main .hero.magazine-categories .hero-content-container,
+    main .hero.magazine-categories .hero-content-wrapper,
+    main .hero.magazine-categories img {
+        height: 600px;
+    }
+
+    main .hero.magazine-categories h4 {
+        font-size: var(--heading-1-desktop-size-xl);
+    }
+}
+
+/* Hero with half the height */
+@media (min-width: 768px) {
+    main .hero.half-height,
+    main .hero.half-height .hero-content-container,
+    main .hero.half-height .hero-content-wrapper,
+    main .hero.half-height img {
+        height: 50vw;
+    }
+}
+
+/* hero columns variant */
+.hero.hero-columns {
+  background-color: var(--c-primary-black);
+  padding: 32px 0;
+}
+
+.hero.hero-columns .hero-content-wrapper,
+.hero.hero-columns .hero-content-container,
+main .hero.hero-columns:not(.auto-block) {
+  height: auto;
+}
+
+.hero.hero-columns .hero-content-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.hero.hero-columns .hero-content-media p {
+  margin: 0;
+}
+
+.hero.hero-columns picture {
+  position: relative;
+}
+
+.hero.hero-columns .hero-content-wrapper {
+  transform: unset;
+  padding: 40px 16px;
+  position: static;
+  max-width: unset
+}
+
+@media (min-width: 600px) {
+  .hero.hero-columns .hero-content-container {
+    flex-direction: row-reverse;
+  }
+
+  .hero.hero-columns .hero-content-wrapper {
+    padding: 40px 32px;
+  }
+
+  .hero.hero.hero-columns .hero-content-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50%;
+  }
+}
+

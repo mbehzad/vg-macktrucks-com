@@ -47,39 +47,8 @@ const setContentWrapperHeight = (wrapper, slidesCount) => {
 export default async function decorate(block) {
   const activeSlideClass = `${blockName}__slide--active`;
   const activeSlideImageClass = `${blockName}__slide-image--active`;
-  const variantClasses = ['image-left', 'image-shadow'];
-  variantsClassesToBEM(block.classList, variantClasses, blockName);
 
-  [...block.querySelectorAll(':scope > div')].forEach(unwrapDivs);
-
-  const heading = block.querySelector(':scope > div > :is(h1, h2, h3, h4, h5, h6)');
-  const rows = [...block.querySelectorAll(':scope > div')].slice(1);
-  const list = createElement('ul', { classes: `${blockName}__slides` });
-  const contentEl = createElement('div', { classes: `${blockName}__content` });
-
-  heading.parentElement.replaceWith(heading);
-  heading.classList.add(`${blockName}__heading`);
-
-  contentEl.append(heading, list);
-  block.append(contentEl);
-
-  // moving the rows to list
-  rows.forEach((el) => {
-    const newEl = createElement('li', { classes: `${blockName}__slide` });
-    const textWrapper = createElement('div', { classes: `${blockName}__text-wrapper` });
-
-    newEl.innerHTML = el.innerHTML;
-
-    const descriptionHeading = newEl.querySelector(':scope > :is(h1, h2, h3, h4, h5, h6)');
-    const description = newEl.querySelector(':scope > p');
-
-    descriptionHeading.replaceWith(textWrapper);
-    textWrapper.append(descriptionHeading, description);
-
-    el.remove();
-    list.append(newEl);
-    selectImagesList(newEl);
-  });
+  const list = block.querySelector(`.${blockName}__slides`)
 
   const slidesCount = list.querySelectorAll(`.${blockName}__images-list picture`).length;
   setContentWrapperHeight(block, slidesCount);
@@ -182,3 +151,6 @@ export default async function decorate(block) {
     }
   });
 }
+
+
+document.querySelectorAll(".v2-truck-features-container").forEach(decorate);

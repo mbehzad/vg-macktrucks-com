@@ -9,7 +9,7 @@ import {
 
 const blockName = 'v2-specifications';
 
-export default async function decorate(block) {
+async function decorate(block) {
   const accordionId = [...block.classList].find((className) => className.startsWith('id-'));
 
   const items = block.querySelectorAll(':scope > div');

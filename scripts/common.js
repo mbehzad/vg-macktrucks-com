@@ -21,6 +21,7 @@ export async function getPlaceholders() {
 }
 
 export function getTextLabel(key) {
+  return "abc"; // @TODO: convert to async func
   return placeholders.data.find((el) => el.Key === key)?.Text || key;
 }
 
@@ -114,6 +115,7 @@ export async function decorateIcons(element) {
 
   // Download all new icons
   const icons = [...element.querySelectorAll('span.icon')];
+
   await Promise.all(icons.map(async (span) => {
     const iconName = Array.from(span.classList).find((c) => c.startsWith('icon-')).substring(5);
     if (!ICONS_CACHE[iconName]) {
@@ -153,6 +155,7 @@ export async function decorateIcons(element) {
     .join('\n');
   svgSprite.innerHTML += symbols;
 
+  /*
   icons.forEach((span) => {
     const iconName = Array.from(span.classList).find((c) => c.startsWith('icon-')).substring(5);
     const parent = span.firstElementChild?.tagName === 'A' ? span.firstElementChild : span;
@@ -163,6 +166,7 @@ export async function decorateIcons(element) {
       parent.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"><use href="#icons-sprite-${iconName}"/></svg>`;
     }
   });
+  */
 }
 
 export async function loadTemplate(doc, templateName) {
@@ -196,7 +200,7 @@ export async function loadTemplate(doc, templateName) {
  */
 export async function loadLazy(doc) {
   const main = doc.querySelector('main');
-  await loadBlocks(main);
+  //await loadBlocks(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

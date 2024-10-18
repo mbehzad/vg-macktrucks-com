@@ -1,0 +1,430 @@
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./blocks/footer/footer.css ***!
+  \****************************************************************************/
+/* stylelint-disable no-descending-specificity */
+
+.footer {
+  background: var(--c-primary-black);
+  color: var(--c-secondary-silver);
+  line-height: 150%;
+}
+
+.footer svg {
+  display: block;
+  height: 1em;
+  width: 1em;
+}
+
+.footer a:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* General ul styles */
+.prefooter ul,
+.footer-menu__column ul,
+.footer-legal ul,
+.footer-menu__socialmedia,
+.footer-truck-list__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Apply max width to all the necessary footer items */
+.prefooter ul,
+.footer-truck-list__wrapper,
+.footer-legal ul,
+.footer-menu {
+  max-width: var(--wrapper-width);
+  margin: 0 auto;
+}
+
+/* Prefooter */
+.prefooter {
+  background-color: var(--c-primary-gold);
+}
+
+.prefooter ul {
+  padding: 8px 16px;
+}
+
+.prefooter li:not(:last-child) {
+  border-bottom: 1px solid var(--c-primary-black);
+}
+
+.prefooter a {
+  font-size: 18px;
+  font-family: var(--ff-subheadings-medium);
+  line-height: 140%;
+  letter-spacing: 0.36px;
+  color: var(--c-primary-black);
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prefooter .icon-arrow-right {
+  width: 28px;
+  height: 28px;
+  display: block;
+  padding-top: 2px;
+}
+
+/* Truck list menu */
+.footer-truck-list {
+  background-color: var(--c-secondary-graphite);
+}
+
+.footer-truck-list__title {
+  color: var(--c-primary-white);
+  margin: 0 auto;
+  padding: 24px 32px;
+  max-width: var(--wrapper-width);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.footer-truck-list__title,
+.footer-newsletter__title {
+  font-family: var(--ff-body-bold);
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.92px;
+  text-transform: uppercase;
+  color: var(--c-primary-white);
+}
+
+.footer-truck-list__title .icon-dropdown-caret {
+  --color-icon: var(--c-primary-white);
+
+  transition: transform var(--duration-medium) cubic-bezier(0.45, 0, 0.125, 1);
+  pointer-events: none;
+}
+
+.footer-truck-list.expand .icon-dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.footer-truck-list__title .icon-dropdown-caret svg {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-truck-list__items {
+  transition: 300ms max-height ease;
+  will-change: max-height;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.footer-truck-list__items a {
+  display: flex;
+  padding: 0 32px 16px;
+  color: var(--c-primary-white);
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: var(--body-1-line-height);
+  letter-spacing: 0.16px;
+  justify-content: flex-start;
+}
+
+/* Menu wrapper */
+.footer-menu {
+  display: grid;
+  gap: 40px 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding: 40px 16px;
+  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+  grid-template-areas:
+    "logo"
+    "menu"
+    "newsletter"
+    "social";
+}
+
+/* Logo */
+.footer-menu__logo {
+  --color-icon: var(--c-primary-white);
+
+  grid-area: logo;
+}
+
+.footer-menu__logo svg {
+  width: 193px;
+  height: 19px;
+}
+
+/* Menu */
+.footer-menu__columns {
+  grid-area: menu;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 16px;
+}
+
+.footer-menu__column {
+  width: calc(50% - 20px);
+}
+
+.footer-menu__column a {
+  color: var(--c-secondary-silver);
+  font-family: var(--ff-body);
+  font-size: 13px;
+  line-height: var(--body-2-line-height);
+}
+
+.footer-menu__column a:hover {
+  text-decoration: underline;
+}
+
+/* Newsletter */
+.footer-newsletter {
+  grid-area: newsletter;
+}
+
+.footer-newsletter a {
+  color: currentcolor;
+  text-decoration: underline;
+}
+
+.footer-newsletter a:hover {
+  color: var(--c-primary-white);
+}
+
+.footer-newsletter__title {
+  margin-bottom: 12px;
+}
+
+/* Social media */
+.footer-menu__socialmedia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  grid-area: social;
+}
+
+.footer-menu__socialmedia a {
+  --color-icon: var(--c-tertiary-cool-gray);
+
+  display: block;
+}
+
+.footer-menu__socialmedia a:hover {
+  --color-icon: var(--c-primary-white);
+}
+
+.footer-menu__socialmedia svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Legal */
+.footer-legal ul {
+  border-top: 1px solid var(--c-tertiary-cool-gray);
+  margin: 0 16px;
+  padding: 40px 16px 40px 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px 24px;
+  flex-wrap: wrap;
+}
+
+.footer-legal li {
+  font-size: 13px;
+}
+
+.footer-legal a {
+  font-family: var(--ff-body);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  color: var(--c-secondary-silver);
+}
+
+/* Scroll to top */
+
+.scroll-to-top-container {
+  padding: 24px;
+  display: block;
+  position: absolute;
+  top: calc(100vh - 1px);
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+a.scroll-to-top {
+  display: block;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  background-color: var(--c-primary-gold);
+  box-shadow: 0 8px 16px rgb(0 0 0 / 30%);
+  position: sticky;
+  top: calc(100vh - 24px - 50px);
+  z-index: 99;
+  pointer-events: all;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--button-secondary-gold-hover);
+}
+
+.scroll-to-top:active {
+  background-color: var(--button-secondary-gold-pressed);
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.scroll-to-top svg {
+  transform: rotate(-90deg);
+  height: 24px;
+  width: 24px;
+}
+
+@media (min-width: 1200px) {
+  /* Prefooter */
+  .prefooter ul {
+    display: flex;
+    padding: 28px 0 24px;
+  }
+
+  .prefooter li {
+    align-items: center;
+    border-right: 1px solid var(--c-primary-black);
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .prefooter li:last-child {
+    border-right: 0;
+  }
+
+  .prefooter li:not(:last-child) {
+    border-bottom: 0;
+  }
+
+  .prefooter a {
+    font-size: 24px;
+    gap: 12px;
+    border-bottom: none;
+    justify-content: center;
+    letter-spacing: 0.48px;
+    padding: 15px 0;
+  }
+
+  .prefooter li:first-child a {
+    margin-right: auto;
+  }
+
+  .prefooter li:last-child a {
+    margin-left: auto;
+  }
+
+  .prefooter .icon-arrow-right {
+    padding-top: 0;
+  }
+
+  /* Truck list menu */
+  .footer-truck-list {
+    padding: 0;
+  }
+
+  .footer-truck-list__wrapper {
+    margin: auto;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .footer-truck-list__title {
+    margin: 0 auto 0 0;
+    padding: 24px 32px 24px 0;
+    cursor: default;
+  }
+
+  .footer-truck-list__title .icon-dropdown-caret {
+    display: none;
+  }
+
+  .footer-truck-list__items {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .footer-truck-list__items li {
+    padding: 4px; /* reserve space for focus style */
+  }
+
+  .footer-truck-list__items a {
+    padding: 0;
+  }
+
+  .footer-menu {
+    padding: 96px 0 60px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+    grid-template-areas:
+      "logo menu newsletter"
+      "social menu newsletter";
+  }
+
+  /* Logo */
+  .footer-menu__logo {
+    margin-top: 10px;
+  }
+
+  /* Menu */
+  .footer-menu__columns {
+    flex-wrap: nowrap;
+  }
+
+  .footer-menu__column {
+    width: 160px;
+  }
+
+  /* Legal */
+  .footer-legal ul {
+    margin: 0 auto;
+  }
+}
+
+/* cutsom footer styles */
+.footer__custom .footer-menu {
+  grid-template-areas:
+    "logo"
+    "social";
+}
+
+@media (min-width: 1140px) {
+  .footer__custom .footer-menu {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+    grid-template-areas: "logo social";
+  }
+
+  .footer__custom .footer-menu__socialmedia {
+    justify-self: flex-end;
+  }
+}
+

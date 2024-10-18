@@ -1,0 +1,450 @@
+/*!******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./blocks/v2-hero/v2-hero.css ***!
+  \******************************************************************************/
+.redesign-v2 .v2-hero-container {
+  padding: 0;
+}
+
+.v2-hero {
+  --text-color: var(--c-primary-white);
+  --hero-magazine-headline: 48px;
+  
+  /* height of the hero block is set in main style to prevent CLS */
+  position: relative;
+  overflow: hidden;
+}
+
+.v2-hero__image,
+.v2-hero__video {
+  position: absolute;
+  object-fit: cover;
+  height: 100%;
+  object-position: center;
+  width: 100%;
+}
+
+.v2-hero .v2-video__playback-button {
+  --playback-button-size: 48px;
+
+  background-color: var(--button-primary-bg);
+}
+
+.v2-hero .v2-video__playback-button:hover {
+  background-color: var(--button-primary-bg-hover);
+}
+
+.v2-hero__content-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  justify-content: flex-end;
+  padding: 0 16px var(--section-padding-bottom);
+}
+
+[data-page='pdp'] .v2-hero__content-wrapper {
+  padding: 0;
+}
+
+.v2-hero--no-image .v2-hero__content-wrapper {
+  padding: 40px 16px;
+}
+
+
+.v2-hero__content {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: var(--wrapper-width);
+  width: 100%;
+}
+
+.v2-hero-container:not([data-page='pdp']) .v2-hero__content * {
+  max-width: 600px;
+}
+
+.v2-hero__heading {
+  margin: 0;
+  font-family: var(--ff-headline-medium);
+  font-size: var(--headline-1-font-size);
+  line-height: 120%;
+  letter-spacing: -0.56px;
+}
+
+.v2-hero .v2-hero__cta:any-link {
+  margin: 0;
+  padding: 2px 20px 0;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--c-primary-white);
+  text-align: center;
+  font-family: var(--ff-subheadings-medium);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 18px;
+  letter-spacing: 1.12px;
+  border-radius: 2px;
+}
+
+.v2-hero__cta-wrapper {
+  margin: 16px 0 0;
+}
+
+.v2-hero__cta-wrapper a.button {
+  margin: 0;
+}
+
+/* Magazine variant */
+.v2-hero-wrapper .v2-hero.v2-hero--magazine {
+  height: 375px;
+}
+
+.v2-hero.v2-hero--magazine .v2-hero__content,
+.v2-hero.v2-hero--magazine .v2-hero__content * {
+  max-width: 850px;
+}
+
+.v2-hero--magazine .v2-hero__content-wrapper {
+  justify-content: flex-start;
+  padding: 25px 17px 0;
+}
+
+.v2-hero--magazine .v2-hero__heading {
+  font-family: var(--ff-headline-compressed);
+  font-size: var(--hero-magazine-headline);
+  line-height: 90%;
+  text-transform: uppercase;
+}
+
+.v2-hero--magazine .v2-hero__heading span {
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .v2-hero {
+    --hero-magazine-headline: 96px;
+  }
+
+  .v2-hero-wrapper .v2-hero.v2-hero--magazine {
+    height: 580px;
+  }
+
+  .v2-hero--magazine .v2-hero__content-wrapper {
+    padding: 68px 0 0;
+  }
+}
+
+/* Half height variant */
+.v2-hero.v2-hero--half-height {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  height: unset;
+}
+
+.v2-hero.v2-hero--half-height .v2-hero__content {
+  margin: 0 auto;
+}
+
+.v2-hero.v2-hero--half-height,
+.section.text-black .v2-hero.v2-hero--half-height {
+  --text-color: var(--c-primary-black);
+}
+
+.section.text-white .v2-hero.v2-hero--half-height {
+  --text-color: var(--c-primary-white);
+}
+
+.v2-hero--half-height .v2-hero__image {
+  position: unset;
+  display: block;
+  aspect-ratio: 16/9;
+}
+
+.v2-hero--half-height .v2-hero__content-wrapper {
+  background-color: var(--c-tertiary-light-warm-gray);
+  padding: 40px 16px;
+}
+
+.section.text-white .v2-hero--half-height .v2-hero__content-wrapper {
+  background-color: var(--c-primary-black);
+}
+
+.v2-hero--half-height .v2-hero__heading {
+  font-size: var(--headline-2-font-size);
+}
+
+.v2-hero--half-height .button-container {
+  margin: 0;
+}
+
+@media (min-width: 1200px) {
+  .v2-hero__content {
+    margin: 0 auto;
+  }
+
+  .v2-hero.v2-hero--half-height {
+    height: unset;
+  }
+  
+  .v2-hero--half-height .v2-hero__image {
+    position: absolute;
+    top: -50%;
+    height: auto;
+  }
+
+  .v2-hero--half-height .v2-hero__content-wrapper,
+  .section.text-black .v2-hero--half-height .v2-hero__content-wrapper,
+  .section.text-white .v2-hero--half-height .v2-hero__content-wrapper {
+    background-color: unset;
+    padding: 80px 16px;
+  }
+
+  .v2-hero--half-height .v2-hero__heading {
+    text-wrap: balance;
+  }
+
+  .v2-hero--half-height .button-container {
+    margin: 0;
+  }
+}
+
+/* PDP - Hero section */
+
+[data-page='pdp'] .v2-hero picture::after {
+  @media (min-width: 1200px) {
+    background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, #000 100%);
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 208px;
+    bottom: 0;
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+[data-page='pdp'] .v2-hero__content {
+  flex-direction: row;
+  height: 68px;
+  padding: 0;
+  max-width: unset;
+  gap: 0;
+
+  @media (min-width: 1200px) {
+    min-height: 160px;
+  }
+}
+
+[data-page='pdp'] .v2-hero__content::after {
+  content: '';
+  flex-grow: 1;
+  background-color: rgb(29 29 29 / 85%);
+
+}
+
+[data-page='pdp'] .v2-hero__content ul {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(29 29 29 / 85%);
+  list-style-type: none;
+  color: var(--text-color);
+  margin: 0;
+  padding: 35px 40px 40px;
+  text-align: center;
+  max-height: 160px;
+
+  @media (min-width: 1200px) {
+    display: flex;
+    min-width: 180px;
+  }
+}
+
+[data-page='pdp'][data-page-variation-standard="is-standard-model"] .v2-hero__content ul {
+  background-color: rgb(29 29 29 / 85%);
+}
+
+[data-page='pdp'] .v2-hero__content li:first-child {
+  font-family: var(--ff-testimonial);
+  font-size: var(--accent-2-font-size);
+  line-height: var(--accent-2-line-height);
+  text-transform: capitalize;
+}
+
+[data-page='pdp'] .v2-hero__content li:nth-child(2) {
+  font-size: var(--body-font-size-xxl);
+  line-height: var(--headline-1-line-height);
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+[data-page='pdp'] .v2-hero__content li:nth-child(3) {
+  font-family: var(--ff-accents);
+  font-size: var(--body-2-font-size);
+  text-transform: uppercase;
+  letter-spacing: .08rem;
+}
+
+[data-page='pdp'] .v2-hero__heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-height: 68px;
+  max-width: unset;
+  background: rgb(29 29 29 / 75%);
+  font-size: var(--body-font-size-xxl);
+  font-family: var(--ff-headline-medium);
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  margin: 0;
+  padding-left: 20px;
+
+  @media (min-width: 1200px) {
+    min-height: 160px;
+    justify-content: center;
+    font-size: calc(var(--body-font-size-xxl) * 2);
+  }
+
+  @media (min-width: 1200px) {
+    width: 50%;
+    justify-content: flex-end;
+    padding-right: 40px;
+  }
+}
+
+[data-page='pdp'][data-page-variation-standard="is-standard-model"] .v2-hero__heading {
+  background: rgb(29 29 29 / 75%);
+}
+
+[data-page='pdp'] .v2-hero__content .v2-hero__heading + ul::before,
+[data-page='pdp'] .v2-hero__content .v2-hero__heading + ul + ul::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 29px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--c-primary-white);
+}
+
+[data-page='pdp'] .v2-hero__heading.with-marker::before {
+  display: none;
+}
+
+/* PDP - electric model availability banner */
+[data-page='pdp'] .v2-hero__content .v2-hero__cta {
+  width: 100%;
+  position: relative;
+  background: transparent;
+  font-family: var(--ff-body-bold);
+  font-size: var(--body-1-font-size);
+}
+
+[data-page='pdp'] .v2-hero__cta-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  background: var(--c-accent-copper);
+  margin-top: 0;
+}
+
+[data-page='pdp'] .v2-hero__cta .icon-arrow-right,
+[data-page='pdp'] .v2-hero__cta .icon-flash {
+  line-height: 1;
+}
+
+[data-page='pdp'] .v2-hero__cta .icon-arrow-right svg,
+[data-page='pdp'] .v2-hero__cta .icon-flash svg {
+  --color-icon: var(--c-primary-white);
+
+  width: 16px;
+  height: 16px;
+}
+
+/* PDP - electric model availability banner END */
+
+/* PDP - electric model stats bar */
+[data-page='pdp'][data-page-variation-electric='is-electric-model'] .v2-hero__heading {
+  background: rgb(143 101 77 / 60%);
+}
+
+[data-page='pdp'][data-page-variation-electric='is-electric-model'] .v2-hero__content ul,
+[data-page='pdp'][data-page-variation-electric='is-electric-model'] .v2-hero__content::after {
+  background: rgb(143 101 77 / 90%);
+}
+
+[data-page-variation-electric='is-electric-model'] .v2-hero__cta-wrapper {
+  display: none !important;
+}
+
+[data-page='pdp'][data-page-variation-standard='is-standard-model'][data-model-variation] .v2-hero__cta-wrapper {
+  display: none;
+}
+
+[data-page='pdp'][data-page-variation-standard='is-standard-model'][data-model-variation="has-electric-model"] .v2-hero__cta-wrapper {
+  display: block;
+}
+
+/* Dark and Light Variants */
+.v2-hero--light {
+  --text-color: var(--c-primary-black);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.v2-hero--dark .v2-hero__content-wrapper {
+  background: linear-gradient(180deg, transparent 56.46%, rgba(0 0 0 / 50%) 100%);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.v2-hero--light .v2-hero__content-wrapper {
+  background: linear-gradient(180deg, transparent 56.46%, rgba(255 255 255 / 50%) 100%);
+}
+
+/* Hero with text styling */
+
+.v2-hero__content.with-text .v2-hero__text {
+  word-wrap: break-word;
+  letter-spacing: .01rem;
+  margin: 0;
+}
+
+/* Hero with no image */
+.v2-hero--no-image {
+  height: unset;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.v2-hero--no-image .v2-hero__content-wrapper,
+.v2-hero--no-image.v2-hero--dark .v2-hero__content-wrapper {
+  background-color: var(--c-primary-black);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.v2-hero--no-image.v2-hero--light .v2-hero__content-wrapper {
+  background-color: var(--c-primary-white);
+}
+
+@media (min-width: 1200px) {
+  .v2-hero__content-wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .v2-hero--no-image .v2-hero__content-wrapper {
+    padding: 50px 16px;
+  }
+}
+
+/* PDP - electric model stats bar END */
+
+/* PDP - Hero section END */
+

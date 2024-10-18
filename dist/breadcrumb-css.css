@@ -1,0 +1,45 @@
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./blocks/breadcrumb/breadcrumb.css ***!
+  \************************************************************************************/
+main .section.breadcrumb-container {
+  padding: 0!important;
+} 
+
+.breadcrumb-wrapper {
+  font-size: var(--body-font-size-xs);
+  font-family: var(--ff-subheadings-medium);
+  margin: 0 auto;
+}
+
+.breadcrumb-list {
+  vertical-align: middle;
+  line-height: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  max-width: 1376px;
+  height: 45px;
+  margin: 5px auto 10px;
+}
+
+.breadcrumb-home {
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.breadcrumb-home a {
+  color: var(--c-secondary-dark-gold);
+  text-decoration: none;
+}
+
+.breadcrumb-current {
+  color: var(--c-primary-black);
+  text-transform: capitalize;
+}
+
+.breadcrumb-current::before {
+  content: '/';
+  padding: 8px 10px;
+}
+
