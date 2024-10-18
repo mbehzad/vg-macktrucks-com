@@ -1,8 +1,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="/dist/main.js" type="module"></script>
-<link rel="stylesheet" href="/dist/styles.css"/>
+<!--<script src="/dist/main.js" type="module"></script>-->
+<!--<link rel="stylesheet" href="/dist/styles.css"/>-->
+
+<link rel="preload" href="/dist/styles.css" as="style" fetchpriority="high"/>
+<link rel="modulepreload" href="/dist/main.js" fetchpriority="high"/>
 <link rel="preload" href="/constants.json" as="fetch" type="application/json" crossorigin="anonymous"/>
 <link rel="preload" href="/placeholder.json" as="fetch" type="application/json" crossorigin="anonymous"/>
+<script type="module">
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "/dist/styles.css";
+  link.onload = () => {
+    import("/dist/main.js");
+  };
+  document.head.append(link);
+</script>
 <link rel="icon" href="data:,">
 
 <style id="before-load">

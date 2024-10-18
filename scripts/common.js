@@ -519,8 +519,10 @@ export function createResponsivePicture(images, eager, alt, imageClass) {
   let fallbackSrc = '';
 
   function constructSrcset(src, width, format) {
-    const baseUrl = `${src}?format=${format}&optimize=medium`;
-    return `${baseUrl}&width=${width} 1x, ${baseUrl}&width=${width * 2} 2x`;
+    // width=2000&format=webply&optimize=medium
+    //const baseUrl = `${src}?format=${format}&optimize=medium`;
+    //return `${baseUrl}&width=${width} 1x, ${baseUrl}&width=${width * 2} 2x`;
+    return `${src}?width=${width}&format=webply&optimize=medium`;
   }
 
   images.forEach((image) => {

@@ -42,6 +42,9 @@ export default async function decorate(block) {
     link.remove();
   }
 
+
+  console.log("imageData", imageData);
+
   if (imageData.length === 1) {
     imageData[0].breakpoints = [
       { media: '(min-width: 600px)', width: 600 },
@@ -53,15 +56,15 @@ export default async function decorate(block) {
   }
 
   if (imageData.length > 1) {
+    // mobile
     imageData[0].breakpoints = [
-      { media: '(min-width: 600px)', width: 600 },
-      { width: 750 },
+      { media: '(max-width: 599px)', width: 750 },
+      { media: '(min-width: 600px) and (max-width: 1199px)', width: 2000 },
     ];
 
+    // desktop
     imageData[1].breakpoints = [
-      { media: '(min-width: 1200px)', width: 1200 },
-      { media: '(min-width: 1440px)', width: 1440 },
-      { media: '(min-width: 1920px)', width: 1920 },
+      { media: '(min-width: 1200px)', width: 2000 }
     ];
   }
 
