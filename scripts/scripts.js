@@ -457,7 +457,7 @@ export function decorateMain(main, head) {
   }
   // hopefully forward compatible button decoration
   decorateButtons(main);
-  decorateIcons(main);
+  /*decorateIcons(main);*/
   buildAutoBlocks(main, head);
   decorateSections(main);
   decorateBlocks(main);
@@ -530,6 +530,7 @@ async function loadLazy(doc) {
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
+  decorateIcons(document.querySelector('main'));
   loadDelayed();
 }
 
