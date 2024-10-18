@@ -1,9 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/styles.css" as="style" crossorigin="anonymous"/>
-    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s.css" as="style" crossorigin="anonymous" fetchpriority="high"/>
-    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium" as="image" crossorigin="anonymous" fetchpriority="low"/>
-    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=2" as="image" crossorigin="anonymous" fetchpriority="low"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s1.css" as="style" fetchpriority="low" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s2.css" as="style" fetchpriority="low" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s3.css" as="style" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s4.css" as="style" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s5.css" as="style" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s6.css" as="style" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s7.css" as="style" fetchpriority="high"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s8.css" as="style" fetchpriority="high"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s9.css" as="style" fetchpriority="high"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s10.css" as="style" fetchpriority="high"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium" as="image" fetchpriority="low"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=2" as="image" fetchpriority="low"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=3" as="image" fetchpriority="low"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=4" as="image" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=5" as="image" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=6" as="image" />
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=7" as="image" fetchpriority="high"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=8" as="image" fetchpriority="high"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=9" as="image" fetchpriority="high"/>
+    <link rel="preload" href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=10" as="image" fetchpriority="high"/>
   </head>
+  <body>
+    <script type="module">
+      if (location.href.includes("?")) {
+        for (let i = 1 ; i < 21 ; i ++) {
+          const link = document.createElement("link");
+          link.rel = "preload";
+          // 10 css
+          if (i <= 10) {
+            link.href=`https://img--vg-macktrucks-com--mbehzad.hlx.page/dist/s${i}.css`;
+            link.as="style";
+          }
+          // then 10 images
+          else {
+            link.href="https://img--vg-macktrucks-com--mbehzad.hlx.page/trucks/anthem/media_1ed108fcbce79ebc3bdc2d105f0532d1e93c05205.jpeg?width=750&format=webply&optimize=medium&a=" + i;
+            link.as="image";
+          }
+          // each group, the first half has a lower prio
+          link.fetchPriority = i < 5 || (i > 10 && i < 15) ? "low" : "high";
+          setTimeout(() => {
+            document.head.append(link);
+          }, i * 30);
+        }
+      }
+    </script>
+  </body>
 </html>
