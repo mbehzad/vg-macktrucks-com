@@ -487,6 +487,7 @@ async function loadEager(doc) {
     const templateName = getMetadata('template');
     if (templateName) await loadTemplate(doc, templateName);
     /*await waitForLCP(LCP_BLOCKS);*/
+    document.getElementById('before-load')?.remove();
   } else {
     document.documentElement.lang = 'en';
   }

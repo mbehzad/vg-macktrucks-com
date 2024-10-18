@@ -4,3 +4,25 @@
 <link rel="preload" href="/constants.json" as="fetch" type="application/json" crossorigin="anonymous"/>
 <link rel="preload" href="/placeholder.json" as="fetch" type="application/json" crossorigin="anonymous"/>
 <link rel="icon" href="data:,">
+
+<style id="before-load">
+  body {
+    opacity: 0;
+  }
+  main > div:not(:has(.v2-hero)) {
+    display: none;
+  }
+
+
+  @media (width < 1200px) {
+    .v2-hero > div > div > p:nth-child(2) > picture {
+      display: none;
+    }
+  }
+
+  @media (width >= 1200px) {
+    .v2-hero > div > div > p:nth-child(1) > picture {
+      display: none;
+    }
+  }
+</style>
