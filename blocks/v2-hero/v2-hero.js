@@ -70,8 +70,11 @@ export default async function decorate(block) {
   images.forEach((image) => image.parentNode.remove());
 
   /** @type {HTMLImageElement} */
-  const img = newPicture.querySelectorAll('img');
+  const img = newPicture.querySelector('img');
   img.fetchPriority = 'high';
+
+  console.log("img", img);
+
 
   if (images.length !== 0) {
     block.prepend(newPicture);
