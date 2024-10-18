@@ -1576,3 +1576,10 @@ main .section.responsive-title h1 {
     --text-block-max-width: 694px;
   }
 }
+
+
+main > div, footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 100vh;
+}
+
