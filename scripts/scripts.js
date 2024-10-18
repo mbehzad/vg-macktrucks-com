@@ -674,7 +674,7 @@ export function getAllElWithChildren(elements, childrenCheck, isOpposite = false
 /* Adds attributes to all anchors and buttons that start with properties between [ brackets ] */
 const allLinks = [...document.querySelectorAll('a'), ...document.querySelectorAll('button')];
 allLinks.forEach((link) => {
-  const linkText = link.innerText;
+  const linkText = link.textContent;
   if (linkText[0] !== '[') return;
   const brackets = linkText.match(/^\[(.*?)\]/);
   const rawProperties = brackets && brackets[1];
