@@ -69,6 +69,10 @@ export default async function decorate(block) {
   const newPicture = createResponsivePicture(imageData, true, altText, `${blockName}__image`);
   images.forEach((image) => image.parentNode.remove());
 
+  /** @type {HTMLImageElement} */
+  const img = newPicture.querySelectorAll('img');
+  img.fetchPriority = 'high';
+
   if (images.length !== 0) {
     block.prepend(newPicture);
   } else if (!isVideo) {
