@@ -520,7 +520,7 @@ async function loadLazy(doc) {
     header.appendChild(subnav);
   }
 
-  loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  // loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   addFavIcon(`${window.hlx.codeBasePath}/styles/favicon.svg`);
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));

@@ -164,7 +164,7 @@ a.header__link {
 
 .header__link-accordion::after {
   content: '';
-  background-image: url('/icons/dropdown-caret.svg');
+  background-image: /* webpackIgnore: true */ url('/icons/dropdown-caret.svg');
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
@@ -405,7 +405,7 @@ a.header__link {
 
   .header__logo-image-wrapper:has(.icon-bulldog)::after {
     content: '';
-    background: url('/icons/logo.svg') center no-repeat;
+    background: /* webpackIgnore: true */ url('/icons/logo.svg') center no-repeat;
     width: 100%;
     height: 100%;
     display: block;

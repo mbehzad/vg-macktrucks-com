@@ -238,7 +238,7 @@
 .modal-content.modal-red {
   min-height: 700px;
   background-color: #7d191b;
-  background-image: url('../../media/subscribe-to-bulldog-background.webp');
+  background-image: /* webpackIgnore: true */ url('../../media/subscribe-to-bulldog-background.webp');
 }
 
 .modal-content.modal-form.modal-black .eloqua-form input[type='submit'] {
@@ -248,7 +248,7 @@
 .modal-content.modal-black {
   min-height: 700px;
   background-color: #090909;
-  background-image: url('../../media/share-your-thoughts-background.webp');
+  background-image: /* webpackIgnore: true */ url('../../media/share-your-thoughts-background.webp');
 }
 
 @media (min-width: 1200px) {
