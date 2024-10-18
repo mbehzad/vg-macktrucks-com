@@ -19,7 +19,10 @@ let cssfiles = globSync([
 const blockNames = cssfiles.map(getBlockName);
 // remove blocks having v2
 cssfiles = cssfiles.filter(
-  (filepath) => !blockNames.includes(`v2-${getBlockName(filepath)}`)
+  (filepath) => {
+    const blockName = getBlockName(filepath);
+    return !blockNames.includes(`v2-${blockName}`) && (blockName !== 'search');
+  },
 );
 
 module.exports = {
