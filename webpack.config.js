@@ -12,7 +12,7 @@ function getBlockName(filepath) {
 // get all css files,
 // remove obsolete ones and merge into one css file
 let cssfiles = globSync([
-  'styles/**/*.css',
+  'styles/styles.css',
   'blocks/**/*.css',
   'templates/**/*.css',
 ]).map((filepath) => `./${filepath.replaceAll(path.sep, '/')}`);
