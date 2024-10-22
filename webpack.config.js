@@ -35,7 +35,7 @@ const cssfiles = globSync([
 ]).map((filepath) => `./${filepath.replaceAll(path.sep, '/')}`);
 
 module.exports = {
-  mode: 'development', // 'production' | ' development'
+  mode: 'production', // 'production' | ' development'
   devtool: false,
   entry: {
     main: './scripts/scripts.js',
