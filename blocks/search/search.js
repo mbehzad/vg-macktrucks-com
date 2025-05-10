@@ -12,6 +12,8 @@ import { searchQuery, fetchData } from './search-api.js';
 
 import { fetchAutosuggest, handleArrowDown, handleArrowUp } from './autosuggest.js';
 
+// @TODO: load css before showing results...
+
 const PLACEHOLDERS = {
   searchFor: getTextLabel('Search For'),
   noResults: getTextLabel('no results'),

@@ -3,65 +3,65 @@
 /* Headings */
 @font-face {
   font-family: 'GT America Extended Medium';
-  src: url('../fonts/GT-America-Extended-Medium.woff2') format('woff2'),
-  url('../fonts/GT-America-Extended-Medium.woff') format('woff');
+  src: /* webpackIgnore: true */ url('../fonts/GT-America-Extended-Medium.woff2') format('woff2'),
+  /* webpackIgnore: true */ url('../fonts/GT-America-Extended-Medium.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'GT America Extended Regular';
-  src: url('../fonts/GT-America-Extended-Regular.woff2') format('woff2'),
-  url('../fonts/GT-America-Extended-Regular.woff') format('woff');
+  src: /* webpackIgnore: true */ url('../fonts/GT-America-Extended-Regular.woff2') format('woff2'),
+  /* webpackIgnore: true */ url('../fonts/GT-America-Extended-Regular.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'GT America Compressed Regular';
-  src: url('../fonts/GT-America-Compressed-Regular.woff2') format('woff2'),
-  url('../fonts/GT-America-Compressed-Regular.woff') format('woff');
+  src: /* webpackIgnore: true */ url('../fonts/GT-America-Compressed-Regular.woff2') format('woff2'),
+  /* webpackIgnore: true */ url('../fonts/GT-America-Compressed-Regular.woff') format('woff');
   font-display: swap;
 }
 
 /* Subheads, Body Copy, & Legal Copy */
 @font-face {
   font-family: 'Helvetica Neue LT Pro 55 Roman';
-  src: url('../fonts/HelveticaNeueLTPro-55Roman.otf') format('opentype');
+  src: /* webpackIgnore: true */ url('../fonts/HelveticaNeueLTPro-55Roman.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue LT Pro 65 Medium';
-  src: url('../fonts/HelveticaNeueLTPro-65Md.otf') format('opentype');
+  src: /* webpackIgnore: true */ url('../fonts/HelveticaNeueLTPro-65Md.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue LT Pro 75 Bold';
-  src: url('../fonts/HelveticaNeueLTPro-75Bd.otf') format('opentype');
+  src: /* webpackIgnore: true */ url('../fonts/HelveticaNeueLTPro-75Bd.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue LT Pro 56 Roman Italic';
-  src: url('../fonts/HelveticaNeueLTPro-56It.otf') format('opentype');
+  src: /* webpackIgnore: true */ url('../fonts/HelveticaNeueLTPro-56It.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue LT Pro 66 Medium Italic';
-  src: url('../fonts/HelveticaNeueLTPro-66MdIt.otf') format('opentype');
+  src: /* webpackIgnore: true */ url('../fonts/HelveticaNeueLTPro-66MdIt.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue LT Pro 76 Bold Italic';
-  src: url('../fonts/HelveticaNeueLTPro-76BdIt.otf') format('opentype');
+  src: /* webpackIgnore: true */ url('../fonts/HelveticaNeueLTPro-76BdIt.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue 85 Heavy';
-  src: url('../fonts/helveticaneueltpro-hv.woff') format('woff');
+  src: /* webpackIgnore: true */ url('../fonts/helveticaneueltpro-hv.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -70,16 +70,16 @@
 /* Accent elements */
 @font-face {
   font-family: 'GT America Mono Regular';
-  src: url('../fonts/GT-America-Mono-Regular.woff2') format('woff2'),
-  url('../fonts/GT-America-Mono-Regular.woff') format('woff');
+  src: /* webpackIgnore: true */ url('../fonts/GT-America-Mono-Regular.woff2') format('woff2'),
+  /* webpackIgnore: true */ url('../fonts/GT-America-Mono-Regular.woff') format('woff');
   letter-spacing: -4%;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'GT America Mono Medium';
-  src: url('../fonts/GT-America-Mono-Medium.woff2') format('woff2'),
-  url('../fonts/GT-America-Mono-Medium.woff') format('woff');
+  src: /* webpackIgnore: true */ url('../fonts/GT-America-Mono-Medium.woff2') format('woff2'),
+  /* webpackIgnore: true */ url('../fonts/GT-America-Mono-Medium.woff') format('woff');
   letter-spacing: -4%;
   font-display: swap;
 }
@@ -105,7 +105,7 @@
 
 @font-face {
   font-family: fontawesome;
-  src: url('../fonts/fontawesome-webfont.woff') format('woff');
+  src: /* webpackIgnore: true */ url('../fonts/fontawesome-webfont.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap

@@ -102,13 +102,13 @@
   .recommendations-container {
     width: 100%;
   }
-  
+
   .recommendations-list {
     flex-direction: row;
     justify-content: flex-start;
     column-gap: 15px;
   }
-  
+
   .recommendations-item {
     --card-height: 270px;
 
@@ -194,7 +194,7 @@
 }
 
 .magazine-categories.recommendations-container .recommendations-text-content .recommendations-link::after {
-  content: url('../../media/arrow-B.webp');
+  content: /* webpackIgnore: true */ url('../../media/arrow-B.webp');
   margin-left: 10px;
 }
 
@@ -234,7 +234,7 @@
   .magazine-categories.recommendations-container .recommendations-list {
     flex-direction: column;
   }
-  
+
   .magazine-categories.recommendations-container .recommendations-item {
     width: unset;
   }

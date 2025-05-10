@@ -7,7 +7,7 @@
 
 .news-sidebar .news-sidebar-rss-icon::before {
   content: "";
-  background-image: url("/icons/feed-icon.png");
+  background-image: /* webpackIgnore: true */ url("/icons/feed-icon.png");
   display: inline-block;
   width: 14px;
   height: 14px;

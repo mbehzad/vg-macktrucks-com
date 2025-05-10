@@ -1704,7 +1704,7 @@
   .sf-sidebar-container
   .btn-custom
   .search-close {
-  background-image: url('/images/Close-Icons.png');
+  background-image: /* webpackIgnore: true */ url('/images/Close-Icons.png');
 }
 
 .search-close-button {

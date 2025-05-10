@@ -189,7 +189,7 @@ export default async function decorate(block) {
 
   addScrollToTopButton(block);
 
-  await decorateIcons(block);
+  /*await */decorateIcons(block);
   await loadBlocks(block);
 
   const onFormLoaded = (mutationList) => {

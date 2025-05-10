@@ -82,7 +82,7 @@
 
 .v2-cards__text-wrapper li::before {
   margin-right: 5px;
-  content: url('../../icons/bullet.svg');
+  content: /* webpackIgnore: true */ url('../../icons/bullet.svg');
 }
 
 .v2-cards__text-wrapper .v2-cards__button-container {
@@ -186,7 +186,7 @@
 
 .v2-cards.v2-cards--with-border .v2-cards__heading {
   margin-bottom: 4px;
-} 
+}
 
 .v2-cards.v2-cards--with-border .v2-cards__text-wrapper ul {
   gap: 8px;
@@ -204,7 +204,7 @@
 .v2-cards.v2-cards--heading-with-arrow .v2-cards__heading a::after {
   height: 28px;
   width: 28px;
-  content: url('../../icons/arrow-right.svg');
+  content: /* webpackIgnore: true */ url('../../icons/arrow-right.svg');
 }
 
 @media (min-width: 744px) {

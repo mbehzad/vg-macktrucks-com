@@ -166,6 +166,8 @@ export async function decorateIcons(element) {
 }
 
 export async function loadTemplate(doc, templateName) {
+  console.log('loadTemplate', templateName);
+
   try {
     await loadCSS(`${window.hlx.codeBasePath}/templates/${templateName}/${templateName}.css`);
     const decorationComplete = new Promise((resolve) => {
@@ -223,9 +225,11 @@ export async function loadLazy(doc) {
 export function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => {
+    console.log('delayed');
+
     // eslint-disable-next-line import/no-cycle
     import('./delayed.js');
-  }, 3000);
+  }, 300);
   // load anything that can be postponed to the latest here
 }
 
